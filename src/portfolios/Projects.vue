@@ -1,8 +1,8 @@
 <template>
   <v-container grid-list-md>
     <v-layout row wrap>
-      <v-flex xs12 sm6 md4>
-        <app-card v-for="app in apps" :app="app"></app-card>
+      <v-flex xs12 sm6 md4 v-for="(app, index) in apps" :key="index">
+        <app-card :app="app"></app-card>
       </v-flex>
     </v-layout>
   </v-container>
@@ -32,6 +32,7 @@ export default {
         {
           title: 'Statify',
           link: 'http://my-statify.ryanvitter.com/',
+          github: 'https://github.com/rnvitter/my-statify',
           imageName: 'statify',
           images: 4,
           color: '#2bb355',

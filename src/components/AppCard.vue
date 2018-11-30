@@ -3,11 +3,16 @@
     <a :href="app.link" target=”_blank” style="text-decoration: none;">
       <v-card-title
         class="app-card-title"
-        :style="`background-color: ${app.color};`"
+        :style="`background-color: #eee; border-top: 3px solid ${app.color};`"
         primary-title>
-        <h3 class="app-name" style="color: #fff;">
+        <h3 class="app-name" :style="`color: #333;`">
           {{ app.title }}
         </h3>
+        <a :href="app.github" target="_blank" style="text-decoration: none;" v-if="app.github">
+          <v-btn flat icon color="black">
+            <v-icon>code</v-icon>
+          </v-btn>
+        </a>
       </v-card-title>
     </a>
     <v-carousel style="height: 150px;" hide-controls hide-delimiters>
@@ -27,7 +32,7 @@
       </v-carousel-item>
     </v-carousel>
 
-    <v-card-title>
+    <v-card-title style="background-color: #fafafa;">
       <div class="app-description">{{ app.description }}</div>
       <v-chip
         v-for="tag in app.tags"
@@ -107,14 +112,17 @@ export default {
 }
 
 .app-card-title {
-  padding: 10px;
+  height: 64px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   cursor: pointer;
 }
 
 .app-name {
   font-size: 1.2em;
   font-weight: 400;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.1em;
 }
 
 .app-description {
