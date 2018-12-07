@@ -2,9 +2,10 @@
   <v-app>
     <v-content>
       <splash-page></splash-page>
-      <div class="section-title" style="background-color: #F25652;">Code Portfolio</div>
+      <div class="section-title" style="background-color: #F25652;">Projects</div>
       <projects></projects>
-      <div class="section-title" style="background-color: #F2B134;">Map Portfolio</div>
+      <div class="section-title" style="background-color: #F2B134;">Maps & Posters</div>
+      <div class="section-title" style="background-color: #4FB99F;">Photography</div>
       <!-- <photos></photos> -->
     </v-content>
   </v-app>

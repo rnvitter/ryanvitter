@@ -4,6 +4,9 @@
       <v-flex xs12 v-for="(app, index) in apps" :key="index">
         <app-card :app="app"></app-card>
       </v-flex>
+      <v-flex xs12 class="mb-5">
+        <h3 style="font-size: 1.6em;">More Projects</h3>
+      </v-flex>
     </v-layout>
   </v-container>
 </template>

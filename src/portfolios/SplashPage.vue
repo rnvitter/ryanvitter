@@ -1,11 +1,19 @@
 <template>
   <div class="splash-wrapper">
     <div class="splash">
-      <h1 class="splash-title">Ryan Vitter</h1>
-      <div class="splash-overview">
-        <div class="splash-tag" style="background-color: #F25652;">Developer</div>
-        <div class="splash-tag" style="background-color: #F2B134;">Cartographer</div>
-        <div class="splash-tag" style="background-color: #4FB99F;">Photographer</div>
+      <div class="splash-title-wrapper">
+        <h1 class="splash-title">Ryan Vitter</h1>
+        <div class="splash-tags">
+          <div class="splash-tag" style="background-color: #F25652;">{{ mobile ? 'Code' : 'Developer' }}</div>
+          <div class="splash-tag" style="background-color: #F2B134;">{{ mobile ? 'Maps' : 'Cartographer' }}</div>
+          <div class="splash-tag" style="background-color: #4FB99F;">Photography</div>
+        </div>
+      </div>
+      <div class="splash-btns">
+        <div class="splash-btn">Projects</div>
+        <div class="splash-btn">Maps & Posters</div>
+        <div class="splash-btn">Photography</div>
+        <div class="splash-btn">Contact Me</div>
       </div>
       <div class="splash-tagline">
         <div class="tagline-title">K.I.S.S.</div>
@@ -16,7 +24,24 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
 
+const computed = {
+  ...mapGetters({
+    mobile: 'ux/mobile'
+  })
+}
+
+const methods = {
+  getPic () {
+    return require('../../static/pictures/bald_eagle.jpg')
+  }
+}
+
+export default {
+  computed,
+  methods
+}
 </script>
 
 <style>
@@ -27,33 +52,61 @@
 }
 
 .splash {
-  position: absolute;
-  top: 100px;
-  left: 100px;
+  padding-top: 70px;
+  width: 100%;
+}
+
+.splash-title-wrapper,
+.splash-btn,
+.splash-tagline {
+  padding-left: 100px;
+}
+
+
+.splash-title-wrapper {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
 }
 
 .splash-title {
-  font-size: 7em;
+  font-size: 1.5em;
   font-weight: 600;
   letter-spacing: 0.02em;
-  line-height: 100px;
   color: #333;
+  text-transform: uppercase;
 }
 
-.splash-overview {
-  margin-top: 20px;
-  font-size: 1.2em;
+.splash-tags {
+  font-size: 0.9em;
   font-weight: 400;
   color: #fff;
-  line-height: 40px;
   letter-spacing: 0.05em;
+  margin-left: 10px;
 }
 
 .splash-tag {
   display: inline-block;
-  padding: 0px 20px;
+  padding: 2px 20px;
   border-radius: 50px;
   margin: 5px;
+  color: #fff;
+}
+
+.splash-btn {
+  color: #bdbdbd;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-size: 2em;
+  font-weight: 600;
+  line-height: 20px;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+
+.splash-btn:hover {
+  color: #fff;
+  background-color: #F25652;
 }
 
 .splash-tagline {
@@ -72,9 +125,17 @@
 }
 
 @media only screen and (max-width: 420px) {
-  .splash {
-    top: 70px;
-    left: 30px;
+  .splash-title-wrapper,
+  .splash-btn,
+  .splash-tagline {
+    padding-left: 10px;
+  }
+  .splash-title-wrapper {
+    display: block;
+  }
+
+  .splash-tags {
+    margin-left: 0;
   }
 }
 </style>

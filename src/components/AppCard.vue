@@ -147,10 +147,10 @@ export default {
 }
 
 .app-description {
-  font-size: 1.2em;
+  font-size: 1.1em;
   font-weight: 500;
   color: #757575;
-  margin: 10px 10px 10px 0;
+  margin: 15px 10px 10px 0;
 }
 
 .app-link {
@@ -168,6 +168,7 @@ export default {
 
 .app-image {
   margin: 10px 0;
+  border: 1px solid #bdbdbd;
 }
 
 .app-image:hover {
