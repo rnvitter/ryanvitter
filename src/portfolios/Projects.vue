@@ -1,7 +1,7 @@
 <template>
-  <v-container grid-list-md>
+  <v-container grid-list-lg>
     <v-layout row wrap>
-      <v-flex xs12 sm6 md4 v-for="(app, index) in apps" :key="index">
+      <v-flex xs12 v-for="(app, index) in apps" :key="index">
         <app-card :app="app"></app-card>
       </v-flex>
     </v-layout>
@@ -27,7 +27,8 @@ export default {
           images: 6,
           color: '#FA3138',
           tags: ['work', 'vue.js', 'd3.js', 'python'],
-          description: 'App for live election results. I developed this app with one other person for work, I worked on the UI/UX design, frontend code, and developed all the maps and charts from scratch with d3'
+          tagline: '2018 Live Results Dashboard for Primary and General Elections',
+          description: 'I developed this app while working at 0ptimus with one other person. I worked on the UI/UX design, frontend code, and developed all the maps and charts from scratch with d3. We had upwards of 1,500 people on the site at a time during election night.'
         },
         {
           title: 'Statify',
@@ -37,7 +38,8 @@ export default {
           images: 4,
           color: '#2bb355',
           tags: ['personal', 'vue.js', 'node.js'],
-          description: 'App for discovering your top music over time and sharing it with friends. Created using vue, node, and the spotify api.'
+          tagline: 'Tool For Discovering Your Music Trends',
+          description: 'App for discovering your top music over time and sharing it with friends. I created the entirety of this app as a personal project using vue, node, and the spotify and bitly apis.'
         }
       ]
     }

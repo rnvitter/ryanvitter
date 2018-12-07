@@ -1,50 +1,63 @@
 <template>
-  <v-card raised class="app-card">
-    <a :href="app.link" target=”_blank” style="text-decoration: none;">
-      <v-card-title
-        class="app-card-title"
-        :style="`background-color: #eee; border-top: 3px solid ${app.color};`"
-        primary-title>
-        <h3 class="app-name" :style="`color: #333;`">
-          {{ app.title }}
-        </h3>
-        <a :href="app.github" target="_blank" style="text-decoration: none;" v-if="app.github">
-          <v-btn flat icon color="black">
-            <v-icon>code</v-icon>
-          </v-btn>
-        </a>
-      </v-card-title>
-    </a>
-    <v-carousel style="height: 150px;" hide-controls hide-delimiters>
-      <v-carousel-item v-for="(key, index) in app.images" :key="index">
-        <img
-          :src="getSrc(index)"
-          width="100%"
-          height="150px">
-          <v-container fill-height fluid>
-            <v-layout fill-height>
-              <v-flex xs12 align-end flexbox>
-                <span class="headline">{{ app.title }}</span>
-              </v-flex>
-            </v-layout>
-          </v-container>
-        </img>
-      </v-carousel-item>
-    </v-carousel>
+  <div class="app-card">
+    <!-- card-header -->
+    <v-layout row wrap>
+      <v-flex xs12 sm12 md6>
+        <div style="width: 90%;">
+          <h2 class="app-name">
+            {{ app.title }}
+          </h2>
+          <div class="app-tagline">{{ app.tagline }}</div>
+          <div class="app-tags">
+            <v-chip
+              v-for="tag in app.tags"
+              class="app-tag"
+              :style="`${tagStyle(tag)}`"
+              small>
+              {{ tag }}
+            </v-chip>
+          </div>
+        </div>
+      </v-flex>
+      <v-flex xs12 sm12 md6 v-if="!mobile">
+        <div class="app-description">{{ app.description }}</div>
+        <a :href="app.link" target="_blank" class="app-link mr-3">Explore</a>
+        <a :href="app.github" target="_blank" class="app-link" v-if="app.github">Github</a>
+      </v-flex>
+    </v-layout>
 
-    <v-card-title style="background-color: #fafafa;">
-      <div class="app-description">{{ app.description }}</div>
-      <v-chip
-        v-for="tag in app.tags"
-        :style="`${tagStyle(tag)}`"
-        small>
-        {{ tag }}
-      </v-chip>
-    </v-card-title>
-  </v-card>
+    <!-- card body -->
+    <a :href="app.link" target=”_blank” style="text-decoration: none;">
+      <img class="app-image"
+        :src="getSrc()"
+        width="100%"
+        height="auto">
+      </img>
+    </a>
+
+    <!-- card-footer -->
+    <div style="display: flex;" v-if="mobile">
+      <a :href="app.link" target="_blank" class="app-link mr-3">Explore</a>
+      <div @click="descriptionDialog = true" class="app-link mr-3">Details</div>
+      <a :href="app.github" target="_blank" class="app-link" v-if="app.github">Github</a>
+    </div>
+
+    <v-dialog v-model="descriptionDialog" max-width="320">
+      <v-card>
+        <v-card-title class="headline">{{ app.title }}</v-card-title>
+        <v-card-text>{{ app.description }}</v-card-text>
+        <v-card-actions>
+          <v-btn color="black" flat="flat" @click="descriptionDialog = false">Close</v-btn>
+        </v-card-actions>
+      </v-card>
+    </v-dialog>
+
+  </div>
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
+
 const props = {
   app: {
     type: Object,
@@ -52,10 +65,15 @@ const props = {
   }
 }
 
+const computed = {
+  ...mapGetters({
+    mobile: 'ux/mobile'
+  })
+}
+
 const methods = {
-  getSrc (index) {
-    const number = index + 1
-    return require('../assets/app-previews/' + this.app.imageName + '-' + number + '-min.png')
+  getSrc () {
+    return require('../../static/img/app-previews/' + this.app.imageName + '-min.png')
   },
   tagStyle (tag) {
     const obj = this.tagColors.find(item => item.name === tag)
@@ -65,9 +83,11 @@ const methods = {
 
 export default {
   props,
+  computed,
   methods,
   data () {
     return {
+      descriptionDialog: false,
       tagColors: [
         {
           name: 'personal',
@@ -108,33 +128,60 @@ export default {
 <style>
 .app-card {
   width: 100%;
-  margin: 20px;
-}
-
-.app-card-title {
-  height: 64px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  cursor: pointer;
+  margin: 30px 0;
 }
 
 .app-name {
-  font-size: 1.2em;
-  font-weight: 400;
-  letter-spacing: 0.1em;
+  color: #333;
+  letter-spacing: 0.05em;
+  font-size: 2.2em;
+  margin-bottom: 10px;
+}
+
+.app-tagline {
+  font-size: 1.6em;
+  font-weight: 600;
+  color: #bdbdbd;
+  line-height: 24px;
+  margin-bottom: 10px;
 }
 
 .app-description {
-  margin: 10px 0;
-  color: #666;
-  font-size: 0.9em;
-  font-weight: 400;
-  letter-spacing: 0.04em;
+  font-size: 1.2em;
+  font-weight: 500;
+  color: #757575;
+  margin: 10px 10px 10px 0;
 }
 
-/* vuetify override */
-.v-card__title--primary {
-  padding-top: 16px;
+.app-link {
+  font-size: 1.2em;
+  font-weight: 600;
+  color: #333;
+  text-decoration: none;
+  /* padding: 5px 10px; */
+  /* border: 1px solid #333; */
+}
+
+.app-link:hover {
+  opacity: 0.85;
+}
+
+.app-image {
+  margin: 10px 0;
+}
+
+.app-image:hover {
+  opacity: 0.85;
+}
+
+.app-tags {
+  margin: 10px 0;
+}
+
+.app-tag {
+  padding: 2px;
+  font-size: 0.9em;
+  letter-spacing: 0.07em;
+  height: 22px;
 }
 </style>
