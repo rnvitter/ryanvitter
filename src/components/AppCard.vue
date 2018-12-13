@@ -100,17 +100,17 @@ export default {
           text: '#fff'
         },
         {
-          name: 'vue.js',
+          name: 'vue',
           color: '#40b784',
           text: '#fff'
         },
         {
-          name: 'node.js',
+          name: 'node',
           color: '#323333',
           text: '#fff'
         },
         {
-          name: 'd3.js',
+          name: 'd3',
           color: '#f69b4f',
           text: '#fff'
         },
