@@ -1,7 +1,9 @@
 import AppCard from './AppCard'
-import RvHeader from './RvHeader'
+import AppCardPreview from './AppCardPreview'
+import MapCard from './MapCard'
 
 export {
   AppCard,
-  RvHeader
+  AppCardPreview,
+  MapCard
 }

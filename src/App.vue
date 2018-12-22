@@ -1,34 +1,44 @@
 <template>
   <v-app>
-    <div class="stripe-wrapper">
-      <div class="stripe" style="background-color: #F25652;"></div>
-      <div class="stripe" style="background-color: #F2B134;"></div>
-      <div class="stripe" style="background-color: #4FB99F;"></div>
-    </div>
-    <rv-header></rv-header>
-    <v-content class="content-wrapper">
-      <splash-page></splash-page>
-        <projects></projects>
-        <!-- <div class="section-title" style="color: #F2B134;">Maps & Posters</div>
-        <div class="section-title" style="color: #4FB99F;">Photography</div>
-        <div class="section-title" style="color: #666;">Contact Me</div> -->
-        <!-- <photos></photos> -->
+    <div class="app-wrapper">
+      <div class="stripe-wrapper">
+        <div class="stripe" style="background-color: #F25652;"></div>
+        <div class="stripe" style="background-color: #F2B134;"></div>
+        <div class="stripe" style="background-color: #4FB99F;"></div>
       </div>
-    </v-content>
+      <splash-page></splash-page>
+      <template v-if="mobile">
+        <header></header>
+        <v-content class="content-wrapper">
+          <portfolio></portfolio>
+        </v-content>
+      </template>
+      <div class="portfolio-wrapper" v-else>
+        <portfolio style="padding: 0 120px 0 40px;"></portfolio>
+        <navbar></navbar>
+      </div>
+    </div>
   </v-app>
 </template>
 
 <script>
-import { mapActions } from 'vuex'
+import { mapActions, mapGetters } from 'vuex'
 
-import { RvHeader } from '@/components'
-import { Photos, Projects, SplashPage } from './portfolios'
+import { Header, Navbar } from '@/components/layout'
+import Portfolio from './views/Portfolio'
+import SplashPage from './views/SplashPage'
 
 const components = {
-  RvHeader,
-  Photos,
-  Projects,
+  Header,
+  Navbar,
+  Portfolio,
   SplashPage
+}
+
+const computed = {
+  ...mapGetters({
+    mobile: 'ux/mobile'
+  })
 }
 
 const methods = {
@@ -49,6 +59,7 @@ const methods = {
 export default {
   name: 'App',
   components,
+  computed,
   methods,
   mounted () {
     this.getWindowSize()
@@ -68,29 +79,12 @@ export default {
   box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14), 0 3px 1px -2px rgba(0, 0, 0, .2), 0 1px 5px 0 rgba(0, 0, 0, .12);
 }
 
-.content-wrapper {
-  z-index: 2;
-  padding-left: 60px;
-}
-
 .stripe {
   position: relative;
   display: inline-block;
   height: 100vh;
   width: 5px;
   opacity: 0.7;
-}
-
-.section-title {
-  color: #fff;
-  font-size: 3em;
-  font-weight: 600;
-}
-
-@media only screen and (max-width: 960px) {
-  .content-wrapper {
-    padding-left: 30px !important;
-  }
 }
 
 @media only screen and (max-width: 420px) {
@@ -100,14 +94,6 @@ export default {
 
   .stripe {
     width: 4px;
-  }
-
-  .content-wrapper {
-    padding-left: 20px !important;
-  }
-
-  .section-title {
-    font-size: 2.6em;
   }
 }
 </style>

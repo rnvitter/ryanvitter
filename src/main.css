@@ -1,5 +1,6 @@
 html {
 	font-size: 62.5%; /* 10px browser default */
+  background-color: #fafafa;
 }
 
 html, body {
@@ -7,3 +8,8 @@ html, body {
   padding: 0;
   height: 100%;
 }
+
+/* .app-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+} */

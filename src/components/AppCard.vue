@@ -1,17 +1,18 @@
 <template>
-  <div class="app-card">
+  <div class="item-card">
     <!-- card-header -->
     <v-layout row wrap>
       <v-flex xs12 sm12 md6>
         <div style="width: 90%;">
-          <h2 class="app-name">
-            {{ app.title }}
+          <h2 class="item-name">
+            {{ item.title }}
           </h2>
-          <div class="app-tagline">{{ app.tagline }}</div>
-          <div class="app-tags">
+          <div class="item-tagline">{{ item.tagline }}</div>
+          <div class="item-tags">
             <v-chip
-              v-for="tag in app.tags"
-              class="app-tag"
+              v-for="(tag, index) in item.tags"
+              :key="index"
+              class="item-tag"
               :style="`${tagStyle(tag)}`"
               small>
               {{ tag }}
@@ -20,32 +21,39 @@
         </div>
       </v-flex>
       <v-flex xs12 sm12 md6 v-if="!mobile">
-        <div class="app-description">{{ app.description }}</div>
-        <a :href="app.link" target="_blank" class="app-link mr-3">Explore</a>
-        <a :href="app.github" target="_blank" class="app-link" v-if="app.github">Github</a>
+        <div class="item-description">{{ item.description }}</div>
+        <a :href="item.link" target="_blank" class="item-link mr-3">Explore</a>
+        <a :href="item.github" target="_blank" class="item-link" v-if="item.github">Github</a>
       </v-flex>
     </v-layout>
 
-    <!-- card body -->
-    <a :href="app.link" target=”_blank” style="text-decoration: none;">
-      <img class="app-image"
+    <a :href="item.link" target=”_blank” style="text-decoration: none;" v-if="item.link">
+      <img
+        class="item-image"
         :src="getSrc()"
         width="100%"
         height="auto">
       </img>
     </a>
 
-    <!-- card-footer -->
+    <img
+      v-else
+      class="item-image"
+      :src="getSrc()"
+      width="100%"
+      height="auto">
+    </img>
+
     <div style="display: flex;" v-if="mobile">
-      <a :href="app.link" target="_blank" class="app-link mr-3">Explore</a>
-      <div @click="descriptionDialog = true" class="app-link mr-3">Details</div>
-      <a :href="app.github" target="_blank" class="app-link" v-if="app.github">Github</a>
+      <a :href="item.link" target="_blank" class="item-link mr-3">Explore</a>
+      <div @click="descriptionDialog = true" class="item-link mr-3">Details</div>
+      <a :href="item.github" target="_blank" class="item-link" v-if="item.github">Github</a>
     </div>
 
     <v-dialog v-model="descriptionDialog" max-width="320">
       <v-card>
-        <v-card-title class="headline">{{ app.title }}</v-card-title>
-        <v-card-text>{{ app.description }}</v-card-text>
+        <v-card-title class="headline">{{ item.title }}</v-card-title>
+        <v-card-text>{{ item.description }}</v-card-text>
         <v-card-actions>
           <v-btn color="black" flat="flat" @click="descriptionDialog = false">Close</v-btn>
         </v-card-actions>
@@ -59,9 +67,13 @@
 import { mapGetters } from 'vuex'
 
 const props = {
-  app: {
+  item: {
     type: Object,
     required: true
+  },
+  src: {
+    type: String,
+    required: false
   }
 }
 
@@ -73,7 +85,7 @@ const computed = {
 
 const methods = {
   getSrc () {
-    return require('../../static/img/app-previews/' + this.app.imageName + '-min.png')
+    return require('../../public/static/img/app-previews/' + this.item.imageName + '-min.png')
   },
   tagStyle (tag) {
     const obj = this.tagColors.find(item => item.name === tag)
@@ -126,19 +138,21 @@ export default {
 </script>
 
 <style>
-.app-card {
+.item-card {
   width: 100%;
-  margin: 30px 0;
+  margin: 60px 0;
+  padding: 0 10px;
 }
 
-.app-name {
+.item-name {
   color: #333;
   letter-spacing: 0.05em;
   font-size: 2.2em;
   margin-bottom: 10px;
+  line-height: 34px;
 }
 
-.app-tagline {
+.item-tagline {
   font-size: 1.6em;
   font-weight: 600;
   color: #bdbdbd;
@@ -146,14 +160,14 @@ export default {
   margin-bottom: 10px;
 }
 
-.app-description {
+.item-description {
   font-size: 1.1em;
   font-weight: 500;
   color: #757575;
   margin: 15px 10px 10px 0;
 }
 
-.app-link {
+.item-link {
   font-size: 1.2em;
   font-weight: 600;
   color: #333;
@@ -162,24 +176,24 @@ export default {
   /* border: 1px solid #333; */
 }
 
-.app-link:hover {
+.item-link:hover {
   opacity: 0.85;
 }
 
-.app-image {
+.item-image {
   margin: 10px 0;
   border: 1px solid #bdbdbd;
 }
 
-.app-image:hover {
+.item-image:hover {
   opacity: 0.85;
 }
 
-.app-tags {
+.item-tags {
   margin: 10px 0;
 }
 
-.app-tag {
+.item-tag {
   padding: 2px;
   font-size: 0.9em;
   letter-spacing: 0.07em;
