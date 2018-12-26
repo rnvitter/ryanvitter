@@ -2,9 +2,9 @@
   <div>
     <v-divider class="mt-5 mb-4"></v-divider>
     <v-layout row wrap>
-      <v-flex xs12>
+      <!-- <v-flex xs12>
         <div class="section-title" style="color: #F2B134;">Maps</div>
-      </v-flex>
+      </v-flex> -->
       <v-flex xs12 v-for="map in featuredMaps" :key="map.title">
         <map-card :item="map" :src="getSrc(map.imageName)"></map-card>
       </v-flex>

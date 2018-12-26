@@ -22,7 +22,7 @@
 
         <div style="display: flex;" v-if="mobile">
           <a :href="item.link" target="_blank" class="item-link mr-3">View PDF</a>
-          <div @click="descriptionDialog = true" class="item-link mr-3">Details</div>
+          <div @click="" class="item-link mr-3">Details</div>
         </div>
       </v-flex>
     </v-layout>
@@ -49,17 +49,6 @@
           <a :href="item.link" target="_blank" class="item-link mr-3">View PDF</a>
       </v-flex>
     </v-layout>
-
-    <v-dialog v-model="descriptionDialog" max-width="320">
-      <v-card>
-        <v-card-title class="headline">{{ item.title }}</v-card-title>
-        <v-card-text>{{ item.description }}</v-card-text>
-        <v-card-actions>
-          <v-btn color="black" flat="flat" @click="descriptionDialog = false">Close</v-btn>
-        </v-card-actions>
-      </v-card>
-    </v-dialog>
-
   </div>
 </template>
 
@@ -92,11 +81,6 @@ const methods = {
 export default {
   props,
   computed,
-  methods,
-  data () {
-    return {
-      descriptionDialog: false
-    }
-  }
+  methods
 }
 </script>

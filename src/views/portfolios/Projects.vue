@@ -2,9 +2,9 @@
   <div>
     <v-divider class="mt-5 mb-4"></v-divider>
     <v-layout row wrap>
-      <v-flex xs12>
+      <!-- <v-flex xs12>
         <div class="section-title" style="color: #F25652;">Projects</div>
-      </v-flex>
+      </v-flex> -->
       <v-flex xs12 v-for="app in featuredApps" :key="app.title">
         <app-card :item="app"></app-card>
       </v-flex>

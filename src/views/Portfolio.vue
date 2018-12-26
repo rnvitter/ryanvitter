@@ -1,5 +1,6 @@
 <template>
-  <div style="padding: 0 10px;">
+  <div class="portfolio">
+    <splash-page></splash-page>
     <projects></projects>
     <maps></maps>
     <photos></photos>
@@ -7,12 +8,14 @@
 </template>
 
 <script>
+import SplashPage from './SplashPage'
 import { Maps, Projects, Photos } from './portfolios'
 
 const components = {
   Maps,
   Projects,
-  Photos
+  Photos,
+  SplashPage
 }
 
 export default {
@@ -21,6 +24,11 @@ export default {
 </script>
 
 <style>
+.portfolio {
+  padding: 0 20px;
+  width: 100%;
+}
+
 .content-wrapper {
   z-index: 2;
   padding-left: 60px;
