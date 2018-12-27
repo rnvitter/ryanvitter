@@ -238,7 +238,7 @@ export default {
   }
 
   .item-name {
-    font-size: 2.6em;
+    font-size: 2.2em;
     letter-spacing: 0em;
   }
 }

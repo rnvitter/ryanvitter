@@ -13,14 +13,12 @@
 <script>
 import { mapActions, mapGetters } from 'vuex'
 
-import { Header, Navbar, NavbarOld } from '@/components/layout'
+import { Navbar } from '@/components/layout'
 import Portfolio from './views/Portfolio'
 import SplashPage from './views/SplashPage'
 
 const components = {
-  Header,
   Navbar,
-  NavbarOld,
   Portfolio,
   SplashPage
 }
