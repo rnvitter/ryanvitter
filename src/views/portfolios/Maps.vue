@@ -1,13 +1,13 @@
 <template>
   <div>
-    <div class="section-title">Maps</div>
+    <div class="section-title">Featured Maps</div>
     <v-divider class="mb-5"></v-divider>
     <v-layout row wrap class="app-container">
       <v-flex xs12 v-for="map in featuredMaps" :key="map.title">
         <map-card :item="map" :src="getSrc(map.imageName)"></map-card>
       </v-flex>
       <v-flex xs12 style="display: flex; align-items: center;">
-        <h3 style="font-size: 1.6em;">More Maps</h3>
+        <div class="more-title">More Maps</div>
         <v-divider class="ml-4"></v-divider>
       </v-flex>
       <v-flex xs12 sm6 v-for="map in moreMaps" :key="map.title">

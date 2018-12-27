@@ -39,6 +39,12 @@ export default {
   text-transform: uppercase;
 }
 
+.more-title {
+  font-size: 1.6em;
+  font-weight: 300;
+  letter-spacing: 0.1em;
+}
+
 @media only screen and (max-width: 420px) {
   .section-title {
     font-size: 2.6em;

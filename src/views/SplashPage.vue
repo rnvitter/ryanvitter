@@ -83,27 +83,17 @@ export default {
   100% { opacity: 0 }
 }
 
-/* .splash-tagline {
-  position: absolute;
-  padding-left: 100px;
-  top: 35%;
-  margin: 80px 0;
-  color: #fff;
-  z-index: 11;
-} */
-
 .splash-tagline {
-  /* background: rgba(0,0,0,0.5); */
-  color: white;
-  margin-right: calc(((100vw - 1200px) / 2) + 202px);
-  padding-left: calc((100vw - 1200px) / 2);
-  padding-top: 32px;
-  padding-bottom: 32px;
-  padding-right: 120px;
-  margin-top: -72px;
   position: absolute;
   top: 65vh;
   z-index: 11;
+  color: white;
+  margin-top: -80px;
+  margin-left: 4vw;
+  padding-top: 32px;
+  padding-bottom: 32px;
+  padding-right: 120px;
+  /* background: rgba(0,0,0,0.5); */
 }
 
 .tagline-title {
@@ -114,15 +104,5 @@ export default {
 .tagline-description {
   font-size: 1.8em;
   font-weight: 300;
-}
-
-@media only screen and (max-width: 420px) {
-  .splash {
-    padding-top: 120px;
-  }
-
-  .splash-tagline {
-    padding-left: 10px;
-  }
 }
 </style>

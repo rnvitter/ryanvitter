@@ -1,13 +1,13 @@
 <template>
   <div>
-    <div class="section-title">Projects</div>
+    <div class="section-title">Featured Projects</div>
     <v-divider></v-divider>
     <v-layout row wrap class="app-container">
       <v-flex xs12 v-for="app in featuredApps" :key="app.title">
         <app-card :item="app"></app-card>
       </v-flex>
       <v-flex xs12 style="display: flex; align-items: center;">
-        <h3 style="font-size: 1.6em;">More Projects</h3>
+        <div class="more-title">More Projects</div>
         <v-divider class="ml-4"></v-divider>
       </v-flex>
       <v-flex xs12 sm6 v-for="app in moreApps" :key="app.title">

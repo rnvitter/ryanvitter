@@ -165,21 +165,25 @@ export default {
   color: #fff;
   font-size: 2.8em;
   font-weight: 700;
+  letter-spacing: -0.02em;
   line-height: 42px;
 }
 
 .item-tagline {
   font-size: 2em;
   font-weight: 700;
-  color: #bdbdbd;
+  color: #333;
+  opacity: 0.3;
+  letter-spacing: -0.02em;
   line-height: 28px;
   margin-bottom: 10px;
 }
 
 .item-description {
   font-size: 1.4em;
-  font-weight: 600;
-  color: #8f8f8f;
+  font-weight: 500;
+  color: #333;
+  opacity: 0.5;
   margin: 15px 10px 10px 0;
 }
 

@@ -137,7 +137,6 @@ export default {
 
 .item-name-preview {
   color: #333;
-  letter-spacing: 0.03em;
   font-size: 1.8em;
   line-height: 28px;
 }
@@ -145,7 +144,8 @@ export default {
 .item-tagline-preview {
   font-size: 1.2em;
   font-weight: 600;
-  color: #bdbdbd;
+  color: #333;
+  opacity: 0.3;
   line-height: 28px;
   margin: 5px 0;
 }
