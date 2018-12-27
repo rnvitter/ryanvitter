@@ -3,7 +3,7 @@
     <!-- card-header -->
     <v-layout row wrap>
       <v-flex xs12>
-        <div style="width: 90%;">
+        <div>
           <h2 class="item-name-preview">
             {{ item.title }}
           </h2>
@@ -18,6 +18,11 @@
               {{ tag }}
             </v-chip>
           </div>
+        </div>
+        <div style="display: flex;" class="item-btns">
+          <a :href="item.link" target="_blank" class="item-link mr-3">Explore</a>
+          <div @click="" class="item-link">Details</div>
+          <a :href="item.github" target="_blank" class="item-link ml-3" v-if="item.github">Github</a>
         </div>
       </v-flex>
     </v-layout>
@@ -37,12 +42,6 @@
       :width="width"
       :height="height">
     </img>
-
-    <div style="display: flex;">
-      <a :href="item.link" target="_blank" class="item-link mr-3">Explore</a>
-      <div @click="" class="item-link mr-3">Details</div>
-      <a :href="item.github" target="_blank" class="item-link" v-if="item.github">Github</a>
-    </div>
   </div>
 </template>
 
@@ -147,6 +146,18 @@ export default {
   font-size: 1.2em;
   font-weight: 600;
   color: #bdbdbd;
-  line-height: 24px;
+  line-height: 28px;
+  margin: 5px 0;
+}
+
+@media only screen and (max-width: 960px) {
+  .item-name-preview,
+  .item-tagline-preview {
+    text-align: center;
+  }
+
+  .item-btns {
+    justify-content: center;
+  }
 }
 </style>

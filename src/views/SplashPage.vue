@@ -1,10 +1,10 @@
 <template>
   <div>
+    <div class="splash-tagline">
+      <div class="tagline-title">K.I.S.S.</div>
+      <div class="tagline-description">Keep it simple stupid</div>
+    </div>
     <div class="splash-wrapper">
-      <div class="splash-tagline">
-        <div class="tagline-title">K.I.S.S.</div>
-        <div class="tagline-description">Keep it simple stupid</div>
-      </div>
       <ul class="splash-image">
         <li><span></span></li>
         <li><span></span></li>
@@ -48,6 +48,7 @@ export default {
   background-repeat: no-repeat;
   opacity: 0;
   animation: imageAnimation 36s linear infinite 0s;
+  box-shadow: 0 4px 4px -2px rgba(0, 0, 0, 0.3);
 }
 
 .splash-image li:nth-child(1) span {
@@ -82,12 +83,26 @@ export default {
   100% { opacity: 0 }
 }
 
-.splash-tagline {
+/* .splash-tagline {
   position: absolute;
   padding-left: 100px;
   top: 35%;
   margin: 80px 0;
   color: #fff;
+  z-index: 11;
+} */
+
+.splash-tagline {
+  /* background: rgba(0,0,0,0.5); */
+  color: white;
+  margin-right: calc(((100vw - 1200px) / 2) + 202px);
+  padding-left: calc((100vw - 1200px) / 2);
+  padding-top: 32px;
+  padding-bottom: 32px;
+  padding-right: 120px;
+  margin-top: -72px;
+  position: absolute;
+  top: 65vh;
   z-index: 11;
 }
 

@@ -1,8 +1,8 @@
 <template>
   <div>
-    <v-divider class="mt-5 mb-4"></v-divider>
-    <!-- <div class="section-title" style="color: #F2B134;">Photos</div> -->
-    <div class="mt-4 mb-5">
+    <div class="section-title">Photos</div>
+    <v-divider class="mb-5"></v-divider>
+    <div class="app-container mb-5">
       <template v-for="(category, index) in allCategories">
         <!-- <div class="mt-2 mb-3" style="display: flex; align-items: center;">
           <h3 style="font-size: 1.6em; text-transform: capitalize;">{{ category.name }}</h3>
@@ -10,7 +10,7 @@
         </div> -->
         <carousel :index="index" navColor="white">
           <template v-for="photo in category.category">
-            <img class="photos" :src="photo.src" style="height:25vh"/>
+            <img class="photos" :src="photo.src" style="height:25vh; vertical-align: middle;"/>
           </template>
         </carousel>
       </template>

@@ -1,12 +1,60 @@
 <template>
   <div class="item-card">
-    <!-- card-header -->
-    <v-layout row wrap>
-      <v-flex xs12 sm12 md6>
-        <div style="width: 90%;">
-          <h2 class="item-name">
-            {{ item.title }}
-          </h2>
+    <v-layout row wrap v-if="mobile">
+      <v-flex xs12>
+        <div>
+          <div class="item-name-wrapper">
+            <h2 class="item-name">
+              {{ item.title }}
+            </h2>
+          </div>
+          <div class="item-tagline">{{ item.tagline }}</div>
+        </div>
+        <div class="item-tags">
+          <v-chip
+            v-for="(tag, index) in item.tags"
+            :key="index"
+            class="item-tag"
+            :style="`${tagStyle(tag)}`"
+            small>
+            {{ tag }}
+          </v-chip>
+        </div>
+        <div style="display: flex; justify-content: center;">
+          <a :href="item.link" target="_blank" class="item-link mr-3">Explore</a>
+          <a :href="item.github" target="_blank" class="item-link" v-if="item.github">Github</a>
+        </div>
+      </v-flex>
+      <v-flex xs12>
+        <a :href="item.link" target=”_blank” style="text-decoration: none;">
+          <img
+            class="item-image"
+            :src="getSrc()"
+            width="100%"
+            height="auto">
+          </img>
+        </a>
+      </v-flex>
+    </v-layout>
+
+    <v-layout row wrap v-else>
+      <v-flex xs12 sm6>
+        <a :href="item.link" target=”_blank” style="text-decoration: none;">
+          <img
+            class="item-image"
+            :src="getSrc()"
+            width="100%"
+            height="auto">
+          </img>
+        </a>
+      </v-flex>
+      <v-flex xs12 sm6 style="padding: 20px;">
+        <div>
+          <div class="item-name-wrapper">
+            <h2 class="item-name">
+              {{ item.title }}
+            </h2>
+          </div>
           <div class="item-tagline">{{ item.tagline }}</div>
           <div class="item-tags">
             <v-chip
@@ -19,36 +67,11 @@
             </v-chip>
           </div>
         </div>
-      </v-flex>
-      <v-flex xs12 sm12 md6 v-if="!mobile">
-        <div class="item-description">{{ item.description }}</div>
+        <div class="item-description" style="margin-top: 0px;">{{ item.description }}</div>
         <a :href="item.link" target="_blank" class="item-link mr-3">Explore</a>
         <a :href="item.github" target="_blank" class="item-link" v-if="item.github">Github</a>
       </v-flex>
     </v-layout>
-
-    <a :href="item.link" target=”_blank” style="text-decoration: none;" v-if="item.link">
-      <img
-        class="item-image"
-        :src="getSrc()"
-        width="100%"
-        height="auto">
-      </img>
-    </a>
-
-    <img
-      v-else
-      class="item-image"
-      :src="getSrc()"
-      width="100%"
-      height="auto">
-    </img>
-
-    <div style="display: flex;" v-if="mobile">
-      <a :href="item.link" target="_blank" class="item-link mr-3">Explore</a>
-      <div @click="" class="item-link mr-3">Details</div>
-      <a :href="item.github" target="_blank" class="item-link" v-if="item.github">Github</a>
-    </div>
   </div>
 </template>
 
@@ -131,36 +154,40 @@ export default {
   margin: 60px 0;
 }
 
+.item-name-wrapper {
+  background-color: rgba(0,0,0,0.8);
+  width: 100vw;
+  padding: 15px;
+  margin-bottom: 20px;
+}
+
 .item-name {
-  color: #333;
-  letter-spacing: 0.05em;
-  font-size: 2.2em;
-  margin-bottom: 10px;
-  line-height: 34px;
+  color: #fff;
+  font-size: 2.8em;
+  font-weight: 700;
+  line-height: 42px;
 }
 
 .item-tagline {
-  font-size: 1.6em;
-  font-weight: 600;
+  font-size: 2em;
+  font-weight: 700;
   color: #bdbdbd;
-  line-height: 24px;
+  line-height: 28px;
   margin-bottom: 10px;
 }
 
 .item-description {
-  font-size: 1.1em;
-  font-weight: 500;
-  color: #757575;
+  font-size: 1.4em;
+  font-weight: 600;
+  color: #8f8f8f;
   margin: 15px 10px 10px 0;
 }
 
 .item-link {
-  font-size: 1.2em;
+  font-size: 1.4em;
   font-weight: 600;
   color: #333;
   text-decoration: none;
-  /* padding: 5px 10px; */
-  /* border: 1px solid #333; */
 }
 
 .item-link:hover {
@@ -185,5 +212,12 @@ export default {
   font-size: 0.9em;
   letter-spacing: 0.07em;
   height: 22px;
+}
+
+@media only screen and (max-width: 960px) {
+  .item-tagline,
+  .item-tags {
+    text-align: center;
+  }
 }
 </style>

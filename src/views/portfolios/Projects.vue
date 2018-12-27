@@ -1,10 +1,8 @@
 <template>
   <div>
-    <v-divider class="mt-5 mb-4"></v-divider>
-    <v-layout row wrap>
-      <!-- <v-flex xs12>
-        <div class="section-title" style="color: #F25652;">Projects</div>
-      </v-flex> -->
+    <div class="section-title">Projects</div>
+    <v-divider></v-divider>
+    <v-layout row wrap class="app-container">
       <v-flex xs12 v-for="app in featuredApps" :key="app.title">
         <app-card :item="app"></app-card>
       </v-flex>
@@ -38,7 +36,7 @@ export default {
           link: 'https://results.decisiondeskhq.com/',
           imageName: 'election-results',
           tags: ['work', 'vue', 'd3', 'python'],
-          tagline: '2018 Live Results Dashboard for Primary and General Elections',
+          tagline: '2018 Live Election Night Dashboard',
           description: 'I developed this app while working at 0ptimus with one other person. I worked on the UI/UX design, frontend code, and developed all the maps and charts from scratch with d3. We had upwards of 1,500 people on the site at a time during election night.'
         },
         {

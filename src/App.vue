@@ -1,19 +1,10 @@
 <template>
   <v-app>
     <div class="app-wrapper">
-      <div v-if="mobile">
-        <header></header>
-        <v-content class="content-wrapper">
-          <splash-page></splash-page>
-          <portfolio></portfolio>
-        </v-content>
-      </div>
-      <div v-else>
-        <!-- <navbar-old></navbar-old> -->
-        <navbar></navbar>
-        <div id="portfolio-wrapper">
-          <portfolio></portfolio>
-        </div>
+      <navbar></navbar>
+      <div id="portfolio-wrapper">
+        <splash-page></splash-page>
+        <portfolio></portfolio>
       </div>
     </div>
   </v-app>
@@ -79,20 +70,10 @@ export default {
 <style>
 .app-wrapper {
   position: relative;
+}
+
+.app-container {
   max-width: 1200px;
   margin: 0 auto;
 }
-
-/* @media only screen and (min-width: 1200px) {
-  #portfolio-wrapper {
-    width: 1040px;
-    margin: 0;
-  }
-}
-
-@media only screen and (max-width: 960px) {
-  #portfolio-wrapper {
-    width: 100%;
-  }
-} */
 </style>

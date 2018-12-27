@@ -1,6 +1,5 @@
 <template>
   <div class="portfolio">
-    <splash-page></splash-page>
     <projects></projects>
     <maps></maps>
     <photos></photos>
@@ -8,14 +7,12 @@
 </template>
 
 <script>
-import SplashPage from './SplashPage'
 import { Maps, Projects, Photos } from './portfolios'
 
 const components = {
   Maps,
   Projects,
-  Photos,
-  SplashPage
+  Photos
 }
 
 export default {
@@ -29,28 +26,20 @@ export default {
   width: 100%;
 }
 
-.content-wrapper {
-  z-index: 2;
-  padding-left: 60px;
-}
-
 .section-title {
-  color: #fff;
-  font-size: 3em;
-  font-weight: 600;
-}
-
-@media only screen and (max-width: 960px) {
-  .content-wrapper {
-    padding-left: 30px !important;
-  }
+  font-size: 2.4em;
+  font-weight: 300;
+  letter-spacing: 0.1em;
+  color: #333;
+  /* background-color: rgba(0,0,0,0.8); */
+  width: fit-content;
+  padding: 15px 30px;
+  text-align: center;
+  margin: 60px auto 0;
+  text-transform: uppercase;
 }
 
 @media only screen and (max-width: 420px) {
-  .content-wrapper {
-    padding-left: 20px !important;
-  }
-
   .section-title {
     font-size: 2.6em;
   }

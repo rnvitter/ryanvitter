@@ -53,7 +53,7 @@ export default {
 }
 
 .navbar-content {
-  width: 1200px;
+  /* width: 1200px; */
   display: flex;
   justify-content: space-between;
   align-items: center;

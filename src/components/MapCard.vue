@@ -3,11 +3,17 @@
     <!-- card-header -->
     <v-layout row wrap v-if="mobile">
       <v-flex xs12>
-        <div style="width: 90%;">
-          <h2 class="item-name">
-            {{ item.title }}
-          </h2>
+        <div>
+          <div class="item-name-wrapper">
+            <h2 class="item-name">
+              {{ item.title }}
+            </h2>
+          </div>
           <div class="item-tagline">{{ item.tagline }}</div>
+          <div style="display: flex;" class="item-btns">
+            <a :href="item.link" target="_blank" class="item-link mr-3">View PDF</a>
+            <div @click="" class="item-link mr-3">Details</div>
+          </div>
         </div>
       </v-flex>
       <v-flex xs12>
@@ -15,15 +21,10 @@
           <img
             class="item-image"
             :src="getSrc()"
-            width="auto"
-            height="500px">
+            width="100%"
+            height="auto">
           </img>
         </a>
-
-        <div style="display: flex;" v-if="mobile">
-          <a :href="item.link" target="_blank" class="item-link mr-3">View PDF</a>
-          <div @click="" class="item-link mr-3">Details</div>
-        </div>
       </v-flex>
     </v-layout>
 
@@ -39,10 +40,12 @@
         </a>
       </v-flex>
       <v-flex xs12 sm6 style="padding: 20px;">
-        <div style="width: 90%;">
-          <h2 class="item-name">
-            {{ item.title }}
-          </h2>
+        <div>
+          <div class="item-name-wrapper">
+            <h2 class="item-name">
+              {{ item.title }}
+            </h2>
+          </div>
           <div class="item-tagline">{{ item.tagline }}</div>
         </div>
         <div class="item-description" style="margin-top: 0px;">{{ item.description }}</div>
