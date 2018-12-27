@@ -16,12 +16,22 @@
 const methods = {
   headerStyle () {
     const header = document.getElementById('navbar')
+    const title = document.getElementsByClassName('header-title')[0]
+    const menu = document.getElementsByClassName('nav-menu-line')
     const scrollTop = window.scrollY
     if (scrollTop > 10 && !header.classList.contains('fixed-navbar')) {
       header.classList.add('fixed-navbar')
+      title.style.color = '#fff'
+      for (var i = 0, all = menu.length; i < all; i++){
+        menu[i].classList.add('dark')
+      }
     }
     if (scrollTop < 10 && header.classList.contains('fixed-navbar')) {
       header.classList.remove('fixed-navbar')
+      title.style.color = '#333'
+      for (var i = 0, all = menu.length; i < all; i++){
+        menu[i].classList.remove('dark')
+      }
     }
   }
 }
@@ -30,6 +40,7 @@ export default {
   name: 'navbar',
   methods,
   mounted () {
+    this.headerStyle()
     window.addEventListener('scroll', () => this.headerStyle())
   },
   beforeDestroy () {
@@ -48,7 +59,7 @@ export default {
 }
 
 .fixed-navbar {
-  background-color: #fff;
+  background-color: #333;
   box-shadow: 0 4px 4px -2px rgba(0, 0, 0, 0.3);
 }
 
@@ -62,20 +73,25 @@ export default {
 }
 
 .header-title {
-  font-size: 2em;
-  font-weight: 600;
-  letter-spacing: 0.03em;
+  font-size: 1.8em;
+  font-weight: 700;
+  /* letter-spacing: -0.02em; */
   color: #333;
+  text-transform: uppercase;
 }
 
 .nav-menu {
-  width: 30px;
+  width: 25px;
 }
 
 .nav-menu-line {
   background-color: #333;
-  height: 4px;
+  height: 3px;
   width: 100%;
   display: block;
+}
+
+.dark {
+  background-color: #fff;
 }
 </style>

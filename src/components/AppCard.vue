@@ -156,7 +156,7 @@ export default {
 
 .item-name-wrapper {
   background-color: rgba(0,0,0,0.8);
-  width: 100vw;
+  width: calc(100% + ((100vw - 1200px) / 2 + 20px));
   padding: 15px;
   margin-bottom: 20px;
 }
@@ -216,6 +216,12 @@ export default {
   font-size: 0.9em;
   letter-spacing: 0.07em;
   height: 22px;
+}
+
+@media only screen and (max-width: 1200px) {
+  .item-name-wrapper {
+    width: calc(100% + 40px);
+  }
 }
 
 @media only screen and (max-width: 960px) {
