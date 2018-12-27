@@ -230,4 +230,16 @@ export default {
     text-align: center;
   }
 }
+
+@media only screen and (max-width: 420px) {
+  .item-name-wrapper {
+    width: calc(100% + 20px);
+    padding: 10px 15px;
+  }
+
+  .item-name {
+    font-size: 2.6em;
+    letter-spacing: 0em;
+  }
+}
 </style>

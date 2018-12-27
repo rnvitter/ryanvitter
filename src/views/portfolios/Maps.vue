@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="section-title">Featured Maps</div>
+    <div class="section-title"><span v-if="!mobile">Featured </span>Maps</div>
     <v-divider class="mb-5"></v-divider>
     <v-layout row wrap class="app-container">
       <v-flex xs12 v-for="map in featuredMaps" :key="map.title">
@@ -19,10 +19,17 @@
 
 <script>
 import { MapCard, AppCardPreview } from '@/components'
+import { mapGetters } from 'vuex'
 
 const components = {
   AppCardPreview,
   MapCard
+}
+
+const computed = {
+  ...mapGetters({
+    mobile: 'ux/mobile'
+  })
 }
 
 const methods = {
@@ -41,6 +48,7 @@ const methods = {
 export default {
   name: 'maps',
   components,
+  computed,
   methods,
   data () {
     return {
@@ -54,7 +62,7 @@ export default {
           description: 'A map I made for 0ptimus clients during the 2016 presidential campaign depicting designated market areas, congressional districts, and major cities. CDs are labled and DMAs are color coded in the key at the bottom, along with a graph of the top 30 DMAs. There are several insets for the major U.S. cities.'
         },
         {
-          title: 'Human Development and Terrorism',
+          title: 'HDI and Terrorism',
           link: '',
           imageName: 'human_development_and_terrorism',
           tags: ['school', 'arcgis', 'illustrator'],

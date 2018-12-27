@@ -160,4 +160,10 @@ export default {
     justify-content: center;
   }
 }
+
+@media only screen and (max-width: 420px) {
+  .item-card-preview {
+    padding: 30px 0;
+  }
+}
 </style>

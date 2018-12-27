@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="section-title">Featured Projects</div>
+    <div class="section-title"><span v-if="!mobile">Featured </span>Projects</div>
     <v-divider></v-divider>
     <v-layout row wrap class="app-container">
       <v-flex xs12 v-for="app in featuredApps" :key="app.title">
@@ -19,15 +19,23 @@
 
 <script>
 import { AppCard, AppCardPreview } from '@/components'
+import { mapGetters } from 'vuex'
 
 const components = {
   AppCard,
   AppCardPreview
 }
 
+const computed = {
+  ...mapGetters({
+    mobile: 'ux/mobile'
+  })
+}
+
 export default {
   name: 'projects',
   components,
+  computed,
   data () {
     return {
       featuredApps: [

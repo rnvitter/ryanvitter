@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="section-title">Featured Photos</div>
+    <div class="section-title"><span v-if="!mobile">Featured </span>Photos</div>
     <v-divider class="mb-5"></v-divider>
     <div class="app-container mb-5">
       <template v-for="(category, index) in allCategories">
@@ -16,6 +16,7 @@
 
 <script>
 import Carousel from '@/components/Carousel'
+import { mapGetters } from 'vuex';
 
 const name = 'Photos'
 
@@ -24,6 +25,9 @@ const components = {
 }
 
 const computed = {
+  ...mapGetters({
+    mobile: 'ux/mobile'
+  }),
   allCategories () {
     const categories = []
     const tags = ['nature', 'animal', 'people', 'misc']
