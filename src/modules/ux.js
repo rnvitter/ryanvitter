@@ -5,7 +5,8 @@ const namespaced = true
 const initialState = {
   screenWidth: 0,
   mobile: false,
-  mobilePhone: false
+  mobilePhone: false,
+  menu: false
 }
 
 const mutations = {
@@ -17,6 +18,10 @@ const mutations = {
   },
   [types.SET_MOBILE_PHONE] (state, isMobile) {
     state.mobilePhone = isMobile
+  },
+  [types.TOGGLE_MENU] (state) {
+    state.menu = !state.menu
+    console.log(state.menu)
   }
 }
 
@@ -34,6 +39,9 @@ const actions = {
     } else {
       commit(types.SET_MOBILE_PHONE, false)
     }
+  },
+  toggleMenu: ({ commit }) => {
+    commit(types.TOGGLE_MENU)
   }
 }
 
@@ -46,6 +54,9 @@ const getters = {
   },
   mobilePhone (state) {
     return state.mobilePhone
+  },
+  menu (state) {
+    return state.menu
   }
 }
 

@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div id="photos">
     <div class="section-title"><span v-if="!mobile">Featured </span>Photos</div>
     <v-divider class="mb-5"></v-divider>
     <div class="app-container mb-5">

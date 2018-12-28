@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div id="projects">
     <div class="section-title"><span v-if="!mobile">Featured </span>Projects</div>
     <v-divider></v-divider>
     <v-layout row wrap class="app-container">

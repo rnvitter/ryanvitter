@@ -1,9 +1,9 @@
 <template>
-  <div id="navbar">
+  <div id="navbar" class="layout-container">
     <div class="navbar-content">
       <div class="header-title">Ryan Vitter</div>
 
-      <div class=nav-menu>
+      <div class="nav-menu-icon" @click="toggleMenu">
         <span class="nav-menu-line"></span>
         <span class="nav-menu-line" style="margin-top: 5px;"></span>
         <span class="nav-menu-line" style="margin-top: 5px;"></span>
@@ -13,7 +13,12 @@
 </template>
 
 <script>
+import { mapActions } from 'vuex'
+
 const methods = {
+  ...mapActions({
+    toggleMenu: 'ux/toggleMenu'
+  }),
   headerStyle () {
     const header = document.getElementById('navbar')
     const title = document.getElementsByClassName('header-title')[0]
@@ -64,12 +69,10 @@ export default {
 }
 
 .navbar-content {
-  /* width: 1200px; */
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin: 10px auto;
-  padding: 0 20px;
 }
 
 .header-title {
@@ -80,8 +83,13 @@ export default {
   text-transform: uppercase;
 }
 
-.nav-menu {
+.nav-menu-icon {
   width: 25px;
+}
+
+.nav-menu-icon:hover {
+  opacity: 0.7;
+  cursor: pointer;
 }
 
 .nav-menu-line {

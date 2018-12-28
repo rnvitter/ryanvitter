@@ -2,6 +2,7 @@
   <v-app>
     <div class="app-wrapper">
       <navbar></navbar>
+      <nav-menu v-if="menu"></nav-menu>
       <div id="portfolio-wrapper">
         <splash-page></splash-page>
         <portfolio></portfolio>
@@ -13,19 +14,21 @@
 <script>
 import { mapActions, mapGetters } from 'vuex'
 
-import { Navbar } from '@/components/layout'
+import { Navbar, NavMenu } from '@/components/layout'
 import Portfolio from './views/Portfolio'
 import SplashPage from './views/SplashPage'
 
 const components = {
   Navbar,
+  NavMenu,
   Portfolio,
   SplashPage
 }
 
 const computed = {
   ...mapGetters({
-    mobile: 'ux/mobile'
+    mobile: 'ux/mobile',
+    menu: 'ux/menu'
   })
 }
 

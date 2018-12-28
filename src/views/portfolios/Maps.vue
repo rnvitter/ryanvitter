@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div id="maps">
     <div class="section-title"><span v-if="!mobile">Featured </span>Maps</div>
     <v-divider class="mb-5"></v-divider>
     <v-layout row wrap class="app-container">

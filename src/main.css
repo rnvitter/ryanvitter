@@ -8,3 +8,9 @@ html, body {
   padding: 0;
   height: 100%;
 }
+
+.layout-container {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
