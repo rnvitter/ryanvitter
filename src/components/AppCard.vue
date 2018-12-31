@@ -220,7 +220,7 @@ export default {
 
 @media only screen and (max-width: 1200px) {
   .item-name-wrapper {
-    width: calc(100% + 40px);
+    width: calc(100% + 20px);
   }
 }
 
@@ -233,7 +233,6 @@ export default {
 
 @media only screen and (max-width: 420px) {
   .item-name-wrapper {
-    width: calc(100% + 20px);
     padding: 10px 15px;
   }
 

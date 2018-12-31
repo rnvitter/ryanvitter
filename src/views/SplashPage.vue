@@ -105,4 +105,10 @@ export default {
   font-size: 1.8em;
   font-weight: 300;
 }
+
+@media only screen and (max-width: 370px) {
+  .tagline-description {
+    font-size: 1.6em;
+  }
+}
 </style>

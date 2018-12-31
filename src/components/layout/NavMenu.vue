@@ -13,7 +13,7 @@
         <div><a href="#photos">Photos</a></div>
       </li>
       <li class="nav-menu-item" @click="toggleMenu">
-        <div><a href="#about">About</a></div>
+        <div><a href="#contact">Contact</a></div>
       </li>
     </ul>
   </div>
@@ -32,10 +32,7 @@ const computed = {
 const methods = {
   ...mapActions({
     toggleMenu: 'ux/toggleMenu'
-  }),
-  goTo () {
-    this.toggleMenu()
-  }
+  })
 }
 
 export default {
@@ -64,9 +61,9 @@ export default {
   top: 0px;
   left: 50%;
   transform: translateX(-50%);
-  width: 100%;
+  width: 101%;
   height: 100%;
-  z-index: 1001;
+  z-index: 15;
   overflow: auto;
 }
 
@@ -76,6 +73,7 @@ export default {
   letter-spacing: 0.1em;
   text-transform: uppercase;
   margin-bottom: 20px;
+  text-align: end;
 }
 
 .nav-menu-item a {
@@ -103,21 +101,21 @@ export default {
 
 @media only screen and (max-width: 960px) {
   .nav-menu {
-    background-color: #333;
+    background-color: #fff;
+    opacity: 0.97;
   }
-}
 
-@media only screen and (min-width: 421px) {
-  .nav-menu-item {
-    text-align: end;
+  .nav-menu-item a {
+    color: #333;
+    font-size: 1.4em;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    background: none;
+    box-shadow: none;
   }
 }
 
 @media only screen and (max-width: 420px) {
-  .nav-menu {
-    z-index: 1002;
-  }
-
   .nav-menu-item {
     font-size: 1.2em;
   }

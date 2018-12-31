@@ -3,13 +3,15 @@
     <projects></projects>
     <maps></maps>
     <photos></photos>
+    <contact></contact>
   </div>
 </template>
 
 <script>
-import { Maps, Projects, Photos } from './portfolios'
+import { Contact, Maps, Projects, Photos } from './portfolios'
 
 const components = {
+  Contact,
   Maps,
   Projects,
   Photos
