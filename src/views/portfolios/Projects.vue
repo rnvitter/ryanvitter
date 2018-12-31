@@ -67,6 +67,13 @@ export default {
           // description: 'I developed this app while working at 0ptimus with one other person. I worked on the UI/UX design, frontend code, and developed all the maps and charts from scratch with d3. We had upwards of 1,500 people on the site at a time during election night.'
         },
         {
+          title: 'Portfolio V1',
+          link: 'http://v1.ryanvitter.com/',
+          imageName: 'portfolioV1',
+          tags: ['personal', 'vue', 'node'],
+          tagline: 'The first version of my portfolio website'
+        },
+        {
           title: 'Bucketlist',
           link: null,
           imageName: 'coming-soon',

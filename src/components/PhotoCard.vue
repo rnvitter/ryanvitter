@@ -17,7 +17,7 @@
       <v-flex xs12>
         <a :href="item.link" target=”_blank” style="text-decoration: none;">
           <img
-            class="item-image"
+            class="item-image item-image-override"
             :src="getSrc()"
             width="100%"
             height="auto">
@@ -30,7 +30,7 @@
       <v-flex xs12 sm6>
         <a :href="item.link" target=”_blank” style="text-decoration: none;">
           <img
-            class="item-image"
+            class="item-image item-image-override"
             :src="getSrc()"
             width="100%"
             height="auto">
@@ -81,3 +81,10 @@ export default {
   methods
 }
 </script>
+
+<style>
+.item-image-override:hover {
+  opacity: 1;
+  cursor: auto;
+}
+</style>
