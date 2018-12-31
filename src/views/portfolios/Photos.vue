@@ -2,26 +2,36 @@
   <div id="photos">
     <div class="section-title"><span v-if="!mobile">Featured </span>Photos</div>
     <v-divider class="mb-5"></v-divider>
-    <div class="app-container mb-5">
-      <template v-for="(category, index) in allCategories">
-        <carousel :index="index" navColor="white">
-          <template v-for="photo in category.category">
-            <img class="photos" :src="photo.src" style="height:25vh; vertical-align: middle;"/>
-          </template>
-        </carousel>
-      </template>
-    </div>
+    <v-layout row wrap class="app-container mb-5">
+      <v-flex xs12 v-for="photo in featuredPhotos" :key="photo.title">
+        <photo-card :item="photo"></photo-card>
+      </v-flex>
+      <v-flex xs12 style="display: flex; align-items: center;" class="mb-4">
+        <div class="more-title">More Photos</div>
+        <v-divider class="ml-4"></v-divider>
+      </v-flex>
+      <v-flex xs12>
+        <template v-for="(category, index) in allCategories">
+          <carousel :index="index" navColor="white">
+            <template v-for="photo in category.category">
+              <img class="photos" :src="photo.src" style="height:25vh; vertical-align: middle;"/>
+            </template>
+          </carousel>
+        </template>
+      </v-flex>
+    </v-layout>
   </div>
 </template>
 
 <script>
-import Carousel from '@/components/Carousel'
-import { mapGetters } from 'vuex';
+import { Carousel, PhotoCard } from '@/components'
+import { mapGetters } from 'vuex'
 
 const name = 'Photos'
 
 const components = {
-  Carousel
+  Carousel,
+  PhotoCard
 }
 
 const computed = {
@@ -48,7 +58,21 @@ export default {
   computed,
   data () {
     return {
-      photoset: []
+      photoset: [],
+      featuredPhotos: [
+        {
+          title: 'The Black White and Grey',
+          yourshot: 'https://yourshot.nationalgeographic.com/photos/10685273/',
+          imageName: 'bald_eagle',
+          description: 'This is one of my favorite photos that I have taken, it is of a bald eagle in Juneau, Alaska that was shot. What I love about this photo is the contrast created by the use of black and white, and the differences in highlights and shadows on the different sides of her face.'
+        },
+        {
+          title: 'Purple Wave',
+          unsplash: 'https://unsplash.com/photos/DzHihgxNiko',
+          imageName: 'antelope',
+          description: 'This shot was taken in Antelope Canyon, it was awarded one of the most viewed photos in Spring 2018 on Unsplash and currently has over 10,000,000 views.  I love how the rock formations give the impression of an ocean and the gradient from the orange to dark purple from the top left to bottom left.'
+        },
+      ]
     }
   },
   created () {

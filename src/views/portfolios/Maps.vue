@@ -35,13 +35,6 @@ const computed = {
 const methods = {
   getSrc (img) {
     return require(`../../../public/static/img/maps/${img}.png`)
-    // if (title === '0ptimus Poster') {
-    //   return require('../../../public/static/img/maps/0ptimus_poster.png')
-    // } else if (title === 'Human Development and Terrorism') {
-    //   return require('../../../public/static/img/maps/human_development_and_terrorism.png')
-    // } else if (title === '') {
-
-    // }
   }
 }
 
