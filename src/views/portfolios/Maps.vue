@@ -34,7 +34,7 @@ const computed = {
 
 const methods = {
   getSrc (img) {
-    return require(`../../../public/static/img/maps/${img}.png`)
+    return require(`@/static/img/maps/${img}.jpg`)
   }
 }
 

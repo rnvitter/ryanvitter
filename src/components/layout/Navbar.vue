@@ -1,6 +1,6 @@
 <template>
-  <div id="navbar" class="layout-container">
-    <div class="navbar-content">
+  <div id="navbar">
+    <div class="navbar-content layout-container">
       <div class="header-title">Ryan Vitter</div>
 
       <div class="nav-menu-icon" @click="toggleMenu">

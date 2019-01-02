@@ -79,7 +79,7 @@ const methods = {
     if (this.src) {
       return this.src
     }
-    return require('../../public/static/img/app-previews/' + this.item.imageName + '-min.png')
+    return require('@/static/img/app-previews/' + this.item.imageName + '-min.jpg')
   },
   tagStyle (tag) {
     const obj = this.tagColors.find(item => item.name === tag)

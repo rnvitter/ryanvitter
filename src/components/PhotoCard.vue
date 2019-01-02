@@ -71,7 +71,7 @@ const computed = {
 
 const methods = {
   getSrc () {
-    return require('../../public/static/img/photos/' + this.item.imageName + '-min.jpg')
+    return require('@/static/img/photos/' + this.item.imageName + '-min.jpg')
   }
 }
 

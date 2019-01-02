@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="layout-container">
     <div class="splash-tagline">
       <div class="tagline-title">K.I.S.S.</div>
       <div class="tagline-description">Keep it simple stupid</div>
