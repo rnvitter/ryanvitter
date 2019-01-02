@@ -52,27 +52,27 @@ export default {
 }
 
 .splash-image li:nth-child(1) span {
-  background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url(/static/img/background-1.jpg);
+  background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url(/static/img/backgrounds/background-1.jpg);
 }
 .splash-image li:nth-child(2) span {
   animation-delay: 6s;
-  background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url(/static/img/background-2.jpg);
+  background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url(/static/img/backgrounds/background-2.jpg);
 }
 .splash-image li:nth-child(3) span {
   animation-delay: 12s;
-  background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url(/static/img/background-3.jpg);
+  background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url(/static/img/backgrounds/background-3.jpg);
 }
 .splash-image li:nth-child(4) span {
   animation-delay: 18s;
-  background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url(/static/img/background-4.jpg);
+  background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url(/static/img/backgrounds/background-4.jpg);
 }
 .splash-image li:nth-child(5) span {
   animation-delay: 24s;
-  background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url(/static/img/background-5.jpg);
+  background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url(/static/img/backgrounds/background-5.jpg);
 }
 .splash-image li:nth-child(6) span {
   animation-delay: 30s;
-  background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url(/static/img/background-6.jpg);
+  background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url(/static/img/backgrounds/background-6.jpg);
 }
 
 @keyframes imageAnimation {
