@@ -64,12 +64,14 @@ export default {
           title: 'The Black White and Grey',
           yourshot: 'https://yourshot.nationalgeographic.com/photos/10685273/',
           imageName: 'bald_eagle',
+          location: 'Juneau, Alaska',
           description: 'This is one of my favorite photos that I have taken, it is of a bald eagle in Juneau, Alaska that was shot. What I love about this photo is the contrast created by the use of black and white, and the differences in highlights and shadows on the different sides of her face.'
         },
         {
           title: 'Purple Wave',
           unsplash: 'https://unsplash.com/photos/DzHihgxNiko',
           imageName: 'antelope',
+          location: 'Antelope Canyon, Arizona',
           description: 'This shot was taken in Antelope Canyon, it was awarded one of the most viewed photos in Spring 2018 on Unsplash and currently has over 10,000,000 views.  I love how the rock formations give the impression of an ocean and the gradient from the orange to dark purple from the top left to bottom left.'
         },
       ]
