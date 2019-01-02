@@ -20,10 +20,6 @@
             {{ tag }}
           </v-chip>
         </div>
-        <div style="display: flex; justify-content: center;">
-          <a :href="item.link" target="_blank" class="item-link mr-3">Explore</a>
-          <a :href="item.github" target="_blank" class="item-link" v-if="item.github">Github</a>
-        </div>
       </v-flex>
       <v-flex xs12>
         <a :href="item.link" target=”_blank” style="text-decoration: none;">
@@ -34,6 +30,12 @@
             height="auto">
           </img>
         </a>
+      </v-flex>
+      <v-flex xs12>
+        <div style="display: flex; justify-content: center;">
+          <a :href="item.link" target="_blank" class="item-link mr-3">Explore</a>
+          <a :href="item.github" target="_blank" class="item-link" v-if="item.github">Github</a>
+        </div>
       </v-flex>
     </v-layout>
 
@@ -163,14 +165,14 @@ export default {
 
 .item-name {
   color: #fff;
-  font-size: 2.8em;
+  font-size: 2.6em;
   font-weight: 700;
   letter-spacing: -0.02em;
   line-height: 42px;
 }
 
 .item-tagline {
-  font-size: 2em;
+  font-size: 1.8em;
   font-weight: 700;
   color: #333;
   opacity: 0.3;
@@ -180,7 +182,7 @@ export default {
 }
 
 .item-description {
-  font-size: 1.4em;
+  font-size: 1.2em;
   font-weight: 500;
   color: #333;
   opacity: 0.5;
@@ -225,6 +227,17 @@ export default {
 }
 
 @media only screen and (max-width: 960px) {
+  .item-name {
+    font-size: 2.4em;
+  }
+
+  .item-tagline {
+    font-size: 1.6em;
+  }
+
+  .item-description {
+    font-size: 1em;
+  }
   .item-tagline,
   .item-tags {
     text-align: center;

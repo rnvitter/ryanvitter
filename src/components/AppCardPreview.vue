@@ -19,11 +19,6 @@
             </v-chip>
           </div>
         </div>
-        <div style="display: flex;" class="item-btns">
-          <a :href="item.link" target="_blank" class="item-link mr-3">Explore</a>
-          <div @click="" class="item-link">Details</div>
-          <a :href="item.github" target="_blank" class="item-link ml-3" v-if="item.github">Github</a>
-        </div>
       </v-flex>
     </v-layout>
 
@@ -42,12 +37,16 @@
       :width="width"
       :height="height">
     </img>
+
+    <div style="display: flex;" class="item-btns">
+      <a :href="item.link" target="_blank" class="item-link-preview mr-3">Explore</a>
+      <div @click="" class="item-link-preview">Details</div>
+      <a :href="item.github" target="_blank" class="item-link-preview ml-3" v-if="item.github">Github</a>
+    </div>
   </div>
 </template>
 
 <script>
-import { mapGetters } from 'vuex'
-
 const props = {
   item: {
     type: Object,
@@ -132,12 +131,12 @@ export default {
 <style>
 .item-card-preview {
   width: 100%;
-  padding: 30px 20px;
+  padding: 30px 10px;
 }
 
 .item-name-preview {
   color: #333;
-  font-size: 1.8em;
+  font-size: 1.6em;
   line-height: 28px;
 }
 
@@ -146,14 +145,25 @@ export default {
   font-weight: 600;
   color: #333;
   opacity: 0.3;
-  line-height: 28px;
+  line-height: 20px;
   margin: 5px 0;
+}
+
+.item-link-preview {
+  font-size: 1.2em;
+  font-weight: 600;
+  color: #333;
+  text-decoration: none;
 }
 
 @media only screen and (max-width: 960px) {
   .item-name-preview,
   .item-tagline-preview {
     text-align: center;
+  }
+
+  .item-tagline-preview {
+    font-size: 1em;
   }
 
   .item-btns {

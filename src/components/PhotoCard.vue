@@ -9,10 +9,6 @@
             </h2>
           </div>
           <div class="item-tagline">{{ item.location }}</div>
-          <div style="display: flex;" class="item-btns">
-            <a :href="item.unsplash" target="_blank" class="item-link mr-3" v-if="item.unsplash">Unsplash</a>
-            <a :href="item.yourshot" target="_blank" class="item-link" v-if="item.yourshot">Your Shot</a>
-          </div>
         </div>
       </v-flex>
       <v-flex xs12>
@@ -24,6 +20,10 @@
             height="auto">
           </img>
         </a>
+        <div style="display: flex;" class="item-btns">
+          <a :href="item.unsplash" target="_blank" class="item-link mr-3" v-if="item.unsplash">Unsplash</a>
+          <a :href="item.yourshot" target="_blank" class="item-link" v-if="item.yourshot">Your Shot</a>
+        </div>
       </v-flex>
     </v-layout>
 

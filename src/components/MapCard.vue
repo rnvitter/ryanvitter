@@ -10,10 +10,6 @@
             </h2>
           </div>
           <div class="item-tagline">{{ item.tagline }}</div>
-          <div style="display: flex;" class="item-btns">
-            <a :href="item.link" target="_blank" class="item-link mr-3">View PDF</a>
-            <div @click="" class="item-link mr-3">Details</div>
-          </div>
         </div>
       </v-flex>
       <v-flex xs12>
@@ -25,6 +21,10 @@
             height="auto">
           </img>
         </a>
+        <div style="display: flex;" class="item-btns">
+            <a :href="item.link" target="_blank" class="item-link mr-3">View PDF</a>
+            <div @click="" class="item-link mr-3">Details</div>
+          </div>
       </v-flex>
     </v-layout>
 
