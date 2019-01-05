@@ -13,7 +13,6 @@
               v-for="(tag, index) in item.tags"
               :key="index"
               class="item-tag"
-              :style="`${tagStyle(tag)}`"
               small>
               {{ tag }}
             </v-chip>
@@ -150,7 +149,7 @@ export default {
 }
 
 .item-link-preview {
-  font-size: 1.2em;
+  font-size: 1.4em;
   font-weight: 600;
   color: #333;
   text-decoration: none;

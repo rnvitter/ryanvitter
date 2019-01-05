@@ -3,17 +3,24 @@
     <div class="navbar-content layout-container">
       <div class="header-title">Ryan Vitter</div>
 
-      <div class="nav-menu-icon" @click="toggleMenu">
-        <span class="nav-menu-line"></span>
-        <span class="nav-menu-line" style="margin-top: 5px;"></span>
-        <span class="nav-menu-line" style="margin-top: 5px;"></span>
+      <div class="kebab" @click="toggleMenu">
+        <figure></figure>
+        <figure class="middle"></figure>
+        <p class="cross">x</p>
+        <figure></figure>
       </div>
     </div>
   </div>
 </template>
 
 <script>
-import { mapActions } from 'vuex'
+import { mapActions, mapGetters } from 'vuex'
+
+const computed = {
+  ...mapGetters({
+    mobile: 'ux/mobile'
+  })
+}
 
 const methods = {
   ...mapActions({
@@ -24,32 +31,45 @@ const methods = {
     const title = document.getElementsByClassName('header-title')[0]
     const menu = document.getElementsByClassName('nav-menu-line')
     const scrollTop = window.scrollY
-    if (scrollTop > 10 && !header.classList.contains('fixed-navbar')) {
+    const breakPoint = window.innerHeight - 20
+    if (scrollTop > breakPoint && !header.classList.contains('fixed-navbar') && this.mobile) {
       header.classList.add('fixed-navbar')
-      title.style.color = '#fff'
-      for (var i = 0, all = menu.length; i < all; i++){
-        menu[i].classList.add('dark')
-      }
+      title.style.opacity = 1
     }
-    if (scrollTop < 10 && header.classList.contains('fixed-navbar')) {
+    if (scrollTop < breakPoint && header.classList.contains('fixed-navbar')) {
       header.classList.remove('fixed-navbar')
-      title.style.color = '#333'
-      for (var i = 0, all = menu.length; i < all; i++){
-        menu[i].classList.remove('dark')
-      }
+      title.style.opacity = 0
     }
+  },
+  menuStyle () {
+    const kebab = document.querySelector('.kebab')
+    const middle = document.querySelector('.middle')
+    const cross = document.querySelector('.cross')
+
+    middle.classList.toggle('active')
+    cross.classList.toggle('active')
+  }
+}
+
+const watch = {
+  mobile () {
+    this.headerStyle()
   }
 }
 
 export default {
   name: 'navbar',
+  computed,
   methods,
+  watch,
   mounted () {
     this.headerStyle()
     window.addEventListener('scroll', () => this.headerStyle())
+    document.querySelector('.kebab').addEventListener('click', () => this.menuStyle())
   },
   beforeDestroy () {
     window.removeEventListener('scroll', () => this.headerStyle())
+    document.querySelector('.kebab').removeEventListener('click', () => this.menuStyle())
   }
 }
 </script>
@@ -60,11 +80,15 @@ export default {
   top: 0;
   left: 0;
   width: 100%;
-  z-index: 20;
+  z-index: 100;
+  opacity: 0;
+  animation: 1s normal forwards letter-fade-in;
+  animation-timing-function: ease-in;
+  animation-delay: 2s;
 }
 
 .fixed-navbar {
-  background-color: #333;
+  background-color: #fff;
   box-shadow: 0 4px 4px -2px rgba(0, 0, 0, 0.3);
 }
 
@@ -81,25 +105,55 @@ export default {
   /* letter-spacing: -0.02em; */
   color: #333;
   text-transform: uppercase;
+  opacity: 0;
 }
 
-.nav-menu-icon {
-  width: 25px;
-}
-
-.nav-menu-icon:hover {
-  opacity: 0.7;
+.kebab {
   cursor: pointer;
+  position: relative;
+  display: inline-block;
+  box-sizing: border-box;
 }
 
-.nav-menu-line {
-  background-color: #333;
-  height: 3px;
-  width: 100%;
-  display: block;
+.kebab figure {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #ECBB11;
+  margin: 3px;
 }
 
-.dark {
-  background-color: #fff;
+.middle {
+  transition: all 0.25s cubic-bezier(.72,1.2,.71,.72);
+  transform: scale(1);
+  position: relative;
+  box-shadow: 0 0.1px 0.1px 0 rgba(0, 0, 0, 0.16), 0 0.1px 0.3px 0 rgba(0, 0, 0, 0.12);
+  -webkit-filter: blur(.1px);
+  filter: blur(.1px);
+}
+
+.middle.active {
+  transform: scale(4.5);
+  transition: all 0.25s cubic-bezier(.32,2.04,.85,.54);
+  box-shadow: 0 0.1px 0.1px 0 rgba(0, 0, 0, 0.16), 0 0.1px 0.3px 0 rgba(0, 0, 0, 0.12);
+}
+
+.cross {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  /* font-family: $nunito; */
+  color: white;
+  transition: all 0.2s cubic-bezier(.72,1.2,.71,.72);
+  font-weight: 500;
+  font-size: 1.4em;
+  margin-top: -2px;
+  user-select: none;
+}
+
+.cross.active {
+  transform: translate(-50%, -50%) scale(1);
+  transition: all 0.15s cubic-bezier(.32,2.04,.85,.54);
 }
 </style>

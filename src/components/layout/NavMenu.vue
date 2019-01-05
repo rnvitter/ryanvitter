@@ -4,6 +4,9 @@
     @click="toggleMenu">
     <ul class="primary-nav-menu">
       <li class="nav-menu-item" @click="toggleMenu">
+        <div><a href="about">About Me</a></div>
+      </li>
+      <li class="nav-menu-item" @click="toggleMenu">
         <div><a href="#projects">Projects</a></div>
       </li>
       <li class="nav-menu-item" @click="toggleMenu">
@@ -63,14 +66,16 @@ export default {
   transform: translateX(-50%);
   width: 101%;
   height: 100%;
-  z-index: 15;
+  z-index: 50;
   overflow: auto;
+  background-color: #fff;
+  opacity: 0.97;
 }
 
 .nav-menu-item {
   font-size: 1.8em;
-  font-weight: 300;
-  letter-spacing: 0.1em;
+  font-weight: 700;
+  letter-spacing: -0.02em;
   text-transform: uppercase;
   margin-bottom: 20px;
   text-align: end;
@@ -81,30 +86,15 @@ export default {
 }
 
 .nav-menu-item a {
-  color: #fff;
-  padding: 10px 16px;
-  background: #333;
-  box-shadow: 0 4px 4px -2px rgba(0, 0, 0, 0.3);
-}
-
-.nav-menu-item .router-link-exact-active {
-  color: #FA3138 !important;
+  color: #ECBB11;
+  background: rgba(0,0,0,0);
 }
 
 .primary-nav-menu, .secondary-nav-menu {
   list-style-type: none;
 }
 
-.active-nav-menu-item {
-  color: #FA3138 !important;
-}
-
 @media only screen and (max-width: 960px) {
-  .nav-menu {
-    background-color: #fff;
-    opacity: 0.97;
-  }
-
   .nav-menu-item a {
     color: #333;
     font-size: 1.4em;

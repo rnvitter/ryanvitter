@@ -15,7 +15,6 @@
             v-for="(tag, index) in item.tags"
             :key="index"
             class="item-tag"
-            :style="`${tagStyle(tag)}`"
             small>
             {{ tag }}
           </v-chip>
@@ -50,7 +49,7 @@
           </img>
         </a>
       </v-flex>
-      <v-flex xs12 sm6 style="padding: 20px;">
+      <v-flex xs12 sm6 style="padding: 0 20px;">
         <div>
           <div class="item-name-wrapper">
             <h2 class="item-name">
@@ -63,7 +62,6 @@
               v-for="(tag, index) in item.tags"
               :key="index"
               class="item-tag"
-              :style="`${tagStyle(tag)}`"
               small>
               {{ tag }}
             </v-chip>
@@ -100,53 +98,13 @@ const computed = {
 const methods = {
   getSrc () {
     return require('@/static/img/app-previews/' + this.item.imageName + '-min.jpg')
-  },
-  tagStyle (tag) {
-    const obj = this.tagColors.find(item => item.name === tag)
-    return `background-color: ${obj.color}; color: ${obj.text};`
   }
 }
 
 export default {
   props,
   computed,
-  methods,
-  data () {
-    return {
-      tagColors: [
-        {
-          name: 'personal',
-          color: '#2196F3',
-          text: '#fff'
-        },
-        {
-          name: 'work',
-          color: '#FA3138',
-          text: '#fff'
-        },
-        {
-          name: 'vue',
-          color: '#40b784',
-          text: '#fff'
-        },
-        {
-          name: 'node',
-          color: '#323333',
-          text: '#fff'
-        },
-        {
-          name: 'd3',
-          color: '#f69b4f',
-          text: '#fff'
-        },
-        {
-          name: 'python',
-          color: '#fce571',
-          text: '#333'
-        }
-      ]
-    }
-  }
+  methods
 }
 </script>
 
@@ -157,6 +115,7 @@ export default {
 }
 
 .item-name-wrapper {
+  margin-bottom: 15px;
   background-color: rgba(0,0,0,0.8);
   width: calc(100% + ((100vw - 1200px) / 2 + 20px));
   padding: 15px;
@@ -201,7 +160,6 @@ export default {
 }
 
 .item-image {
-  margin: 10px 0;
   border: 1px solid #bdbdbd;
 }
 
@@ -214,6 +172,8 @@ export default {
 }
 
 .item-tag {
+  background-color: #ECBB11 !important;
+  color: #fff !important;
   padding: 2px;
   font-size: 0.9em;
   letter-spacing: 0.07em;

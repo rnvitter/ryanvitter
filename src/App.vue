@@ -5,6 +5,7 @@
       <nav-menu v-if="menu"></nav-menu>
       <div id="portfolio-wrapper">
         <splash-page></splash-page>
+        <about></about>
         <portfolio></portfolio>
       </div>
     </div>
@@ -15,10 +16,12 @@
 import { mapActions, mapGetters } from 'vuex'
 
 import { Navbar, NavMenu } from '@/components/layout'
+import About from './views/About'
 import Portfolio from './views/Portfolio'
 import SplashPage from './views/SplashPage'
 
 const components = {
+  About,
   Navbar,
   NavMenu,
   Portfolio,

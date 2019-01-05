@@ -51,7 +51,7 @@ export default {
 #contact {
   margin: 0 -20px;
   background-color: #333;
-  color: #bdbdbd;
+  color: #f5f5f5;
   height: 100%;
   text-align: center;
 }
@@ -66,8 +66,8 @@ export default {
 
 .contact-btn {
   padding: 10px 30px;
-  border: 1px solid #fff;
-  color: #fff;
+  border: 1px solid #ECBB11;
+  color: #ECBB11;
   font-size: 1.2em;
   font-weight: 700;
   width: fit-content;
@@ -75,7 +75,7 @@ export default {
 }
 
 .icon {
-  color: #fff;
+  color: #ECBB11;
   font-size: 2.4em;
   margin: 20px;
   text-decoration: none;

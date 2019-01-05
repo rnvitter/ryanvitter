@@ -22,9 +22,9 @@
           </img>
         </a>
         <div style="display: flex;" class="item-btns">
-            <a :href="item.link" target="_blank" class="item-link mr-3">View PDF</a>
-            <div @click="" class="item-link mr-3">Details</div>
-          </div>
+          <a :href="item.link" target="_blank" class="item-link mr-3">View PDF</a>
+          <div @click="" class="item-link mr-3">Details</div>
+        </div>
       </v-flex>
     </v-layout>
 

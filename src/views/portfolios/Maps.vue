@@ -1,7 +1,6 @@
 <template>
   <div id="maps">
-    <div class="section-title"><span v-if="!mobile">Featured </span>Maps</div>
-    <v-divider class="mb-5"></v-divider>
+    <div class="section-title">Featured Maps</div>
     <v-layout row wrap class="app-container">
       <v-flex xs12 v-for="map in featuredMaps" :key="map.title">
         <map-card :item="map" :src="getSrc(map.imageName)"></map-card>
@@ -26,12 +25,6 @@ const components = {
   MapCard
 }
 
-const computed = {
-  ...mapGetters({
-    mobile: 'ux/mobile'
-  })
-}
-
 const methods = {
   getSrc (img) {
     return require(`@/static/img/maps/${img}.jpg`)
@@ -41,7 +34,6 @@ const methods = {
 export default {
   name: 'maps',
   components,
-  computed,
   methods,
   data () {
     return {

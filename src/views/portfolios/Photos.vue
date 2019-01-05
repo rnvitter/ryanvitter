@@ -1,7 +1,6 @@
 <template>
   <div id="photos">
-    <div class="section-title"><span v-if="!mobile">Featured </span>Photos</div>
-    <v-divider class="mb-5"></v-divider>
+    <div class="section-title">Featured Photos</div>
     <v-layout row wrap class="app-container mb-5">
       <v-flex xs12 v-for="photo in featuredPhotos" :key="photo.title">
         <photo-card :item="photo"></photo-card>
@@ -35,9 +34,6 @@ const components = {
 }
 
 const computed = {
-  ...mapGetters({
-    mobile: 'ux/mobile'
-  }),
   allCategories () {
     const categories = []
     const tags = ['nature', 'animal', 'people', 'misc']
