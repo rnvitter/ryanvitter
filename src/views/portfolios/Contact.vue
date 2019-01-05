@@ -67,6 +67,7 @@ export default {
 .contact-btn {
   padding: 10px 30px;
   border: 1px solid #ECBB11;
+  border-radius: 20px;
   color: #ECBB11;
   font-size: 1.2em;
   font-weight: 700;

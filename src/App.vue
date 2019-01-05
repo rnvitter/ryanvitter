@@ -64,8 +64,13 @@ export default {
   mounted () {
     this.getWindowSize()
     window.addEventListener('resize', this.getWindowSize)
+    window.onbeforeunload = function() { window.scrollTo(0,0) }
+  },
+  ready () {
+    window.scrollTo(0,0)
   },
   beforeDestroy () {
+    window.scrollTo(0,0)
     window.removeEventListener('resize', this.getWindowSize)
   }
 }
