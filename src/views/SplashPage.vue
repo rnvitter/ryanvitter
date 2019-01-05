@@ -6,6 +6,7 @@
       <div class="tagline-title">I'm Ryan Vitter</div>
       <div class="tagline-description">Developer / Cartographer / Photographer</div>
       <div id="contact-me" @click="copyEmail">Contact Me</div>
+      <div class="copied-text" v-if="copied">My email has been copied to your clipboard!</div>
     </div>
     <div class="moto">
       <span class="moto-abbrev">
@@ -67,7 +68,12 @@ export default {
   name: 'splash-page',
   components,
   computed,
-  methods
+  methods,
+  data () {
+    return {
+      copied: false
+    }
+  }
 }
 </script>
 
@@ -256,6 +262,14 @@ export default {
   width: fit-content;
   margin: 10px 0;
   border-radius: 20px;
+  cursor: pointer;
+}
+
+.copied-text {
+  color: #ECBB11;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  margin-left: 10px;
 }
 
 @media only screen and (max-width: 420px) {

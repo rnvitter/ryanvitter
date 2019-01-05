@@ -187,7 +187,14 @@ export default {
 }
 
 @media only screen and (max-width: 960px) {
+  .item-name-wrapper {
+    margin-bottom: 0px;
+    background-color: rgba(0,0,0,0);
+    width: 100%;
+  }
+
   .item-name {
+    color: #333;
     font-size: 2.4em;
   }
 
@@ -198,6 +205,8 @@ export default {
   .item-description {
     font-size: 1em;
   }
+
+  .item-name,
   .item-tagline,
   .item-tags {
     text-align: center;
