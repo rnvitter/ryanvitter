@@ -61,6 +61,9 @@ const watch = {
   mobile () {
     this.headerStyle()
     this.menuStyle()
+  },
+  menu () {
+    this.menuStyle()
   }
 }
 
@@ -71,6 +74,7 @@ export default {
   watch,
   mounted () {
     this.headerStyle()
+    this.menuStyle()
     window.addEventListener('scroll', () => this.headerStyle())
     document.querySelector('.kebab').addEventListener('click', () => this.menuStyle())
   },

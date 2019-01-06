@@ -74,6 +74,7 @@ export default {
   letter-spacing: -0.02em;
   text-transform: uppercase;
   margin-bottom: 20px;
+  margin-right: 20px;
   text-align: end;
 }
 
