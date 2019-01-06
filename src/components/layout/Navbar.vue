@@ -139,8 +139,7 @@ export default {
   transform: scale(1);
   position: relative;
   box-shadow: 0 0.1px 0.1px 0 rgba(0, 0, 0, 0.16), 0 0.1px 0.3px 0 rgba(0, 0, 0, 0.12);
-  -webkit-filter: blur(.1px);
-  filter: blur(.1px);
+  /* filter: blur(.1px); */
 }
 
 .middle.active {
