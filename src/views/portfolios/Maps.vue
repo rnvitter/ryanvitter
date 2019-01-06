@@ -10,7 +10,7 @@
         <v-divider class="ml-4"></v-divider>
       </v-flex>
       <v-flex xs12 sm6 v-for="map in moreMaps" :key="map.title">
-        <app-card-preview :item="map" :src="getSrc(map.imageName)" :hideTags="true"></app-card-preview>
+        <app-card-preview :item="map" :src="getSrc(map.imageName)" :hideTags="true" :showButtons="false"></app-card-preview>
       </v-flex>
     </v-layout>
   </div>

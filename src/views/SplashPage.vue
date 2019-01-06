@@ -113,25 +113,26 @@ export default {
 }
 
 .splash-image li:nth-child(1) span {
+  animation-delay: 2s;
   background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url(../static/img/backgrounds/background-1.jpg);
 }
 .splash-image li:nth-child(2) span {
-  animation-delay: 6s;
+  animation-delay: 8s;
   background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url(../static/img/backgrounds/background-2.jpg);
 }
 .splash-image li:nth-child(3) span {
-  animation-delay: 12s;
+  animation-delay: 14s;
   background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url(../static/img/backgrounds/background-3.jpg);
 }
 .splash-image li:nth-child(4) span {
-  animation-delay: 18s;
+  animation-delay: 20s;
   background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url(../static/img/backgrounds/background-4.jpg);
 }
 
 @keyframes imageAnimation {
   0% { opacity: 0; animation-timing-function: ease-in; }
   4% { opacity: 1; }
-  22% { opacity: 1; animation-timing-function: ease-out;  }
+  22% { opacity: 1; }
   32% { opacity: 0; }
   100% { opacity: 0; }
 }

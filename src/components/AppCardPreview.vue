@@ -37,7 +37,7 @@
       :height="height">
     </img>
 
-    <div style="display: flex;" class="item-btns">
+    <div style="display: flex;" class="item-btns" v-if="showButtons">
       <a :href="item.link" target="_blank" class="item-link-preview mr-3">Explore</a>
       <div @click="" class="item-link-preview">Details</div>
       <a :href="item.github" target="_blank" class="item-link-preview ml-3" v-if="item.github">Github</a>
@@ -69,6 +69,11 @@ const props = {
     type: String,
     required: false,
     default: 'auto'
+  },
+  showButtons: {
+    type: Boolean,
+    require: false,
+    default: true
   }
 }
 

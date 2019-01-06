@@ -39,7 +39,7 @@
           </img>
         </a>
       </v-flex>
-      <v-flex xs12 sm6 style="padding: 20px;">
+      <v-flex xs12 sm6 style="padding: 0 20px;">
         <div>
           <div class="item-name-wrapper">
             <h2 class="item-name">

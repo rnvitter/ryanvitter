@@ -18,7 +18,8 @@ import { mapActions, mapGetters } from 'vuex'
 
 const computed = {
   ...mapGetters({
-    mobile: 'ux/mobile'
+    mobile: 'ux/mobile',
+    menu: 'ux/menu'
   })
 }
 
@@ -46,14 +47,20 @@ const methods = {
     const middle = document.querySelector('.middle')
     const cross = document.querySelector('.cross')
 
-    middle.classList.toggle('active')
-    cross.classList.toggle('active')
+    if (this.menu && !middle.classList.contains('active')) {
+      middle.classList.add('active')
+      cross.classList.add('active')
+    } else if (!this.menu && middle.classList.contains('active')) {
+      middle.classList.remove('active')
+      cross.classList.remove('active')
+    }
   }
 }
 
 const watch = {
   mobile () {
     this.headerStyle()
+    this.menuStyle()
   }
 }
 
@@ -143,7 +150,6 @@ export default {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%) scale(0);
-  /* font-family: $nunito; */
   color: white;
   transition: all 0.2s cubic-bezier(.72,1.2,.71,.72);
   font-weight: 500;

@@ -43,16 +43,12 @@ export default {
   methods,
   mounted () {
     window.addEventListener('scroll', () => {
-      if (this.menu) {
-        this.toggleMenu()
-      }
+      if (this.menu) this.toggleMenu()
     })
   },
   beforeDestroy () {
     window.removeEventListener('scroll', () => {
-      if (this.menu) {
-        this.toggleMenu()
-      }
+      if (this.menu) this.toggleMenu()
     })
   }
 }
@@ -86,7 +82,7 @@ export default {
 }
 
 .nav-menu-item a {
-  color: #ECBB11;
+  color: #333;
   background: rgba(0,0,0,0);
 }
 
