@@ -2,22 +2,22 @@
   <div id="projects">
     <div class="section-title">Featured Projects</div>
     <v-layout row wrap class="app-container">
-      <v-flex xs12 v-for="app in featuredApps" :key="app.title">
-        <item-card :item="app" :src="getSrc(app.imageName)"></item-card>
+      <v-flex xs12 v-for="(app, index) in featuredApps" :key="app.title">
+        <item-card :cardId="`app-${index}`" :item="app" :src="getSrc(app.imageName)"></item-card>
       </v-flex>
       <v-flex xs12 style="display: flex; align-items: center;">
         <div class="more-title">More Projects</div>
         <v-divider class="ml-4"></v-divider>
       </v-flex>
-      <v-flex xs12 sm6 v-for="app in moreApps" :key="app.title">
-        <item-card-preview :item="app"></item-card-preview>
+      <v-flex xs12 sm6 v-for="(app, index) in moreApps" :key="app.title">
+        <item-card-preview :cardId="`app-${index + 2}`" :item="app" :src="getSrc(app.imageName)"></item-card-preview>
       </v-flex>
     </v-layout>
   </div>
 </template>
 
 <script>
-import { ItemCard, ItemCardPreview } from '@/components'
+import { ItemCard, ItemCardPreview } from '@/components/card'
 import { mapGetters } from 'vuex'
 
 const components = {
@@ -27,7 +27,6 @@ const components = {
 
 const methods = {
   getSrc (img) {
-    // require('@/static/img/app-previews/' + this.item.imageName + '-min.jpg')
     return require(`@/static/img/app-previews/${img}-min.jpg`)
   }
 }

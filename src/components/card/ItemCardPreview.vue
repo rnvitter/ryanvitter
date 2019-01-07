@@ -21,32 +21,24 @@
       </v-flex>
     </v-layout>
 
-    <a :href="item.link" target=”_blank” style="text-decoration: none;" v-if="item.link">
-      <img class="item-image"
-        :src="getSrc()"
-        width="100%"
-        height="auto">
-      </img>
-    </a>
-
-    <img
-      v-else
-      class="item-image"
-      :src="getSrc()"
-      :width="width"
-      :height="height">
-    </img>
+    <item-flip :item="item" :src="src" :cardId="cardId"></item-flip>
 
     <div style="display: flex;" class="item-btns" v-if="showButtons">
       <a :href="item.link" target="_blank" class="item-link-preview mr-3">Explore</a>
-      <div @click="" class="item-link-preview">Details</div>
+      <a @click="flipCard" class="item-link-preview">Details</a>
       <a :href="item.github" target="_blank" class="item-link-preview ml-3" v-if="item.github">Github</a>
     </div>
   </div>
 </template>
 
 <script>
+import ItemFlip from './components/ItemFlip'
+
 const props = {
+  cardId: {
+    type: String,
+    required: true
+  },
   item: {
     type: Object,
     required: true
@@ -77,58 +69,23 @@ const props = {
   }
 }
 
+const components = {
+  ItemFlip
+}
+
 const methods = {
   getSrc () {
-    if (this.src) {
-      return this.src
-    }
-    return require('@/static/img/app-previews/' + this.item.imageName + '-min.jpg')
+    return this.src
   },
-  tagStyle (tag) {
-    const obj = this.tagColors.find(item => item.name === tag)
-    return `background-color: ${obj.color}; color: ${obj.text};`
+  flipCard () {
+    document.querySelector(`#${this.cardId}`).classList.toggle('flip')
   }
 }
 
 export default {
   props,
-  methods,
-  data () {
-    return {
-      tagColors: [
-        {
-          name: 'personal',
-          color: '#2196F3',
-          text: '#fff'
-        },
-        {
-          name: 'work',
-          color: '#FA3138',
-          text: '#fff'
-        },
-        {
-          name: 'vue',
-          color: '#40b784',
-          text: '#fff'
-        },
-        {
-          name: 'node',
-          color: '#323333',
-          text: '#fff'
-        },
-        {
-          name: 'd3',
-          color: '#f69b4f',
-          text: '#fff'
-        },
-        {
-          name: 'python',
-          color: '#fce571',
-          text: '#333'
-        }
-      ]
-    }
-  }
+  components,
+  methods
 }
 </script>
 

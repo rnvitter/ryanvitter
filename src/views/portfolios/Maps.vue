@@ -2,15 +2,16 @@
   <div id="maps">
     <div class="section-title">Featured Maps</div>
     <v-layout row wrap class="app-container">
-      <v-flex xs12 v-for="map in featuredMaps" :key="map.title">
-        <item-card :item="map" :src="getSrc(map.imageName)"></item-card>
+      <v-flex xs12 v-for="(map, index) in featuredMaps" :key="map.title">
+        <item-card :cardId="`map-${index}`" :item="map" :src="getSrc(map.imageName)"></item-card>
       </v-flex>
       <v-flex xs12 style="display: flex; align-items: center;">
         <div class="more-title">More Maps</div>
         <v-divider class="ml-4"></v-divider>
       </v-flex>
-      <v-flex xs12 sm6 v-for="map in moreMaps" :key="map.title">
+      <v-flex xs12 sm6 v-for="(map, index) in moreMaps" :key="map.title">
         <item-card-preview
+          :cardId="`map-${index + 2}`"
           :item="map"
           :src="getSrc(map.imageName)"
           :showButtons="false">
@@ -21,7 +22,7 @@
 </template>
 
 <script>
-import { ItemCard, ItemCardPreview } from '@/components'
+import { ItemCard, ItemCardPreview } from '@/components/card'
 import { mapGetters } from 'vuex'
 
 const components = {

@@ -21,19 +21,12 @@
         </div>
       </v-flex>
       <v-flex xs12>
-        <a :href="item.link" target=”_blank” style="text-decoration: none;">
-          <img
-            class="item-image"
-            :src="getSrc()"
-            width="100%"
-            height="auto">
-          </img>
-        </a>
+        <item-flip :item="item" :src="src" :cardId="cardId"></item-flip>
       </v-flex>
       <v-flex xs12>
         <div style="display: flex; justify-content: center;">
           <a :href="item.link" target="_blank" class="item-link mr-3">View</a>
-          <div @click="" class="item-link mr-3">Details</div>
+          <div @click="flipCard" class="item-link mr-3">Details</div>
           <a :href="item.github" target="_blank" class="item-link" v-if="item.github">Github</a>
         </div>
       </v-flex>
@@ -41,14 +34,7 @@
 
     <v-layout row wrap v-else>
       <v-flex xs12 sm6>
-        <a :href="item.link" target=”_blank” style="text-decoration: none;">
-          <img
-            class="item-image"
-            :src="getSrc()"
-            width="100%"
-            height="auto">
-          </img>
-        </a>
+        <item-flip :item="item" :src="src" :cardId="cardId"></item-flip>
       </v-flex>
       <v-flex xs12 sm6 style="padding: 0 20px;">
         <div>
@@ -71,7 +57,7 @@
         <div class="item-description" style="margin-top: 0px;">{{ item.description }}</div>
         <div style="display: flex;">
           <a :href="item.link" target="_blank" class="item-link mr-3">View</a>
-          <div @click="" class="item-link mr-3">Details</div>
+          <a @click="flipCard" class="item-link mr-3">Details</a>
           <a :href="item.github" target="_blank" class="item-link" v-if="item.github">Github</a>
         </div>
       </v-flex>
@@ -81,8 +67,13 @@
 
 <script>
 import { mapGetters } from 'vuex'
+import ItemFlip from './components/ItemFlip'
 
 const props = {
+  cardId: {
+    type: String,
+    required: true
+  },
   item: {
     type: Object,
     required: true
@@ -93,6 +84,10 @@ const props = {
   }
 }
 
+const components = {
+  ItemFlip
+}
+
 const computed = {
   ...mapGetters({
     mobile: 'ux/mobile'
@@ -100,13 +95,14 @@ const computed = {
 }
 
 const methods = {
-  getSrc () {
-    return this.src
+  flipCard () {
+    document.querySelector(`#${this.cardId}`).classList.toggle('flip')
   }
 }
 
 export default {
   props,
+  components,
   computed,
   methods
 }
