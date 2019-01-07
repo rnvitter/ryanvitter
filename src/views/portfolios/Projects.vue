@@ -3,31 +3,39 @@
     <div class="section-title">Featured Projects</div>
     <v-layout row wrap class="app-container">
       <v-flex xs12 v-for="app in featuredApps" :key="app.title">
-        <app-card :item="app"></app-card>
+        <item-card :item="app" :src="getSrc(app.imageName)"></item-card>
       </v-flex>
       <v-flex xs12 style="display: flex; align-items: center;">
         <div class="more-title">More Projects</div>
         <v-divider class="ml-4"></v-divider>
       </v-flex>
       <v-flex xs12 sm6 v-for="app in moreApps" :key="app.title">
-        <app-card-preview :item="app"></app-card-preview>
+        <item-card-preview :item="app"></item-card-preview>
       </v-flex>
     </v-layout>
   </div>
 </template>
 
 <script>
-import { AppCard, AppCardPreview } from '@/components'
+import { ItemCard, ItemCardPreview } from '@/components'
 import { mapGetters } from 'vuex'
 
 const components = {
-  AppCard,
-  AppCardPreview
+  ItemCard,
+  ItemCardPreview
+}
+
+const methods = {
+  getSrc (img) {
+    // require('@/static/img/app-previews/' + this.item.imageName + '-min.jpg')
+    return require(`@/static/img/app-previews/${img}-min.jpg`)
+  }
 }
 
 export default {
   name: 'projects',
   components,
+  methods,
   data () {
     return {
       featuredApps: [

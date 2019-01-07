@@ -10,7 +10,7 @@
           </div>
           <div class="item-tagline">{{ item.tagline }}</div>
         </div>
-        <div class="item-tags">
+        <div class="item-tags" v-if="item.tags">
           <v-chip
             v-for="(tag, index) in item.tags"
             :key="index"
@@ -32,7 +32,8 @@
       </v-flex>
       <v-flex xs12>
         <div style="display: flex; justify-content: center;">
-          <a :href="item.link" target="_blank" class="item-link mr-3">Explore</a>
+          <a :href="item.link" target="_blank" class="item-link mr-3">View</a>
+          <div @click="" class="item-link mr-3">Details</div>
           <a :href="item.github" target="_blank" class="item-link" v-if="item.github">Github</a>
         </div>
       </v-flex>
@@ -57,7 +58,7 @@
             </h2>
           </div>
           <div class="item-tagline">{{ item.tagline }}</div>
-          <div class="item-tags">
+          <div class="item-tags" v-if="item.tags">
             <v-chip
               v-for="(tag, index) in item.tags"
               :key="index"
@@ -68,8 +69,11 @@
           </div>
         </div>
         <div class="item-description" style="margin-top: 0px;">{{ item.description }}</div>
-        <a :href="item.link" target="_blank" class="item-link mr-3">Explore</a>
-        <a :href="item.github" target="_blank" class="item-link" v-if="item.github">Github</a>
+        <div style="display: flex;">
+          <a :href="item.link" target="_blank" class="item-link mr-3">View</a>
+          <div @click="" class="item-link mr-3">Details</div>
+          <a :href="item.github" target="_blank" class="item-link" v-if="item.github">Github</a>
+        </div>
       </v-flex>
     </v-layout>
   </div>
@@ -97,7 +101,7 @@ const computed = {
 
 const methods = {
   getSrc () {
-    return require('@/static/img/app-previews/' + this.item.imageName + '-min.jpg')
+    return this.src
   }
 }
 

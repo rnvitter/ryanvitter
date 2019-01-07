@@ -1,15 +1,13 @@
-import AppCard from './AppCard'
-import AppCardPreview from './AppCardPreview'
+import ItemCard from './ItemCard'
+import ItemCardPreview from './ItemCardPreview'
 import Carousel from './Carousel'
 import HeadlineAnimation from './HeadlineAnimation'
-import MapCard from './MapCard'
 import PhotoCard from './PhotoCard'
 
 export {
-  AppCard,
-  AppCardPreview,
+  ItemCard,
+  ItemCardPreview,
   Carousel,
   HeadlineAnimation,
-  MapCard,
   PhotoCard
 }
