@@ -71,6 +71,7 @@ export default {
 	transition: 0.6s;
 	transform-style: preserve-3d;
 	position: relative;
+  min-height: 300px;
 }
 
 .front, .back {
