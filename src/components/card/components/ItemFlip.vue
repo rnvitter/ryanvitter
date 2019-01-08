@@ -95,4 +95,10 @@ export default {
   font-weight: 500;
   opacity: 0.5;
 }
+
+@media only screen and (max-width: 960px) {
+  .detail-text {
+    margin: 10px 0;
+  }
+}
 </style>

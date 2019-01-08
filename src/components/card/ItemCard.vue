@@ -206,6 +206,10 @@ export default {
   .item-tags {
     text-align: center;
   }
+
+  .item-image {
+    margin: 10px 0;
+  }
 }
 
 @media only screen and (max-width: 420px) {
