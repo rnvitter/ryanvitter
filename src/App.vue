@@ -2,7 +2,7 @@
   <v-app>
     <div class="app-wrapper">
       <navbar></navbar>
-      <nav-menu v-if="menu"></nav-menu>
+      <nav-menu v-if="menu && mobile"></nav-menu>
       <div id="portfolio-wrapper">
         <splash-page></splash-page>
         <about></about>

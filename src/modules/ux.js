@@ -21,7 +21,6 @@ const mutations = {
   },
   [types.TOGGLE_MENU] (state) {
     state.menu = !state.menu
-    console.log(state.menu)
   }
 }
 

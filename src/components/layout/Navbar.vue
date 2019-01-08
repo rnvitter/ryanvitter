@@ -3,11 +3,31 @@
     <div class="navbar-content layout-container">
       <div class="header-title">Ryan Vitter</div>
 
-      <div class="kebab" @click="toggleMenu">
-        <figure></figure>
-        <figure class="middle"></figure>
-        <p class="cross">x</p>
-        <figure></figure>
+      <div style="display: flex; align-items: center;">
+        <ul class="primary-nav-menu" v-if="!mobile && menu">
+          <li class="nav-menu-item" @click="toggleMenu">
+            <div><a href="#about">About Me</a></div>
+          </li>
+          <li class="nav-menu-item" @click="toggleMenu">
+            <div><a href="#projects">Projects</a></div>
+          </li>
+          <li class="nav-menu-item" @click="toggleMenu">
+            <div><a href="#maps">Maps</a></div>
+          </li>
+          <li class="nav-menu-item" @click="toggleMenu">
+            <div><a href="#photos">Photos</a></div>
+          </li>
+          <li class="nav-menu-item" @click="toggleMenu">
+            <div><a href="#contact">Contact</a></div>
+          </li>
+        </ul>
+
+        <div class="kebab" @click="toggleMenuClick">
+          <figure></figure>
+          <figure class="middle"></figure>
+          <p class="cross">x</p>
+          <figure></figure>
+        </div>
       </div>
     </div>
   </div>
@@ -15,6 +35,11 @@
 
 <script>
 import { mapActions, mapGetters } from 'vuex'
+import NavMenu from './NavMenu'
+
+const components = {
+  NavMenu
+}
 
 const computed = {
   ...mapGetters({
@@ -33,11 +58,11 @@ const methods = {
     const menu = document.getElementsByClassName('nav-menu-line')
     const scrollTop = window.scrollY
     const breakPoint = window.innerHeight - 20
-    if (scrollTop > breakPoint && !header.classList.contains('fixed-navbar') && this.mobile) {
+    if ((scrollTop > breakPoint && !header.classList.contains('fixed-navbar') && this.mobile) || this.menu) {
       header.classList.add('fixed-navbar')
       title.style.opacity = 1
     }
-    if (scrollTop < breakPoint && header.classList.contains('fixed-navbar')) {
+    else if ((scrollTop < breakPoint && header.classList.contains('fixed-navbar') && !this.menu) || !this.mobile) {
       header.classList.remove('fixed-navbar')
       title.style.opacity = 0
     }
@@ -54,6 +79,21 @@ const methods = {
       middle.classList.remove('active')
       cross.classList.remove('active')
     }
+  },
+  toggleMenuClick () {
+    const header = document.getElementById('navbar')
+    const title = document.getElementsByClassName('header-title')[0]
+    const menu = document.getElementsByClassName('nav-menu-line')
+    if (!header.classList.contains('fixed-navbar')) {
+      header.classList.add('fixed-navbar')
+      title.style.opacity = 1
+    }
+    else if (header.classList.contains('fixed-navbar')) {
+      header.classList.remove('fixed-navbar')
+      title.style.opacity = 0
+    }
+
+    this.toggleMenu()
   }
 }
 
@@ -64,11 +104,13 @@ const watch = {
   },
   menu () {
     this.menuStyle()
+    this.headerStyle()
   }
 }
 
 export default {
   name: 'navbar',
+  components,
   computed,
   methods,
   watch,
@@ -164,5 +206,22 @@ export default {
 .cross.active {
   transform: translate(-50%, -50%) scale(1);
   transition: all 0.15s cubic-bezier(.32,2.04,.85,.54);
+}
+
+.primary-nav-menu {
+  display: flex;
+  list-style-type: none;
+  margin-right: 30px;
+}
+
+.nav-menu-item a {
+  text-transform: uppercase;
+  margin-right: 20px;
+  text-align: end;
+  text-decoration: none;
+  color: #333;
+  font-size: 1.2em;
+  font-weight: 700;
+  letter-spacing: -0.02em;
 }
 </style>

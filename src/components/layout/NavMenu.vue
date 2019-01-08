@@ -1,21 +1,19 @@
 <template>
-  <div class="layout-container nav-menu"
-    :style="mobile ? 'padding-top: 100px !important;' : 'padding-top: 90px;'"
-    @click="toggleMenu">
-    <ul class="primary-nav-menu">
-      <li class="nav-menu-item" @click="toggleMenu">
-        <div><a href="about">About Me</a></div>
+  <div class="layout-container mobile-nav-menu">
+    <ul class="mobile-primary-nav-menu">
+      <li class="mobile-nav-menu-item" @click="toggleMenu">
+        <div><a href="#about">About Me</a></div>
       </li>
-      <li class="nav-menu-item" @click="toggleMenu">
+      <li class="mobile-nav-menu-item" @click="toggleMenu">
         <div><a href="#projects">Projects</a></div>
       </li>
-      <li class="nav-menu-item" @click="toggleMenu">
+      <li class="mobile-nav-menu-item" @click="toggleMenu">
         <div><a href="#maps">Maps</a></div>
       </li>
-      <li class="nav-menu-item" @click="toggleMenu">
+      <li class="mobile-nav-menu-item" @click="toggleMenu">
         <div><a href="#photos">Photos</a></div>
       </li>
-      <li class="nav-menu-item" @click="toggleMenu">
+      <li class="mobile-nav-menu-item" @click="toggleMenu">
         <div><a href="#contact">Contact</a></div>
       </li>
     </ul>
@@ -27,7 +25,6 @@ import { mapGetters, mapActions } from 'vuex'
 
 const computed = {
   ...mapGetters({
-    mobile: 'ux/mobile',
     menu: 'ux/menu'
   })
 }
@@ -55,7 +52,7 @@ export default {
 </script>
 
 <style>
-.nav-menu {
+.mobile-nav-menu {
   position: fixed;
   top: 0px;
   left: 50%;
@@ -64,11 +61,12 @@ export default {
   height: 100%;
   z-index: 50;
   overflow: auto;
-  background-color: #fff;
   opacity: 0.97;
+  background-color: #fff;
+  padding-top: 100px;
 }
 
-.nav-menu-item {
+.mobile-nav-menu-item {
   font-size: 1.8em;
   font-weight: 700;
   letter-spacing: -0.02em;
@@ -78,28 +76,18 @@ export default {
   text-align: end;
 }
 
-.nav-menu-item a {
+.mobile-nav-menu-item a {
   text-decoration: none;
-}
-
-.nav-menu-item a {
   color: #333;
-  background: rgba(0,0,0,0);
+  font-size: 1.4em;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  background: none;
+  box-shadow: none;
 }
 
-.primary-nav-menu, .secondary-nav-menu {
+.mobile-primary-nav-menu {
   list-style-type: none;
-}
-
-@media only screen and (max-width: 960px) {
-  .nav-menu-item a {
-    color: #333;
-    font-size: 1.4em;
-    font-weight: 700;
-    letter-spacing: -0.02em;
-    background: none;
-    box-shadow: none;
-  }
 }
 
 @media only screen and (max-width: 420px) {
