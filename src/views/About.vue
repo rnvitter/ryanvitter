@@ -12,7 +12,11 @@
       <span class="skill">Illustrator</span>
       <span class="about-text">, </span>
       <span class="skill">Lightroom</span>
-      <span class="about-text">, and several GIS softwares.</span>
+      <span class="about-text">, and several GIS softwares. I studied Geography and GIS in school and started working with my currently company doing all of their </span>
+      <span class="skill">GIS</span>
+      <span class="about-text"> and mapping needs. I transistioned to frontend development and took a liking to the UI and UX design aspects of building apps and websites. I enjoy work the most when I am sketching out designs for features, bringing them to life with </span>
+      <span class="skill">Javascript</span>
+      <span class="about-text"> and working with the users to better improve the experience and the overall look of the product.</span>
     </div>
     <div style="text-align: center;">
       <div style="display: flex; align-items: center;">
@@ -68,26 +72,11 @@ export default {
   font-size: 1.6em;
 }
 
-.skill  {
-  font-size: 1em;
-}
-
 .skills-header {
   margin: 20px 0;
   font-size: 1.2em !important;
   font-weight: 500;
   font-weight: 300;
   letter-spacing: 0.05em;
-}
-
-.skills-wrapper span, .skill {
-  display: inline-block;
-  margin: 5px;
-  background: #ECBB11;
-  color: #fff;
-  padding: 6px 16px;
-  border-radius: 50px;
-  font-weight: 400;
-  letter-spacing: 0.1em;
 }
 </style>

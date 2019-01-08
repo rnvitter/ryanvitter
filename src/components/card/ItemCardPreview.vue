@@ -9,13 +9,12 @@
           </h2>
           <div class="item-tagline-preview">{{ item.tagline }}</div>
           <div class="item-tags" v-if="!hideTags">
-            <v-chip
+            <span
+              class="skill skill-tag"
               v-for="(tag, index) in item.tags"
-              :key="index"
-              class="item-tag"
-              small>
+              :key="index">
               {{ tag }}
-            </v-chip>
+            </span>
           </div>
         </div>
       </v-flex>

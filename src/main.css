@@ -10,6 +10,22 @@ html, body {
   padding: 0 20px;
 }
 
+.skills-wrapper span, .skill {
+  display: inline-block;
+  margin: 0 5px;
+  background: #ECBB11;
+  color: #333;
+  padding: 4px 12px;
+  border-radius: 50px;
+  font-weight: 400;
+  letter-spacing: 0.1em;
+}
+
+.skill-tag {
+  /* color: #fff !important; */
+  font-size: 0.9em;
+}
+
 /* icon fonts */
 
 @font-face {

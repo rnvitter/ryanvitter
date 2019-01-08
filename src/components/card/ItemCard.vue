@@ -11,13 +11,12 @@
           <div class="item-tagline">{{ item.tagline }}</div>
         </div>
         <div class="item-tags" v-if="item.tags">
-          <v-chip
+          <span
+            class="skill skill-tag"
             v-for="(tag, index) in item.tags"
-            :key="index"
-            class="item-tag"
-            small>
+            :key="index">
             {{ tag }}
-          </v-chip>
+          </span>
         </div>
       </v-flex>
       <v-flex xs12>
@@ -45,13 +44,12 @@
           </div>
           <div class="item-tagline">{{ item.tagline }}</div>
           <div class="item-tags" v-if="item.tags">
-            <v-chip
+            <span
+              class="skill skill-tag"
               v-for="(tag, index) in item.tags"
-              :key="index"
-              class="item-tag"
-              small>
+              :key="index">
               {{ tag }}
-            </v-chip>
+            </span>
           </div>
         </div>
         <div class="item-description" style="margin-top: 0px;">{{ item.description }}</div>
@@ -175,15 +173,6 @@ export default {
 
 .item-tags {
   margin: 10px 0;
-}
-
-.item-tag {
-  background-color: #ECBB11 !important;
-  color: #fff !important;
-  padding: 2px;
-  font-size: 0.9em;
-  letter-spacing: 0.07em;
-  height: 22px;
 }
 
 @media only screen and (max-width: 1200px) {
