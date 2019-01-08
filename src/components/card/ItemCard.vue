@@ -21,7 +21,7 @@
         </div>
       </v-flex>
       <v-flex xs12>
-        <item-flip :item="item" :src="src" :cardId="cardId"></item-flip>
+        <item-flip :item="item" :src="src" :cardId="cardId" :flipped="flipped"></item-flip>
       </v-flex>
       <v-flex xs12>
         <div style="display: flex; justify-content: center;">
@@ -34,7 +34,7 @@
 
     <v-layout row wrap v-else>
       <v-flex xs12 sm6>
-        <item-flip :item="item" :src="src" :cardId="cardId"></item-flip>
+        <item-flip :item="item" :src="src" :cardId="cardId" :flipped="flipped"></item-flip>
       </v-flex>
       <v-flex xs12 sm6 style="padding: 0 20px;">
         <div>
@@ -96,6 +96,7 @@ const computed = {
 
 const methods = {
   flipCard () {
+    this.flipped = !this.flipped
     document.querySelector(`#${this.cardId}`).classList.toggle('flip')
   }
 }
@@ -104,7 +105,12 @@ export default {
   props,
   components,
   computed,
-  methods
+  methods,
+  data () {
+    return {
+      flipped: false
+    }
+  }
 }
 </script>
 

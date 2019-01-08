@@ -1,7 +1,7 @@
 <template>
   <div class="flip-container">
     <div :id="cardId" class="flipper">
-      <div class="front">
+      <div class="front" v-if="!flipped">
         <a :href="item.link" target=”_blank” style="text-decoration: none;">
           <img
             class="item-image"
@@ -11,8 +11,8 @@
           </img>
         </a>
       </div>
-      <div class="back">
-        <h4>I am the back</h4>
+      <div class="back" v-if="flipped">
+        <div class="detail-text" v-if="item.details">{{ item.details }}</div>
       </div>
     </div>
   </div>
@@ -31,6 +31,10 @@ const props = {
   src: {
     type: String,
     required: true
+  },
+  flipped: {
+    type: Boolean,
+    required: false
   }
 }
 
@@ -81,8 +85,14 @@ export default {
 }
 
 .back {
-  position: absolute;
-  height: 100%;
+  max-height: 350px;
+  overflow: auto;
 	transform: rotateX(180deg);
+}
+
+.detail-text {
+  font-size: 1em;
+  font-weight: 500;
+  opacity: 0.5;
 }
 </style>
