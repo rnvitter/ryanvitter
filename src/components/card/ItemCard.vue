@@ -195,6 +195,7 @@ export default {
 
   .item-tagline {
     font-size: 1.6em;
+    padding-bottom: 10px;
   }
 
   .item-description {

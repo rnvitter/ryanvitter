@@ -123,7 +123,7 @@ export default {
   }
 
   .item-tagline-preview {
-    font-size: 1em;
+    padding: 5px 0;
   }
 
   .item-btns {
