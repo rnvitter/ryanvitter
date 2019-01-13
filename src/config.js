@@ -27,14 +27,15 @@ const apps = {
       imageName: 'forecasting',
       tags: ['Javascript', 'Vue.js', 'D3', 'Python'],
       tagline: 'Election Forecasting for the 2018 Elections',
-      // description: 'I developed this app while working at 0ptimus with one other person. I worked on the UI/UX design, frontend code, and developed all the maps and charts from scratch with d3. We had upwards of 1,500 people on the site at a time during election night.'
+      description: 'I developed this app while working at 0ptimus with one other person. I worked on the UI/UX design, frontend code, and developed all the maps and charts from scratch with d3. I worked closely with the data scientists through several iterations to help make their vision for their work come to life.'
     },
     {
       title: 'Portfolio V1',
       link: 'http://v1.ryanvitter.com/',
       imageName: 'portfolioV1',
       tags: ['Javascript', 'Vue.js', 'Node'],
-      tagline: 'The first version of my portfolio website'
+      tagline: 'The first version of my portfolio website',
+      description: 'In my first attempt at a portfolio site I used vue.js for the frontend, and node.js for a simple backend for making calls to the flickr api for the photos. I hosted the site on a free heroku server. I liked the simplicity of the site, however the horizontal carousels were not the most obvious to users and there was not a lot of description for the different projects and examples.'
     },
     {
       title: 'Bucketlist',
@@ -42,7 +43,7 @@ const apps = {
       imageName: 'coming-soon',
       tags: ['Javascript', 'Vue.js', 'Node'],
       tagline: 'Manage your travel bucket list and plan trips',
-      // description: 'I developed this app while working at 0ptimus with one other person. I worked on the UI/UX design, frontend code, and developed all the maps and charts from scratch with d3. We had upwards of 1,500 people on the site at a time during election night.'
+      description: 'An app that I recently started working on, the idea is to use the skyscanner api and potentially the google maps api to make an app where people can keep track of the places they have been and want to go, and allow them to easily create trip plans based on their list and find cheap flights between destinations.'
     },
   ]
 }
@@ -73,7 +74,7 @@ const maps = {
       imageName: 'gdp_vs_spi',
       tags: ['ArcGIS', 'Illustrator'],
       tagline: 'Measuring the Success of Countries',
-      description: ''
+      description: 'This map was made for one of my classes in college. I wanted to show the correlation between a countries GDP and it\'s social progress index. I used two different color scales and created a matrix for the legend to help visualize how those two varaibles change together in each country.'
     },
     {
       title: 'The West Indies',
@@ -81,7 +82,7 @@ const maps = {
       imageName: 'west_indies_reference',
       tags: ['ArcGIS', 'Illustrator'],
       tagline: 'A reference map for the west indies region',
-      description: ''
+      description: 'In one of my GIS classes in college we had to create a reference map of the west indies to scale. I started in ArcGIS, and then did the majority of the work in Illustrator for label placement and making it look clean and appealing.'
     },
     {
       title: 'Google Trends & Political Issues',
@@ -89,7 +90,7 @@ const maps = {
       imageName: 'google_trends_political_issues',
       tags: ['ArcGIS', 'Illustrator'],
       tagline: 'Can Google Trends Predict the Political Leanings of Geographies?',
-      description: ''
+      description: 'For my thesis my senior year of college I looked at whether you could use the google search trends of different poltical topics to determine the political leanings of geographies.'
     },
     {
       title: 'Texas Likely Voters',
@@ -97,7 +98,7 @@ const maps = {
       imageName: 'tx_likely_voters',
       tags: ['QGIS', 'Illustrator'],
       tagline: 'Finding Likely Voters By Congressional District',
-      description: ''
+      description: 'An example of one of the many types of maps I made for 0ptimus. This map shows likely voters in Texas for the 2016 presidential election. I added a graph to better indication to the viewer how the data is actually distributed.'
     }
   ]
 }

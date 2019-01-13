@@ -20,11 +20,13 @@
       </v-flex>
     </v-layout>
 
-    <item-flip :item="item" :src="src" :cardId="cardId"></item-flip>
+    <item-flip :item="item" :src="src" :cardId="cardId" :flipped="flipped"></item-flip>
 
     <div style="display: flex;" class="item-btns" v-if="showButtons">
       <a :href="item.link" target="_blank" class="item-link-preview mr-3">Explore</a>
-      <a @click="flipCard" class="item-link-preview">Details</a>
+      <a @click="flipCard" class="item-link mr-3">
+        {{ flipped ? 'Image' : 'Details' }}
+      </a>
       <a :href="item.github" target="_blank" class="item-link-preview ml-3" v-if="item.github">Github</a>
     </div>
   </div>
@@ -77,6 +79,7 @@ const methods = {
     return this.src
   },
   flipCard () {
+    this.flipped = !this.flipped
     document.querySelector(`#${this.cardId}`).classList.toggle('flip')
   }
 }
@@ -84,7 +87,12 @@ const methods = {
 export default {
   props,
   components,
-  methods
+  methods,
+  data () {
+    return {
+      flipped: false
+    }
+  }
 }
 </script>
 

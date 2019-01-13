@@ -25,7 +25,9 @@
       <v-flex xs12>
         <div style="display: flex; justify-content: center;">
           <a :href="item.link" target="_blank" class="item-link mr-3">View</a>
-          <div @click="flipCard" class="item-link mr-3">Details</div>
+          <a @click="flipCard" class="item-link mr-3">
+            {{ flipped ? 'Image' : 'Details' }}
+          </a>
           <a :href="item.github" target="_blank" class="item-link" v-if="item.github">Github</a>
         </div>
       </v-flex>
@@ -55,7 +57,9 @@
         <div class="item-description" style="margin-top: 0px;">{{ item.description }}</div>
         <div style="display: flex;">
           <a :href="item.link" target="_blank" class="item-link mr-3">View</a>
-          <a @click="flipCard" class="item-link mr-3">Details</a>
+          <a @click="flipCard" class="item-link mr-3" v-if="showDetails">
+            {{ flipped ? 'Image' : 'Details' }}
+          </a>
           <a :href="item.github" target="_blank" class="item-link" v-if="item.github">Github</a>
         </div>
       </v-flex>
@@ -79,6 +83,11 @@ const props = {
   src: {
     type: String,
     required: false
+  },
+  showDetails: {
+    type: Boolean,
+    required: false,
+    default: true
   }
 }
 

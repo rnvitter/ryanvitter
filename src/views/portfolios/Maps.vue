@@ -3,7 +3,12 @@
     <div class="section-title">Featured Maps</div>
     <v-layout row wrap class="app-container">
       <v-flex xs12 v-for="(map, index) in maps.featuredMaps" :key="map.title">
-        <item-card :cardId="`map-${index}`" :item="map" :src="getSrc(map.imageName)"></item-card>
+        <item-card
+          :cardId="`map-${index}`"
+          :item="map"
+          :src="getSrc(map.imageName)"
+          :showDetails="mobile">
+        </item-card>
       </v-flex>
       <v-flex xs12 style="display: flex; align-items: center;">
         <div class="more-title">More Maps</div>
@@ -13,8 +18,7 @@
         <item-card-preview
           :cardId="`map-${index + 2}`"
           :item="map"
-          :src="getSrc(map.imageName)"
-          :showButtons="false">
+          :src="getSrc(map.imageName)">
         </item-card-preview>
       </v-flex>
     </v-layout>
@@ -33,6 +37,9 @@ const components = {
 }
 
 const computed = {
+  ...mapGetters({
+    mobile: 'ux/mobile'
+  }),
   maps () {
     return maps
   }

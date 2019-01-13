@@ -1,18 +1,22 @@
 <template>
   <div class="flip-container">
-    <div :id="cardId" class="flipper">
-      <div class="front" v-if="!flipped">
+    <div :id="cardId" class="flipper" :style="`height: ${height}px;`">
+      <div class="front">
         <a :href="item.link" target=”_blank” style="text-decoration: none;">
           <img
             class="item-image"
             :src="getSrc()"
-            width="100%"
-            height="auto">
+            width="100%">
           </img>
         </a>
       </div>
-      <div class="back" v-if="flipped">
-        <div class="detail-text" v-if="item.details">{{ item.details }}</div>
+      <div class="back" :style="`height: ${height}px;`">
+        <div class="detail-text" v-if="item.details">
+          {{ item.details }}
+        </div>
+        <div class="detail-text" v-else-if="!item.details && item.description">
+          {{ item.description }}
+        </div>
       </div>
     </div>
   </div>
@@ -38,6 +42,15 @@ const props = {
   }
 }
 
+const computed = {
+  height () {
+    const card = document.getElementById(this.cardId)
+    if (card) {
+      return document.getElementById(this.cardId).getElementsByClassName('front')[0].clientHeight
+    }
+  }
+}
+
 const methods = {
   getSrc () {
     return this.src
@@ -46,6 +59,7 @@ const methods = {
 
 export default {
   props,
+  computed,
   methods
 }
 </script>
@@ -86,13 +100,16 @@ export default {
 }
 
 .back {
-  max-height: 350px;
+  position: absolute;
+  top: 0;
+  height: 100%;
   overflow: auto;
 	transform: rotateX(180deg);
+  /* border: 1px solid #bdbdbd; */
 }
 
 .detail-text {
-  font-size: 1em;
+  font-size: 1.1em;
   font-weight: 500;
   opacity: 0.5;
 }

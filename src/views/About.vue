@@ -5,17 +5,17 @@
       <span class="about-text">
         I am a software engineer based in the DC area.
         My focus is on frontend code and UI/UX design.
-        My speciality is
+        My specialty is
       </span>
       <span class="skill">Vue.js</span>
       <span class="about-text">, but I also have experience with </span>
       <span class="skill">Illustrator</span>
       <span class="about-text">, </span>
       <span class="skill">Lightroom</span>
-      <span class="about-text">, and several GIS softwares. I studied Geography and GIS in school and started working with my currently company doing all of their </span>
+      <span class="about-text">, and several GIS software. I studied Geography and GIS in school and started working with my currently company doing all their </span>
       <span class="skill">GIS</span>
-      <span class="about-text"> and mapping needs. I transistioned to frontend development and took a liking to the UI and UX design aspects of building apps and websites. I enjoy work the most when I am sketching out designs for features, bringing them to life with </span>
-      <span class="skill">Javascript</span>
+      <span class="about-text"> and mapping needs. I transitioned to frontend development and took a liking to the UI and UX design aspects of building apps and websites. I enjoy work the most when I am sketching out designs for features, bringing them to life with </span>
+      <span class="skill">JavaScript</span>
       <span class="about-text"> and working with the users to better improve the experience and the overall look of the product.</span>
     </div>
     <div style="text-align: center;">
@@ -38,13 +38,22 @@
         <v-divider class="ml-4"></v-divider>
       </div>
       <div class="skills-wrapper">
-        <span>Python</span>
         <span>Node</span>
         <span>Photoshop</span>
         <span>Adobe XD</span>
         <span>ArcGIS</span>
         <span>PostgresSQL</span>
         <span>PostGIS</span>
+      </div>
+      <div style="display: flex; align-items: center;">
+        <v-divider class="mr-4"></v-divider>
+        <div class="skills-header more-title">Some Exposure</div>
+        <v-divider class="ml-4"></v-divider>
+      </div>
+      <div class="skills-wrapper">
+        <span>Python</span>
+        <span>Django</span>
+        <span>GraphQL</span>
       </div>
     </div>
   </div>
