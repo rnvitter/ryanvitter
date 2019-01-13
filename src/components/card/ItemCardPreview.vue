@@ -23,7 +23,7 @@
     <item-flip :item="item" :src="src" :cardId="cardId" :flipped="flipped"></item-flip>
 
     <div style="display: flex;" class="item-btns" v-if="showButtons">
-      <a :href="item.link" target="_blank" class="item-link-preview mr-3">Explore</a>
+      <a :href="item.link" target="_blank" class="item-link-preview mr-3" v-if="item.link">View</a>
       <a @click="flipCard" class="item-link mr-3">
         {{ flipped ? 'Image' : 'Details' }}
       </a>

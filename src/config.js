@@ -52,7 +52,7 @@ const maps = {
   featuredMaps: [
     {
       title: '0ptimus Poster',
-      link: '',
+      link: 'https://drive.google.com/file/d/0BxLnMO72hm-UM1VqZThtLXcxb3c/view?usp=sharing',
       imageName: '0ptimus_poster',
       tags: ['QGIS', 'Illustrator'],
       tagline: 'Visualizing the poltical and advertising landscape of the U.S.',
@@ -60,7 +60,7 @@ const maps = {
     },
     {
       title: 'HDI and Terrorism',
-      link: '',
+      link: 'https://drive.google.com/file/d/0BxLnMO72hm-URUNxa3d1ejZrOW8/view?usp=sharing',
       imageName: 'human_development_and_terrorism',
       tags: ['ArcGIS', 'Illustrator'],
       tagline: 'Is the HDI Index correlated with terrorism?',
@@ -70,7 +70,7 @@ const maps = {
   moreMaps: [
     {
       title: 'GDP vs SPI',
-      link: '',
+      link: 'https://drive.google.com/file/d/0BxLnMO72hm-UbEZycFlkSzZVUms/view?usp=sharing',
       imageName: 'gdp_vs_spi',
       tags: ['ArcGIS', 'Illustrator'],
       tagline: 'Measuring the Success of Countries',
@@ -78,7 +78,7 @@ const maps = {
     },
     {
       title: 'The West Indies',
-      link: '',
+      link: 'https://drive.google.com/file/d/0BxLnMO72hm-UTU5kc3d0SHdCOVU/view?usp=sharing',
       imageName: 'west_indies_reference',
       tags: ['ArcGIS', 'Illustrator'],
       tagline: 'A reference map for the west indies region',
@@ -86,7 +86,7 @@ const maps = {
     },
     {
       title: 'Google Trends & Political Issues',
-      link: '',
+      link: 'https://drive.google.com/file/d/0BxLnMO72hm-UR0NnMFEzRVRnOUk/view?usp=sharing',
       imageName: 'google_trends_political_issues',
       tags: ['ArcGIS', 'Illustrator'],
       tagline: 'Can Google Trends Predict the Political Leanings of Geographies?',
@@ -94,7 +94,7 @@ const maps = {
     },
     {
       title: 'Texas Likely Voters',
-      link: '',
+      link: 'https://drive.google.com/file/d/0BxLnMO72hm-UNTJqOUczV0pERlk/view?usp=sharing',
       imageName: 'tx_likely_voters',
       tags: ['QGIS', 'Illustrator'],
       tagline: 'Finding Likely Voters By Congressional District',
