@@ -7,7 +7,7 @@ const apps = {
       tags: ['Javascript', 'Vue.js', 'D3', 'Python'],
       tagline: '2018 Live Election Night Dashboard',
       description: 'I developed this app while working at 0ptimus with one other person. I worked on the UI/UX design, front end code, and developed all the maps and charts from scratch with D3. We had upwards of 1,500 people on the site at a time during election night.',
-      details: 'We developed the election results app using the Decision Desk HQ api. We used Vue.js for our front end framework and Django as the backend framework. I worked on the front end, UI, and UX design of the app. The first design I worked with a designer and iterated and made changes from there. The goal of the app was to have a place users can see election results for primary and general elections in 2018. The main feature we wanted was a central place for people to have a quick overview of election night and view battleground races. I designed the home page to have a state of the race section at the top with a toggleable chart and map for viewing the overview of the house, senate and governor elections. The chart is an original design of mine inspired by Tetris, with each race being represented as a block and there’s two levels (polls open and polls closed) and four columns on the second level (> +10D, < +10D, <+10R, > +10R). I created by the chart and the map using custom D3. The second section of the page shows the battleground races which shows toggle able cards for each battleground race that shows a basic overview table and tags that show important information like race prediction and race status. Other features of the app include a page for viewing all elections by state and a detailed view for each race that has an overview table, a county overview table, an interactive D3 map, basic information pertaining to the race, and a detailed downloadable county results table. We also implemented a search feature, authentication, and log in blocking for certain views.'
+      details: 'I used Vue.js for our front end framework and Django as the backend framework. I worked on the front end, UI, and UX design of the app. The first design I worked with a designer and iterated and made changes from there. The goal of the app was to have a place users can see election results for primary and general elections in 2018. The main feature we wanted was a central place for people to have a quick overview of election night and view battleground races. I designed the home page to have a state of the race section at the top with a toggleable chart and map for viewing the overview of the house, senate and governor elections. The chart is an original design of mine inspired by Tetris, with each race being represented as a block and there’s two levels (polls open and polls closed) and four columns on the second level (> +10D, < +10D, <+10R, > +10R). I created by the chart and the map using custom D3. The second section of the page shows the battleground races which shows toggle able cards for each battleground race that shows a basic overview table and tags that show important information like race prediction and race status. Other features of the app include a page for viewing all elections by state and a detailed view for each race that has an overview table, a county overview table, an interactive D3 map, basic information pertaining to the race, and a detailed downloadable county results table. We also implemented a search feature, authentication, and log in blocking for certain views.'
     },
     {
       title: 'Statify',
@@ -16,7 +16,7 @@ const apps = {
       imageName: 'statify',
       tags: ['Javascript', 'Vue.js', 'Node'],
       tagline: 'Tool For Discovering Your Music Trends',
-      description: 'App for discovering your top music over time and sharing it with friends. I created the entirety of this app as a personal project using vue, node, and the spotify and bitly apis.',
+      description: 'App for discovering your top music over time and sharing it with friends. I created the entirety of this app as a personal project using vue, node, and the Spotify and bitly apis.',
       details: 'I developed this app as a personal project so that I could learn Node.js. I created a simple node backend to make calls to the Spotify api and used Vue.js on the front end. I am a big fan of Spotify’s end of the year unwrapped app, however those only get released at the end of the year and I wanted to keep track of top artists and songs throughout the year. The goal of the app was to allow users to view their most listened to artists and songs over several different time periods, share them with friends, and create playlists from them. One feature of the app was allowing users to share their top songs and artists with friends. I did not want to have to store anything on a database so I made the decision to store all the information needed in the url. The function creates a url by taking the users name, the parameters the user entered, and all the ids of the songs or artists that the Spotify api returns, and creating a url from that. It then hits the Bitly api endpoint to create a shortened url for sharing. When a user clicks on one of the share links it will redirect to the share view of the app that uses all the information from the url to generate a view. Other features in this app include toggling by artist and songs, changing the number of items returned, filtering by three different time periods, and previewing a song or an artist’s top 5 songs. I particularly like the card style I designed for this app and the song animation that overlays each card when a song is playing. The app is hosted on a free heroku server so the initial load is slow.'
     }
   ],
@@ -81,8 +81,8 @@ const maps = {
       link: 'https://drive.google.com/file/d/0BxLnMO72hm-UTU5kc3d0SHdCOVU/view?usp=sharing',
       imageName: 'west_indies_reference',
       tags: ['ArcGIS', 'Illustrator'],
-      tagline: 'A reference map for the west indies region',
-      description: 'In one of my GIS classes in college we had to create a reference map of the west indies to scale. I started in ArcGIS, and then did the majority of the work in Illustrator for label placement and making it look clean and appealing.'
+      tagline: 'A reference map for the West Indies region',
+      description: 'In one of my GIS classes in college we had to create a reference map of the West Indies to scale. I started in ArcGIS, and then did the majority of the work in Illustrator for label placement and making it look clean and appealing.'
     },
     {
       title: 'Google Trends & Political Issues',
@@ -90,7 +90,7 @@ const maps = {
       imageName: 'google_trends_political_issues',
       tags: ['ArcGIS', 'Illustrator'],
       tagline: 'Can Google Trends Predict the Political Leanings of Geographies?',
-      description: 'For my thesis my senior year of college I looked at whether you could use the google search trends of different poltical topics to determine the political leanings of geographies.'
+      description: 'For my thesis my senior year of college I looked at whether you could use the Google search trends of different poltical topics to determine the political leanings of geographies.'
     },
     {
       title: 'Texas Likely Voters',
