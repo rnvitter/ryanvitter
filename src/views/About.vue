@@ -4,7 +4,7 @@
     <div class="about-description">
       <span class="about-text">
         I am a software engineer based in the DC area.
-        My focus is on frontend code and UI/UX design.
+        My focus is on front end code and UI/UX design.
         My specialty is
       </span>
       <span class="skill">Vue.js</span>
@@ -12,9 +12,9 @@
       <span class="skill">Illustrator</span>
       <span class="about-text">, </span>
       <span class="skill">Lightroom</span>
-      <span class="about-text">, and several GIS software. I studied Geography and GIS in school and started working with my currently company doing all their </span>
+      <span class="about-text">, and several GIS software. I studied Geography and GIS in school and started working with my current company doing all their </span>
       <span class="skill">GIS</span>
-      <span class="about-text"> and mapping needs. I transitioned to frontend development and took a liking to the UI and UX design aspects of building apps and websites. I enjoy work the most when I am sketching out designs for features, bringing them to life with </span>
+      <span class="about-text"> and mapping needs. I transitioned to front end development and took a liking to the UI and UX design aspects of building apps and websites. I enjoy work the most when I am sketching out designs for features, bringing them to life with </span>
       <span class="skill">JavaScript</span>
       <span class="about-text"> and working with the users to better improve the experience and the overall look of the product.</span>
     </div>

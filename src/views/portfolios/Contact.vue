@@ -2,13 +2,13 @@
   <div id="contact">
     <div style="padding: 0 20px;">
       <div class="contact-section app-container">
-        <div class="contact-text">If you'd like to talk to me or have freelance work shoot me an email</div>
+        <div class="contact-text">If you'd like to talk to me or have freelance work shoot me an email.</div>
         <div id="email-btn" class="contact-btn" @click="copyEmail">Reach Me Here</div>
         <span id="copy-email" style="display: none;">ryanvitter@gmail.com</span>
         <div class="contact-text pb-2" style="color: #fff; font-weight: 500;" v-if="copied">My email has been copied to your clipboard!</div>
-        <div class="contact-text">If you're interested in my photography or a photo shoot go to my photography website</div>
+        <div class="contact-text">If you're interested in my photography or a photo shoot go to my photography website.</div>
         <a href="https://www.rnv-photo.com/" target="_blank" class="contact-btn" style="text-decoration: none;">rnv-photo.com</a>
-        <div class="contact-text pt-2">You can also find me on these social media platforms as well</div>
+        <div class="contact-text pt-2">You can also find me on these social media platforms as well.</div>
         <div>
           <a href="https://www.linkedin.com/in/rnvitter" target="_blank" class="icon icon-linkedin"></a>
           <a href="https://github.com/rnvitter" target="_blank" class="icon icon-github"></a>

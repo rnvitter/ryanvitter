@@ -6,8 +6,8 @@ const apps = {
       imageName: 'election-results',
       tags: ['Javascript', 'Vue.js', 'D3', 'Python'],
       tagline: '2018 Live Election Night Dashboard',
-      description: 'I developed this app while working at 0ptimus with one other person. I worked on the UI/UX design, frontend code, and developed all the maps and charts from scratch with d3. We had upwards of 1,500 people on the site at a time during election night.',
-      details: 'We developed the election results app using the Decision Desk HQ api. We used Vue.js for our frontend framework and Django as the backend framework. I worked on the frontend, UI, and UX design of the app. The first initial design I worked with a designer and iterated and made changes from there. The goal of the app was to have a place users can see election results for primary and general elections in 2018. The main feature we wanted was a central place for people to have a quick overview of election night and view battleground races. I designed the home page to have a state of the race section at the top with a toggleable chart and map for viewing the overview of the house, senate and governor elections. The chart is an original design of mine inspired by Tetris, with each race being represented as a block and there’s two levels (polls open and polls closed) and four columns on the second level (> +10D, < +10D, <+10R, > +10R). I created by the chart and the map using custom D3. The second section of the page shows the battleground races which shows toggle able cards for each battleground race that shows a basic overview table and tags that show important information like race prediction and race status. Other features of the app include a page for viewing all elections by state and a detailed view for each race that has an overview table, a county overview table, an interactive d3 map, basic information pertaining to the race, and a detailed downloadable county results table. We also implemented a search feature, authentication, and log in blocking for certain views.'
+      description: 'I developed this app while working at 0ptimus with one other person. I worked on the UI/UX design, front end code, and developed all the maps and charts from scratch with D3. We had upwards of 1,500 people on the site at a time during election night.',
+      details: 'We developed the election results app using the Decision Desk HQ api. We used Vue.js for our front end framework and Django as the backend framework. I worked on the front end, UI, and UX design of the app. The first design I worked with a designer and iterated and made changes from there. The goal of the app was to have a place users can see election results for primary and general elections in 2018. The main feature we wanted was a central place for people to have a quick overview of election night and view battleground races. I designed the home page to have a state of the race section at the top with a toggleable chart and map for viewing the overview of the house, senate and governor elections. The chart is an original design of mine inspired by Tetris, with each race being represented as a block and there’s two levels (polls open and polls closed) and four columns on the second level (> +10D, < +10D, <+10R, > +10R). I created by the chart and the map using custom D3. The second section of the page shows the battleground races which shows toggle able cards for each battleground race that shows a basic overview table and tags that show important information like race prediction and race status. Other features of the app include a page for viewing all elections by state and a detailed view for each race that has an overview table, a county overview table, an interactive D3 map, basic information pertaining to the race, and a detailed downloadable county results table. We also implemented a search feature, authentication, and log in blocking for certain views.'
     },
     {
       title: 'Statify',
@@ -17,7 +17,7 @@ const apps = {
       tags: ['Javascript', 'Vue.js', 'Node'],
       tagline: 'Tool For Discovering Your Music Trends',
       description: 'App for discovering your top music over time and sharing it with friends. I created the entirety of this app as a personal project using vue, node, and the spotify and bitly apis.',
-      details: 'I developed this app as a personal project so that I could learn Node.js. I created a simple node backend to make calls to the Spotify api and used vue.js on the frontend. I am a big fan of Spotify’s end of the year unwrapped app, however those only get released at the end of the year and I wanted to keep track of top artists and songs throughout the year. The goal of the app was to allow users to view their most listened to artists and songs over several different time periods, share them with friends, and create playlists from them. One feature of the app was allowing users to share their top songs and artists with friends. I did not want to have to store anything on a database so I made the decision to store all the information needed in the url. The function creates a url by taking the users name, the parameters the user entered, and all the ids of the songs or artists that the Spotify api returns, and creating a url from that. It then hits the Bitly api endpoint to create a shortened url for sharing. When a user clicks on one of the share links it will redirect to the share view of the app that uses all the information from the url to generate a view. Other features in this app include toggling by artist and songs, changing the number of items returned, filtering by three different time periods, and previewing a song or an artist’s top 5 songs. I particularly like the card style I designed for this app and the song animation that overlays each card when a song is playing. The app is hosted on a free heroku server so the initial load is slow.'
+      details: 'I developed this app as a personal project so that I could learn Node.js. I created a simple node backend to make calls to the Spotify api and used Vue.js on the front end. I am a big fan of Spotify’s end of the year unwrapped app, however those only get released at the end of the year and I wanted to keep track of top artists and songs throughout the year. The goal of the app was to allow users to view their most listened to artists and songs over several different time periods, share them with friends, and create playlists from them. One feature of the app was allowing users to share their top songs and artists with friends. I did not want to have to store anything on a database so I made the decision to store all the information needed in the url. The function creates a url by taking the users name, the parameters the user entered, and all the ids of the songs or artists that the Spotify api returns, and creating a url from that. It then hits the Bitly api endpoint to create a shortened url for sharing. When a user clicks on one of the share links it will redirect to the share view of the app that uses all the information from the url to generate a view. Other features in this app include toggling by artist and songs, changing the number of items returned, filtering by three different time periods, and previewing a song or an artist’s top 5 songs. I particularly like the card style I designed for this app and the song animation that overlays each card when a song is playing. The app is hosted on a free heroku server so the initial load is slow.'
     }
   ],
   moreApps: [
@@ -27,7 +27,7 @@ const apps = {
       imageName: 'forecasting',
       tags: ['Javascript', 'Vue.js', 'D3', 'Python'],
       tagline: 'Election Forecasting for the 2018 Elections',
-      description: 'I developed this app while working at 0ptimus with one other person. I worked on the UI/UX design, frontend code, and developed all the maps and charts from scratch with d3. I worked closely with the data scientists through several iterations to help make their vision for their work come to life.'
+      description: 'I developed this app while working at 0ptimus with one other person. I worked on the UI/UX design, front end code, and developed all the maps and charts from scratch with D3. I worked closely with the data scientists through several iterations to help make their vision for their work come to life.'
     },
     {
       title: 'Portfolio V1',
@@ -35,7 +35,7 @@ const apps = {
       imageName: 'portfolioV1',
       tags: ['Javascript', 'Vue.js', 'Node'],
       tagline: 'The first version of my portfolio website',
-      description: 'In my first attempt at a portfolio site I used vue.js for the frontend, and node.js for a simple backend for making calls to the flickr api for the photos. I hosted the site on a free heroku server so the initial load is slow. I liked the simplicity of the site, however the horizontal carousels were not the most obvious to users and there was not a lot of description for the different projects and examples.'
+      description: 'In my first attempt at a portfolio site I used Vue.js for the front end, and Node.js for a simple backend for making calls to the Flickr api for the photos. I hosted the site on a free heroku server so the initial load is slow. I liked the simplicity of the site, however the horizontal carousels were not the most obvious to users and there was not a lot of description for the different projects and examples.'
     },
     {
       title: 'Bucketlist',
@@ -43,7 +43,7 @@ const apps = {
       imageName: 'coming-soon',
       tags: ['Javascript', 'Vue.js', 'Node'],
       tagline: 'Manage your travel bucket list and plan trips',
-      description: 'An app that I recently started working on, the idea is to use the skyscanner api and potentially the google maps api to make an app where people can keep track of the places they have been and want to go, and allow them to easily create trip plans based on their list and find cheap flights between destinations.'
+      description: 'An app that I recently started working on, the idea is to use the Skyscanner api and potentially the Google maps api to make an app where people can keep track of the places they have been and want to go, and allow them to easily create trip plans based on their list and find cheap flights between destinations.'
     },
   ]
 }
@@ -98,7 +98,7 @@ const maps = {
       imageName: 'tx_likely_voters',
       tags: ['QGIS', 'Illustrator'],
       tagline: 'Finding Likely Voters By Congressional District',
-      description: 'An example of one of the many types of maps I made for 0ptimus. This map shows likely voters in Texas for the 2016 presidential election. I added a graph to better indication to the viewer how the data is actually distributed.'
+      description: 'An example of one of the many types of maps I made for 0ptimus. This map shows likely voters in Texas for the 2016 presidential election. I added a graph to better indicate to the viewer how the data is actually distributed.'
     }
   ]
 }
