@@ -1,5 +1,5 @@
 <template>
-  <div :class="!mobile ? 'layout-container' : ''" style="position: relative; padding: 0;">
+  <div style="position: relative; padding: 0;">
     <div class="splash-tagline">
       <!-- <headline-animation class="tagline-title" style="font-size: 2.4em;"></headline-animation> -->
       <div class="tagline-title">Hello,</div>

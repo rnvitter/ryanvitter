@@ -1,6 +1,6 @@
 <template>
   <div id="navbar">
-    <div class="navbar-content layout-container">
+    <div class="navbar-content">
       <div class="header-title">Ryan Vitter</div>
 
       <div style="display: flex; align-items: center;">
@@ -150,6 +150,7 @@ export default {
   justify-content: space-between;
   align-items: center;
   margin: 10px auto;
+  padding: 0 20px;
 }
 
 .header-title {
