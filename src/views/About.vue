@@ -34,7 +34,7 @@
       </div>
       <div style="display: flex; align-items: center;">
         <v-divider class="mr-4"></v-divider>
-        <div class="skills-header more-title">Some Experience</div>
+        <div class="skills-header more-title">Additional Skills</div>
         <v-divider class="ml-4"></v-divider>
       </div>
       <div class="skills-wrapper">
@@ -44,13 +44,6 @@
         <span>ArcGIS</span>
         <span>PostgresSQL</span>
         <span>PostGIS</span>
-      </div>
-      <div style="display: flex; align-items: center;">
-        <v-divider class="mr-4"></v-divider>
-        <div class="skills-header more-title">Some Exposure</div>
-        <v-divider class="ml-4"></v-divider>
-      </div>
-      <div class="skills-wrapper">
         <span>Python</span>
         <span>Django</span>
         <span>GraphQL</span>
