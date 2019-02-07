@@ -14,9 +14,9 @@
           <li class="nav-menu-item" @click="toggleMenu">
             <div><a href="#maps">Maps</a></div>
           </li>
-          <li class="nav-menu-item" @click="toggleMenu">
+          <!-- <li class="nav-menu-item" @click="toggleMenu">
             <div><a href="#photos">Photos</a></div>
-          </li>
+          </li> -->
           <li class="nav-menu-item" @click="toggleMenu">
             <div><a href="#contact">Contact</a></div>
           </li>
