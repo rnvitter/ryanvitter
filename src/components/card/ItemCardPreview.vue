@@ -20,7 +20,7 @@
       </v-flex>
     </v-layout>
 
-    <item-flip :item="item" :src="src" :cardId="cardId" :flipped="flipped"></item-flip>
+    <item-flip :item="item" :cardId="cardId" :flipped="flipped"></item-flip>
 
     <div style="display: flex;" class="item-btns" v-if="showButtons">
       <a :href="item.link" target="_blank" class="item-link-preview mr-3" v-if="item.link">View</a>
@@ -49,10 +49,6 @@ const props = {
     default: false,
     require: false
   },
-  src: {
-    type: String,
-    required: false
-  },
   width: {
     type: String,
     required: false,
@@ -75,9 +71,6 @@ const components = {
 }
 
 const methods = {
-  getSrc () {
-    return this.src
-  },
   flipCard () {
     this.flipped = !this.flipped
     document.querySelector(`#${this.cardId}`).classList.toggle('flip')

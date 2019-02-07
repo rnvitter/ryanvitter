@@ -1,6 +1,8 @@
 const apps = {
   featuredApps: [
     {
+      section: 'featured',
+      type: 'apps',
       title: 'Election Results',
       link: 'https://results.decisiondeskhq.com/',
       imageName: 'election-results',
@@ -10,6 +12,8 @@ const apps = {
       details: 'I used Vue.js for our front end framework and Django as the backend framework. I worked on the front end, UI, and UX design of the app. The first design I worked with a designer and iterated and made changes from there. The goal of the app was to have a place users can see election results for primary and general elections in 2018. The main feature we wanted was a central place for people to have a quick overview of election night and view battleground races. I designed the home page to have a state of the race section at the top with a toggleable chart and map for viewing the overview of the house, senate and governor elections. The chart is an original design of mine inspired by Tetris, with each race being represented as a block and there’s two levels (polls open and polls closed) and four columns on the second level (> +10D, < +10D, <+10R, > +10R). I created by the chart and the map using custom D3. The second section of the page shows the battleground races which shows toggle able cards for each battleground race that shows a basic overview table and tags that show important information like race prediction and race status. Other features of the app include a page for viewing all elections by state and a detailed view for each race that has an overview table, a county overview table, an interactive D3 map, basic information pertaining to the race, and a detailed downloadable county results table. We also implemented a search feature, authentication, and log in blocking for certain views.'
     },
     {
+      section: 'featured',
+      type: 'apps',
       title: 'Statify',
       link: 'http://my-statify.herokuapp.com/',
       github: 'https://github.com/rnvitter/my-statify',
@@ -22,6 +26,8 @@ const apps = {
   ],
   moreApps: [
     {
+      section: 'more',
+      type: 'apps',
       title: 'Election Forecasting',
       link: 'https://0ptimus.decisiondeskhq.com/',
       imageName: 'forecasting',
@@ -30,6 +36,8 @@ const apps = {
       description: 'I developed this app while working at 0ptimus with one other person. I worked on the UI/UX design, front end code, and developed all the maps and charts from scratch with D3. I worked closely with the data scientists through several iterations to help make their vision for their work come to life.'
     },
     {
+      section: 'more',
+      type: 'apps',
       title: 'Portfolio V1',
       link: 'https://ryanvitter.herokuapp.com/',
       imageName: 'portfolioV1',
@@ -38,6 +46,8 @@ const apps = {
       description: 'In my first attempt at a portfolio site I used Vue.js for the front end, and Node.js for a simple backend for making calls to the Flickr api for the photos. I hosted the site on a free heroku server so the initial load is slow. I liked the simplicity of the site, however the horizontal carousels were not the most obvious to users and there was not a lot of description for the different projects and examples.'
     },
     {
+      section: 'more',
+      type: 'apps',
       title: 'Bucketlist',
       link: null,
       imageName: 'coming-soon',
@@ -51,6 +61,8 @@ const apps = {
 const maps = {
   featuredMaps: [
     {
+      section: 'featured',
+      type: 'maps',
       title: '0ptimus Poster',
       link: 'https://drive.google.com/file/d/0BxLnMO72hm-UM1VqZThtLXcxb3c/view?usp=sharing',
       imageName: '0ptimus_poster',
@@ -59,6 +71,8 @@ const maps = {
       description: 'A map I made for 0ptimus clients during the 2016 presidential campaign depicting designated market areas, congressional districts, and major cities. CDs are labled and DMAs are color coded in the key at the bottom, along with a graph of the top 30 DMAs. There are several insets for the major U.S. cities.'
     },
     {
+      section: 'featured',
+      type: 'maps',
       title: 'HDI and Terrorism',
       link: 'https://drive.google.com/file/d/0BxLnMO72hm-URUNxa3d1ejZrOW8/view?usp=sharing',
       imageName: 'human_development_and_terrorism',
@@ -69,6 +83,8 @@ const maps = {
   ],
   moreMaps: [
     {
+      section: 'more',
+      type: 'maps',
       title: 'GDP vs SPI',
       link: 'https://drive.google.com/file/d/0BxLnMO72hm-UbEZycFlkSzZVUms/view?usp=sharing',
       imageName: 'gdp_vs_spi',
@@ -77,6 +93,8 @@ const maps = {
       description: 'This map was made for one of my classes in college. I wanted to show the correlation between a countries GDP and it\'s social progress index. I used two different color scales and created a matrix for the legend to help visualize how those two varaibles change together in each country.'
     },
     {
+      section: 'more',
+      type: 'maps',
       title: 'The West Indies',
       link: 'https://drive.google.com/file/d/0BxLnMO72hm-UTU5kc3d0SHdCOVU/view?usp=sharing',
       imageName: 'west_indies_reference',
@@ -85,6 +103,8 @@ const maps = {
       description: 'In one of my GIS classes in college we had to create a reference map of the West Indies to scale. I started in ArcGIS, and then did the majority of the work in Illustrator for label placement and making it look clean and appealing.'
     },
     {
+      section: 'more',
+      type: 'maps',
       title: 'Google Trends & Political Issues',
       link: 'https://drive.google.com/file/d/0BxLnMO72hm-UR0NnMFEzRVRnOUk/view?usp=sharing',
       imageName: 'google_trends_political_issues',
@@ -93,6 +113,8 @@ const maps = {
       description: 'For my thesis my senior year of college I looked at whether you could use the Google search trends of different poltical topics to determine the political leanings of geographies.'
     },
     {
+      section: 'more',
+      type: 'maps',
       title: 'Texas Likely Voters',
       link: 'https://drive.google.com/file/d/0BxLnMO72hm-UNTJqOUczV0pERlk/view?usp=sharing',
       imageName: 'tx_likely_voters',
@@ -106,6 +128,8 @@ const maps = {
 const photos = {
   featuredPhotos: [
     {
+      section: 'featured',
+      type: 'photos',
       title: 'The Black White and Grey',
       yourshot: 'https://yourshot.nationalgeographic.com/photos/10685273/',
       imageName: 'bald_eagle',
@@ -113,6 +137,8 @@ const photos = {
       description: 'This is one of my favorite photos that I have taken, it is of a bald eagle in Juneau, Alaska that was shot. What I love about this photo is the contrast created by the use of black and white, and the differences in highlights and shadows on the different sides of her face.'
     },
     {
+      section: 'featured',
+      type: 'photos',
       title: 'Purple Wave',
       unsplash: 'https://unsplash.com/photos/DzHihgxNiko',
       imageName: 'antelope',

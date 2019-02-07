@@ -20,7 +20,7 @@
         </div>
       </v-flex>
       <v-flex xs12>
-        <item-flip :item="item" :src="src" :cardId="cardId" :flipped="flipped"></item-flip>
+        <item-flip :item="item" :cardId="cardId" :flipped="flipped"></item-flip>
       </v-flex>
       <v-flex xs12>
         <div style="display: flex; justify-content: center;">
@@ -35,7 +35,7 @@
 
     <v-layout row wrap v-else>
       <v-flex xs12 sm6>
-        <item-flip :item="item" :src="src" :cardId="cardId" :flipped="flipped"></item-flip>
+        <item-flip :item="item" :cardId="cardId" :flipped="flipped"></item-flip>
       </v-flex>
       <v-flex xs12 sm6 style="padding: 0 20px;">
         <div>
@@ -79,10 +79,6 @@ const props = {
   item: {
     type: Object,
     required: true
-  },
-  src: {
-    type: String,
-    required: false
   },
   showDetails: {
     type: Boolean,

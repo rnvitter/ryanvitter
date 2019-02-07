@@ -15,10 +15,10 @@
         <a :href="item.link" target=”_blank” style="text-decoration: none;">
           <img
             class="item-image item-image-override"
-            :src="getSrc()"
+            :srcset="getSrcSet()"
+            :src="getSrc(600)"
             width="100%"
-            height="auto">
-          </img>
+            height="auto"/>
         </a>
         <div style="display: flex;" class="item-btns">
           <a :href="item.unsplash" target="_blank" class="item-link mr-3" v-if="item.unsplash">Unsplash</a>
@@ -32,10 +32,10 @@
         <a :href="item.link" target=”_blank” style="text-decoration: none;">
           <img
             class="item-image item-image-override"
-            :src="getSrc()"
+            :srcset="getSrcSet()"
+            :src="getSrc(600)"
             width="100%"
-            height="auto">
-          </img>
+            height="auto"/>
         </a>
       </v-flex>
       <v-flex xs12 sm6 style="padding: 0 20px;">
@@ -72,8 +72,23 @@ const computed = {
 }
 
 const methods = {
-  getSrc () {
-    return require('@/static/img/photos/' + this.item.imageName + '-min.jpg')
+  getSrc (size) {
+    const item = this.item
+    return require(`@/static/img/previews/featured/${size}/photos/${item.imageName}-${size}.jpg`)
+  },
+  getSrcSet () {
+    if (this.item.section === 'featured') {
+      return `
+        ${this.getSrc(375)} 375w,
+        ${this.getSrc(420)} 420w,
+        ${this.getSrc(600)} 600w
+      `
+    } else {
+      return `
+        ${this.getSrc(375)} 375w,
+        ${this.getSrc(580)} 580w,
+      `
+    }
   }
 }
 

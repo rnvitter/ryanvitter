@@ -1,16 +1,16 @@
 <template>
-  <div class="flip-container">
-    <div :id="cardId" class="flipper" :style="`height: ${height}px;`">
-      <div class="front">
+  <div class="item-toggle-container">
+    <div :id="cardId" class="toggle">
+      <div class="front" v-if="!flipped">
         <a :href="item.link" target=”_blank” style="text-decoration: none;">
           <img
             class="item-image"
-            :src="getSrc()"
-            width="100%">
-          </img>
+            :srcset="getSrcSet()"
+            width="100%"
+            :src="getSrc(item.section === 'featured' ? 600 : 580)"/>
         </a>
       </div>
-      <div class="back" :style="`height: ${height}px;`">
+      <div class="back" v-else>
         <div class="detail-text" v-if="item.details">
           {{ item.details }}
         </div>
@@ -32,80 +32,58 @@ const props = {
     type: Object,
     required: true
   },
-  src: {
-    type: String,
-    required: true
-  },
   flipped: {
     type: Boolean,
     required: false
   }
 }
 
-const computed = {
-  height () {
-    const card = document.getElementById(this.cardId)
-    if (card) {
-      return document.getElementById(this.cardId).getElementsByClassName('front')[0].clientHeight
-    }
-  }
-}
-
 const methods = {
-  getSrc () {
-    return this.src
+  getSrc (size) {
+    const item = this.item
+    return require(`@/static/img/previews/${item.section}/${size}/${item.type}/${item.imageName}-${size}.jpg`)
+  },
+  getSrcSet () {
+    if (this.item.section === 'featured') {
+      return `
+        ${this.getSrc(375)} 375w,
+        ${this.getSrc(420)} 420w,
+        ${this.getSrc(600)} 600w
+      `
+    } else {
+      return `
+        ${this.getSrc(375)} 375w,
+        ${this.getSrc(580)} 580w,
+      `
+    }
+  },
+  getSizes () {
+    if (this.item.section === 'featured') {
+      return `
+        (max-width: 375px) 355px,
+        (max-width: 420px) 400px,
+        (max-width: 600px) 580px,
+        580px
+      `
+    } else {
+      return `
+        (max-width: 375px) 100%,
+        (max-width: 580px) 100%,
+        580px
+      `
+    }
   }
 }
 
 export default {
   props,
-  computed,
   methods
 }
 </script>
 
 <style>
-.flip-container {
-	position: relative;
-}
-
-.flip-container .flipper {
-  transform-origin: 100% calc(100% / 2);
-}
-
-.flip {
-  transform: rotateX(-180deg);
-}
-
-.flip-container, .front, .back {
-	height: auto;
-}
-
-.flipper {
-	transition: 0.6s;
-	transform-style: preserve-3d;
-	position: relative;
-  min-height: 200px;
-}
-
-.front, .back {
-	backface-visibility: hidden;
-	top: 0;
-	left: 0;
-}
-
 .front {
-	z-index: 2;
-	transform: rotateY(0deg);
-}
-
-.back {
-  position: absolute;
-  top: 0;
-  height: 100%;
-  overflow: auto;
-	transform: rotateX(180deg);
-  /* border: 1px solid #bdbdbd; */
+  text-align: center;
 }
 
 .detail-text {

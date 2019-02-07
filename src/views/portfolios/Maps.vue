@@ -6,7 +6,6 @@
         <item-card
           :cardId="`map-${index}`"
           :item="map"
-          :src="getSrc(map.imageName)"
           :showDetails="mobile">
         </item-card>
       </v-flex>
@@ -17,8 +16,7 @@
       <v-flex xs12 sm6 v-for="(map, index) in maps.moreMaps" :key="map.title">
         <item-card-preview
           :cardId="`map-${index + 2}`"
-          :item="map"
-          :src="getSrc(map.imageName)">
+          :item="map">
         </item-card-preview>
       </v-flex>
     </v-layout>
@@ -45,16 +43,9 @@ const computed = {
   }
 }
 
-const methods = {
-  getSrc (img) {
-    return require(`@/static/img/maps/${img}.jpg`)
-  }
-}
-
 export default {
   name: 'maps',
   components,
-  computed,
-  methods
+  computed
 }
 </script>
