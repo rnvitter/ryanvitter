@@ -4,7 +4,7 @@
       <!-- <headline-animation class="tagline-title" style="font-size: 2.4em;"></headline-animation> -->
       <div class="tagline-title">Hello,</div>
       <div class="tagline-title">I'm Ryan Vitter</div>
-      <div class="tagline-description">Developer / Cartographer / Photographer</div>
+      <div class="tagline-description">Developer / UX Designer / Cartographer</div>
       <div id="contact-me" @click="copyEmail">Contact Me</div>
       <div class="copied-text" v-if="copied">My email has been copied to your clipboard!</div>
     </div>

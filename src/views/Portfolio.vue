@@ -2,7 +2,7 @@
   <div class="portfolio">
     <projects></projects>
     <maps></maps>
-    <photos></photos>
+    <!-- <photos></photos> -->
     <contact></contact>
   </div>
 </template>

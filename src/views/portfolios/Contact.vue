@@ -1,5 +1,5 @@
 <template>
-  <div id="contact">
+  <div id="contact" style="margin-top: 80px;">
     <div style="padding: 0 20px;">
       <div class="contact-section app-container">
         <div class="contact-text">If you'd like to talk to me or have freelance work shoot me an email.</div>
