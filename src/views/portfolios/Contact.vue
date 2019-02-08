@@ -3,11 +3,11 @@
     <!-- <div class="section-title" style="color: #fff; padding-top: 80px;">Contact Me</div> -->
     <div style="padding: 0 20px;">
       <div class="contact-section app-container">
-        <div class="contact-text">If you have any questions or would like you work with me you can reach me at ryanvitter@gmail.com</div>
+        <div class="contact-text">If you have any questions or would like to work with me you can reach me at ryanvitter@gmail.com</div>
         <div id="email-btn" class="contact-btn" @click="copyEmail">Copy my email to your clipboard</div>
         <span id="copy-email" style="display: none;">ryanvitter@gmail.com</span>
         <div class="contact-text pb-2" style="color: #fff; font-weight: 500;" v-if="copied">My email has been copied to your clipboard!</div>
-        <div class="contact-text">I also have a photography site with my portfolio and am available for hire.</div>
+        <div class="contact-text">I also have a photography site with my portfolio and I am available for hire.</div>
         <a href="https://www.rnv-photo.com/" target="_blank" class="contact-btn" style="text-decoration: none;">Go to rnv-photo.com</a>
         <div class="contact-text pt-2">You can also find me on these social media platforms as well.</div>
         <div>

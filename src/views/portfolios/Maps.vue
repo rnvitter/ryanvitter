@@ -2,7 +2,7 @@
   <div id="maps">
     <div class="section-title">Featured Maps</div>
     <v-layout row wrap class="app-container">
-      <v-flex xs12 v-for="(map, index) in maps.featuredMaps" :key="map.title">
+      <v-flex xs12 v-for="map in maps.featuredMaps" :key="map.title">
         <item-card
           :item="map"
           :showDetails="mobile">
@@ -12,7 +12,7 @@
         <div class="more-title">More Maps</div>
         <v-divider class="ml-4"></v-divider>
       </v-flex>
-      <v-flex xs12 sm6 v-for="(map, index) in maps.moreMaps" :key="map.title">
+      <v-flex xs12 sm6 v-for="map in maps.moreMaps" :key="map.title">
         <item-card-preview
           :item="map">
         </item-card-preview>
