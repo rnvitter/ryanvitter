@@ -1,22 +1,20 @@
 <template>
-  <div class="item-toggle-container">
-    <div :id="cardId" class="toggle">
-      <div class="front" v-if="!flipped">
-        <a :href="item.link" target=”_blank” style="text-decoration: none;">
-          <img
-            class="item-image"
-            :srcset="getSrcSet()"
-            width="100%"
-            :src="getSrc(item.section === 'featured' ? 600 : 580)"/>
-        </a>
+  <div class="image-wrapper">
+    <div class="front" :style="showOverlay ? 'opacity: 0.1;' : 'opacity: 1;'">
+      <a :href="item.link" target=”_blank” style="text-decoration: none;">
+        <img
+          class="item-image"
+          :srcset="getSrcSet()"
+          width="100%"
+          :src="getSrc(item.section === 'featured' ? 600 : 580)"/>
+      </a>
+    </div>
+    <div class="overlay" :style="showOverlay ? 'opacity: 1;' : 'opacity: 0;'">
+      <div class="detail-text" v-if="item.details">
+        {{ item.details }}
       </div>
-      <div class="back" v-else>
-        <div class="detail-text" v-if="item.details">
-          {{ item.details }}
-        </div>
-        <div class="detail-text" v-else-if="!item.details && item.description">
-          {{ item.description }}
-        </div>
+      <div class="detail-text" v-else-if="!item.details && item.description">
+        {{ item.description }}
       </div>
     </div>
   </div>
@@ -24,15 +22,11 @@
 
 <script>
 const props = {
-  cardId: {
-    type: String,
-    required: true
-  },
   item: {
     type: Object,
     required: true
   },
-  flipped: {
+  showOverlay: {
     type: Boolean,
     required: false
   }
@@ -82,14 +76,28 @@ export default {
 </script>
 
 <style>
+.image-wrapper {
+  position: relative;
+}
+
 .front {
   text-align: center;
+  transition: .5s ease;
+}
+
+.overlay {
+  position: absolute;
+  top: 0px;
+  padding: 20px;
+  height: 100%;
+  overflow: auto;
+  transition: 1s ease;
 }
 
 .detail-text {
-  font-size: 1.1em;
-  font-weight: 500;
-  opacity: 0.5;
+  color: #333;
+  font-size: 1.4em;
+  font-weight: 300;
 }
 
 @media only screen and (max-width: 960px) {

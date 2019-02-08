@@ -3,14 +3,14 @@
     <div class="section-title">Featured Projects</div>
     <v-layout row wrap class="app-container">
       <v-flex xs12 v-for="(app, index) in apps.featuredApps" :key="app.title">
-        <item-card :cardId="`app-${index}`" :item="app"></item-card>
+        <item-card :item="app"></item-card>
       </v-flex>
       <v-flex xs12 style="display: flex; align-items: center;">
         <div class="more-title">More Projects</div>
         <v-divider class="ml-4"></v-divider>
       </v-flex>
       <v-flex xs12 sm6 v-for="(app, index) in apps.moreApps" :key="app.title">
-        <item-card-preview :cardId="`app-${index + 2}`" :item="app"></item-card-preview>
+        <item-card-preview :item="app"></item-card-preview>
       </v-flex>
     </v-layout>
   </div>

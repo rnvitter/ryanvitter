@@ -4,7 +4,6 @@
     <v-layout row wrap class="app-container">
       <v-flex xs12 v-for="(map, index) in maps.featuredMaps" :key="map.title">
         <item-card
-          :cardId="`map-${index}`"
           :item="map"
           :showDetails="mobile">
         </item-card>
@@ -15,7 +14,6 @@
       </v-flex>
       <v-flex xs12 sm6 v-for="(map, index) in maps.moreMaps" :key="map.title">
         <item-card-preview
-          :cardId="`map-${index + 2}`"
           :item="map">
         </item-card-preview>
       </v-flex>

@@ -8,7 +8,7 @@ const apps = {
       imageName: 'election-results',
       tags: ['Javascript', 'Vue.js', 'D3', 'Python'],
       tagline: '2018 Live Election Night Dashboard',
-      description: 'I developed this app while working at 0ptimus with one other person. I worked on the UI/UX design, front end code, and developed all the maps and charts from scratch with D3. We had upwards of 1,500 people on the site at a time during election night.',
+      description: 'I developed this app while working at 0ptimus. I worked on the UI/UX design, front end code, and developed all the maps and charts from scratch with D3. We had upwards of 1,500 people on the site at a time during election night.',
       details: 'I used Vue.js for our front end framework and Django as the backend framework. I worked on the front end, UI, and UX design of the app. The first design I worked with a designer and iterated and made changes from there. The goal of the app was to have a place users can see election results for primary and general elections in 2018. The main feature we wanted was a central place for people to have a quick overview of election night and view battleground races. I designed the home page to have a state of the race section at the top with a toggleable chart and map for viewing the overview of the house, senate and governor elections. The chart is an original design of mine inspired by Tetris, with each race being represented as a block and there’s two levels (polls open and polls closed) and four columns on the second level (> +10D, < +10D, <+10R, > +10R). I created by the chart and the map using custom D3. The second section of the page shows the battleground races which shows toggle able cards for each battleground race that shows a basic overview table and tags that show important information like race prediction and race status. Other features of the app include a page for viewing all elections by state and a detailed view for each race that has an overview table, a county overview table, an interactive D3 map, basic information pertaining to the race, and a detailed downloadable county results table. We also implemented a search feature, authentication, and log in blocking for certain views.'
     },
     {
@@ -33,7 +33,7 @@ const apps = {
       imageName: 'forecasting',
       tags: ['Javascript', 'Vue.js', 'D3', 'Python'],
       tagline: 'Election Forecasting for the 2018 Elections',
-      description: 'I developed this app while working at 0ptimus with one other person. I worked on the UI/UX design, front end code, and developed all the maps and charts from scratch with D3. I worked closely with the data scientists through several iterations to help make their vision for their work come to life.'
+      description: 'I developed this app while working at 0ptimus. I worked on the UI/UX design, front end code, and developed all the maps and charts from scratch with D3. I worked closely with the data scientists through several iterations to help make their vision for their work come to life.'
     },
     {
       section: 'more',
@@ -48,12 +48,12 @@ const apps = {
     {
       section: 'more',
       type: 'apps',
-      title: 'Bucketlist',
+      title: 'Spotify Social',
       link: null,
       imageName: 'coming-soon',
-      tags: ['Javascript', 'Vue.js', 'Node'],
-      tagline: 'Manage your travel bucket list and plan trips',
-      description: 'An app that I recently started working on, the idea is to use the Skyscanner api and potentially the Google maps api to make an app where people can keep track of the places they have been and want to go, and allow them to easily create trip plans based on their list and find cheap flights between destinations.'
+      tags: ['Javascript', 'Vue.js', 'Django'],
+      tagline: 'A new way to discover your music trends and share songs with friends',
+      description: 'Built using the Spotify Web and Web Playback APIs with a django backend'
     },
   ]
 }

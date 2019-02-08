@@ -20,12 +20,12 @@
       </v-flex>
     </v-layout>
 
-    <item-flip :item="item" :cardId="cardId" :flipped="flipped"></item-flip>
+    <item-flip :item="item" :showOverlay="showOverlay"></item-flip>
 
     <div style="display: flex;" class="item-btns" v-if="showButtons">
       <a :href="item.link" target="_blank" class="item-link-preview mr-3" v-if="item.link">View</a>
-      <a @click="flipCard" class="item-link mr-3">
-        {{ flipped ? 'Image' : 'Details' }}
+      <a @click="showOverlay = !showOverlay" class="item-link mr-3">
+        {{ showOverlay ? 'Less' : 'Details' }}
       </a>
       <a :href="item.github" target="_blank" class="item-link-preview ml-3" v-if="item.github">Github</a>
     </div>
@@ -36,10 +36,6 @@
 import ItemFlip from './components/ItemFlip'
 
 const props = {
-  cardId: {
-    type: String,
-    required: true
-  },
   item: {
     type: Object,
     required: true
@@ -70,20 +66,12 @@ const components = {
   ItemFlip
 }
 
-const methods = {
-  flipCard () {
-    this.flipped = !this.flipped
-    document.querySelector(`#${this.cardId}`).classList.toggle('flip')
-  }
-}
-
 export default {
   props,
   components,
-  methods,
   data () {
     return {
-      flipped: false
+      showOverlay: false
     }
   }
 }
