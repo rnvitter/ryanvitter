@@ -13,9 +13,6 @@
       <!-- <li class="mobile-nav-menu-item" @click="toggleMenu">
         <div><a href="#photos">Photos</a></div>
       </li> -->
-      <li class="mobile-nav-menu-item" @click="toggleMenu">
-        <div><a href="#contact">Contact</a></div>
-      </li>
     </ul>
   </div>
 </template>

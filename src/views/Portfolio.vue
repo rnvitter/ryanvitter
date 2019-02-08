@@ -3,15 +3,13 @@
     <projects></projects>
     <maps></maps>
     <!-- <photos></photos> -->
-    <contact></contact>
   </div>
 </template>
 
 <script>
-import { Contact, Maps, Projects, Photos } from './portfolios'
+import { Maps, Projects, Photos } from './portfolios'
 
 const components = {
-  Contact,
   Maps,
   Projects,
   Photos

@@ -8,6 +8,7 @@
         <about></about>
         <portfolio></portfolio>
       </div>
+      <rv-footer></rv-footer>
     </div>
   </v-app>
 </template>
@@ -15,13 +16,14 @@
 <script>
 import { mapActions, mapGetters } from 'vuex'
 
-import { Navbar, NavMenu } from '@/components/layout'
+import { RvFooter, Navbar, NavMenu } from '@/components/layout'
 import About from './views/About'
 import Portfolio from './views/Portfolio'
 import SplashPage from './views/SplashPage'
 
 const components = {
   About,
+  RvFooter,
   Navbar,
   NavMenu,
   Portfolio,
@@ -47,12 +49,6 @@ const methods = {
       this.setScreenWidth(document.documentElement.clientWidth)
       this.resizeTimeout = null
     }, 200)
-
-    // if (!this.mobile) {
-    //   const navbar = document.getElementById('navbar')
-    //   const portfolio = document.getElementById('portfolio-wrapper')
-    //   navbar.style.left = portfolio.clientWidth - 40 + 'px'
-    // }
   }
 }
 
