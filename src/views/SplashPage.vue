@@ -196,7 +196,7 @@ export default {
 
 .moto-letter {
   opacity: 0;
-  animation: 1s normal forwards letter-fade-in;
+  animation: 0.7s normal forwards letter-fade-in;
   animation-timing-function: ease-in;
   animation-delay: 1s;
 }
@@ -215,6 +215,7 @@ export default {
 
 @keyframes letter-fade-in {
   0% { opacity: 0; }
+  50% { opacity: 0.4; }
   100% { opacity: 1; }
 }
 
