@@ -5,6 +5,7 @@
         <div class="about-text mb-3 pb-2" style="color: #fff; font-weight: 400; letter-spacing: 0.1em; font-size: 1em;" v-if="copied">My email has been copied to your clipboard!</div>
         <div id="email-btn" class="contact-btn" @click="copyEmail">Get in touch by email</div>
         <div id="email-btn" class="contact-btn" @click="copyEmail">My photography site</div>
+        <span id="copy-email-footer" style="display: none;">ryanvitter@gmail.com</span>
       </div>
       <!-- <div class="footer-text pt-2">You can also find me on these social media platforms as well.</div> -->
       <div>
@@ -28,7 +29,7 @@ const computed = {
 
 const methods = {
   copyEmail () {
-    var email = document.getElementById('copy-email')
+    var email = document.getElementById('copy-email-footer')
     var textArea = document.createElement('textarea')
     textArea.value = email.textContent
     document.body.appendChild(textArea)

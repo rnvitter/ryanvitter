@@ -6,6 +6,7 @@
       <div class="tagline-title">I'm Ryan Vitter</div>
       <div class="tagline-description">Developer / UX Designer / Cartographer</div>
       <div id="contact-me" @click="copyEmail">Contact Me</div>
+      <span id="copy-email-splash" style="display: none;">ryanvitter@gmail.com</span>
       <div class="copied-text" v-if="copied">My email has been copied to your clipboard!</div>
     </div>
     <div class="moto">
@@ -53,7 +54,7 @@ const computed = {
 
 const methods = {
   copyEmail () {
-    var email = document.getElementById('copy-email')
+    var email = document.getElementById('copy-email-splash')
     var textArea = document.createElement('textarea')
     textArea.value = email.textContent
     document.body.appendChild(textArea)

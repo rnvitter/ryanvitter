@@ -30,7 +30,7 @@
           ryanvitter@gmail.com
         </span>
         <!-- <div id="email-btn" class="contact-btn" @click="copyEmail">Get in touch</div> -->
-        <span id="copy-email" style="display: none;">ryanvitter@gmail.com</span>
+        <span id="copy-email-about" style="display: none;">ryanvitter@gmail.com</span>
         <div class="about-text mt-3 pb-2" style="color: #ECBB11; font-weight: 500;" v-if="copied">My email has been copied to your clipboard!</div>
         <div style="margin: 40px 0;"></div>
         <div class="about-text">I am also available for hire for any photography job. You can find my portfolio and past shoots ony my photography website at </div>
@@ -77,7 +77,7 @@
 <script>
 const methods = {
   copyEmail () {
-    var email = document.getElementById('copy-email')
+    var email = document.getElementById('copy-email-about')
     var textArea = document.createElement('textarea')
     textArea.value = email.textContent
     document.body.appendChild(textArea)
