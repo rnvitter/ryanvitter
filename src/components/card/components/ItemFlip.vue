@@ -9,7 +9,7 @@
           :src="getSrc(item.section === 'featured' ? 600 : 580)"/>
       </a>
     </div>
-    <div class="overlay" :style="showOverlay ? 'opacity: 1;' : 'opacity: 0;'">
+    <div class="overlay" :style="showOverlay ? 'opacity: 1; pointer-events: auto;' : 'opacity: 0; pointer-events: none;'">
       <div class="detail-text" v-if="item.details">
         {{ item.details }}
       </div>

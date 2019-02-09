@@ -18,12 +18,6 @@
       </span>
       <br>
       <span class="moto-tagline">Keep It Simple Stupid</span>
-      <!-- <div class="load-wrapper">
-        <div class="load-bar">
-          <div class="bar"></div>
-          <div class="bar"></div>
-        </div>
-      </div> -->
     </div>
     <div class="splash-wrapper">
       <ul class="splash-image">
@@ -151,7 +145,7 @@ export default {
   opacity: 0;
   animation: 1s normal forwards letter-fade-in;
   animation-timing-function: ease-in;
-  animation-delay: 2s;
+  animation-delay: 3s;
 }
 
 .tagline-title {
@@ -218,39 +212,6 @@ export default {
   0% { opacity: 0; }
   50% { opacity: 0.4; }
   100% { opacity: 1; }
-}
-
-.load-wrapper {
-  position: absolute;
-  width: 100%;
-  margin-top: 10px;
-}
-
-.load-bar {
-  position: relative;
-  width: 100%;
-  height: 6px;
-  background-color: #fdba2c;
-}
-.bar {
-  content: "";
-  display: inline;
-  position: absolute;
-  left: 50%;
-  text-align: center;
-}
-
-.bar:nth-child(1) {
-  background-color: #333;
-}
-.bar:nth-child(2) {
-  background-color: #fdba2c;
-  animation: loading 3s linear 2s infinite;
-}
-@keyframes loading {
-  from { left: 0%; width: 0; z-index: 100 ;}
-  33.3333% { left: 50%; width: 100%; z-index: 10; }
-  to { left: 100%; width: 100%; }
 }
 
 #contact-me {
