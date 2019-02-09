@@ -54,7 +54,6 @@ const methods = {
 
 export default {
   name: 'splash-page',
-  components,
   computed,
   methods,
   data () {
