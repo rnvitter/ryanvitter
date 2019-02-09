@@ -10,9 +10,6 @@
       <li class="mobile-nav-menu-item" @click="toggleMenu">
         <div><a href="#maps">Maps</a></div>
       </li>
-      <!-- <li class="mobile-nav-menu-item" @click="toggleMenu">
-        <div><a href="#photos">Photos</a></div>
-      </li> -->
     </ul>
   </div>
 </template>

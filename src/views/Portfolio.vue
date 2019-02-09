@@ -2,17 +2,15 @@
   <div class="portfolio">
     <projects></projects>
     <maps></maps>
-    <!-- <photos></photos> -->
   </div>
 </template>
 
 <script>
-import { Maps, Projects, Photos } from './portfolios'
+import { Maps, Projects } from './portfolios'
 
 const components = {
   Maps,
-  Projects,
-  Photos
+  Projects
 }
 
 export default {

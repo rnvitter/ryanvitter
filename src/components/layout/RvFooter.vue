@@ -7,7 +7,6 @@
         <div id="email-btn" class="contact-btn" @click="copyEmail">My photography site</div>
         <span id="copy-email-footer" style="display: none;">ryanvitter@gmail.com</span>
       </div>
-      <!-- <div class="footer-text pt-2">You can also find me on these social media platforms as well.</div> -->
       <div>
         <a href="https://www.linkedin.com/in/rnvitter" target="_blank" class="icon icon-linkedin"></a>
         <a href="https://github.com/rnvitter" target="_blank" class="icon icon-github"></a>

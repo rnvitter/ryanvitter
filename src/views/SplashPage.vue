@@ -1,7 +1,6 @@
 <template>
   <div style="position: relative; padding: 0;">
     <div class="splash-tagline">
-      <!-- <headline-animation class="tagline-title" style="font-size: 2.4em;"></headline-animation> -->
       <div class="tagline-title">Hello,</div>
       <div class="tagline-title">I'm Ryan Vitter</div>
       <div class="tagline-description">Developer / UX Designer / Cartographer</div>
@@ -33,12 +32,6 @@
 
 <script>
 import { mapGetters } from 'vuex'
-
-import { HeadlineAnimation } from '@/components'
-
-const components = {
-  HeadlineAnimation
-}
 
 const computed = {
   ...mapGetters({
@@ -182,6 +175,10 @@ export default {
   animation: 0.5s normal forwards letter-slide;
   animation-timing-function: ease-in;
   animation-delay: 0.5s;
+  animation: 0.5s normal forwards letter-slide;
+  -webkit-animation: 0.5s normal forwards letter-slide;
+  -webkit-animation-timing-function: ease-in;
+  -webkit-animation-delay: 0.5s;
 }
 
 .moto-slash {
@@ -194,6 +191,9 @@ export default {
   animation: 0.7s normal forwards letter-fade-in;
   animation-timing-function: ease-in;
   animation-delay: 1s;
+  -webkit-animation: 0.7s normal forwards letter-fade-in;
+  -webkit-animation-timing-function: ease-in;
+  -webkit-animation-delay: 1s;
 }
 
 .moto-tagline {
@@ -201,6 +201,9 @@ export default {
   animation: 1s normal forwards letter-fade-in;
   animation-timing-function: ease-in;
   animation-delay: 1.5s;
+  -webkit-animation: 1s normal forwards letter-fade-in;
+  -webkit-animation-timing-function: ease-in;
+  -webkit-animation-delay: 1.5s;
 }
 
 @keyframes letter-slide {

@@ -14,9 +14,6 @@
           <li class="nav-menu-item" @click="toggleMenu">
             <div><a href="#maps">Maps</a></div>
           </li>
-          <!-- <li class="nav-menu-item" @click="toggleMenu">
-            <div><a href="#photos">Photos</a></div>
-          </li> -->
         </ul>
 
         <div class="kebab" @click="toggleMenuClick">
