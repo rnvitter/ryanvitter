@@ -125,6 +125,14 @@ export default {
   100% { opacity: 0; }
 }
 
+@-webkit-keyframes imageAnimation {
+  0% { opacity: 0; animation-timing-function: ease-in; }
+  4% { opacity: 1; }
+  22% { opacity: 1; }
+  32% { opacity: 0; }
+  100% { opacity: 0; }
+}
+
 .splash-tagline {
   position: absolute;
   bottom: 10vh;
@@ -211,7 +219,18 @@ export default {
   100% { letter-spacing: 0.1em; }
 }
 
+@-webkit-keyframes letter-slide {
+  0% { letter-spacing: -1em; }
+  100% { letter-spacing: 0.1em; }
+}
+
 @keyframes letter-fade-in {
+  0% { opacity: 0; }
+  50% { opacity: 0.4; }
+  100% { opacity: 1; }
+}
+
+@-webkit-keyframes letter-fade-in {
   0% { opacity: 0; }
   50% { opacity: 0.4; }
   100% { opacity: 1; }
