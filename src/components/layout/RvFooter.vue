@@ -55,7 +55,6 @@ export default {
 #footer {
   background-color: #333;
   color: #f5f5f5;
-  height: 100%;
   text-align: center;
 }
 
