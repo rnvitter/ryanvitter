@@ -49,7 +49,6 @@ const methods = {
   headerStyle () {
     const header = document.getElementById('navbar')
     const title = document.getElementsByClassName('header-title')[0]
-    const menu = document.getElementsByClassName('nav-menu-line')
     const scrollTop = window.scrollY
     const breakPoint = window.innerHeight - 20
     if ((scrollTop > breakPoint && !header.classList.contains('fixed-navbar') && this.mobile) || this.menu) {
@@ -62,7 +61,6 @@ const methods = {
     }
   },
   menuStyle () {
-    const kebab = document.querySelector('.kebab')
     const middle = document.querySelector('.middle')
     const cross = document.querySelector('.cross')
 
@@ -77,7 +75,6 @@ const methods = {
   toggleMenuClick () {
     const header = document.getElementById('navbar')
     const title = document.getElementsByClassName('header-title')[0]
-    const menu = document.getElementsByClassName('nav-menu-line')
     if (!header.classList.contains('fixed-navbar')) {
       header.classList.add('fixed-navbar')
       title.style.opacity = 1

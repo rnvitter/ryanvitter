@@ -2,14 +2,14 @@
   <div id="projects">
     <div class="section-title">Featured Projects</div>
     <v-layout row wrap class="app-container">
-      <v-flex xs12 v-for="(app, index) in apps.featuredApps" :key="app.title">
+      <v-flex xs12 v-for="app in apps.featuredApps" :key="app.title">
         <item-card :item="app"></item-card>
       </v-flex>
       <v-flex xs12 style="display: flex; align-items: center;">
         <div class="more-title">More Projects</div>
         <v-divider class="ml-4"></v-divider>
       </v-flex>
-      <v-flex xs12 sm6 v-for="(app, index) in apps.moreApps" :key="app.title">
+      <v-flex xs12 sm6 v-for="app in apps.moreApps" :key="app.title">
         <item-card-preview :item="app"></item-card-preview>
       </v-flex>
     </v-layout>
@@ -17,7 +17,6 @@
 </template>
 
 <script>
-import { mapGetters } from 'vuex'
 import { ItemCard, ItemCardPreview } from '@/components/card'
 import { apps } from '@/config.js'
 
