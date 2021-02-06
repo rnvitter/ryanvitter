@@ -121,24 +121,9 @@ export default {
   margin: 15px 10px 10px 0;
 }
 
-.item-link {
-  font-size: 18px;
-  margin-right: 10px;
-  font-weight: 600;
-  color: #333;
-  text-decoration: none;
-}
-
-.item-link:hover {
-  opacity: 0.85;
-}
-
-.item-image {
-  /* border: 1px solid #e9e9e9; */
-  /* border-radius: 4px; */
-  /* max-width: 500px; */
+/* .item-image {
   width: 100%;
-}
+} */
 
 .item-image:hover {
   opacity: 0.95;

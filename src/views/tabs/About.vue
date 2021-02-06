@@ -4,24 +4,10 @@
       <span class="about-text">
         I am a freelancer based in the DC area.
         My focus is on front end code and UX design.
-        My specialty is
+        My specialty is Vue, but I also have experience with Flutter, Illustrator, Lightroom, and QGIS.
+        I enjoy work the most when I am designing apps in Sketch, bringing them to life with JavaScript or Flutter
+        and working with people to improve the experience and overall look of the product.
       </span>
-      <span class="skill">Vue.js</span>
-      <span class="about-text">, but I also have experience with </span>
-      <span class="skill">Flutter</span>
-      <span class="about-text">, </span>
-      <span class="skill">Illustrator</span>
-      <span class="about-text">, </span>
-      <span class="skill">Lightroom</span>
-      <span class="about-text">, and </span>
-      <span class="skill">QGIS</span>
-      <span class="about-text">. </span>
-      <span class="about-text">I enjoy work the most when I am designing apps in Sketch, bringing them to life with </span>
-      <span class="skill">JavaScript</span>
-      <span class="about-text">or </span>
-      <span class="skill">Flutter</span>
-      <span class="about-text">and working with people to improve the experience and overall look of the product.</span>
-      <div style="margin: 20px 0;"></div>
       <div id="contact">
         <span class="about-text">If you have any kind of work including web design, app development, cartography, or photography you can reach me at </span>
         <span
@@ -46,7 +32,7 @@
         <span>Illustrator</span>
       </div>
       <div class="skills-header more-title">Additional Skills</div>
-      <div class="skills-wrapper">
+      <div class="skills-wrapper additional-skills">
         <span>Node</span>
         <span>Photoshop</span>
         <span>QGIS</span>
@@ -136,5 +122,9 @@ export default {
 
 .skills-wrapper span {
   margin: 3px 5px;
+}
+
+.additional-skills span, .skill {
+  background: var(--secondary);
 }
 </style>

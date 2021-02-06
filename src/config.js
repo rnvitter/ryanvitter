@@ -24,7 +24,7 @@ const apps = [
     imageName: 'ddhq_embeds',
     tags: ['Javascript', 'Vue.js', 'D3'],
     tagline: 'DDHQ Election Embeds',
-    description: 'Helped design and build a system which creates embeds that clients like Vox, Business Insider, and Buzzfeed can use to embed election results on their websites.'
+    description: 'I helped design and build a system which creates embeds that clients like Vox, Business Insider, and Buzzfeed can use to embed election results on their websites.'
   },
   {
     type: 'apps',
@@ -34,7 +34,7 @@ const apps = [
     imageName: 'remember_their_names',
     tags: ['Javascript', 'Vue.js', 'AWS S3'],
     tagline: '',
-    description: 'A website I created with my girlfriend as a resource for the Black Lives Matter movement. We coordinated a group of a volunteers to collect data and stories using Slack and Google Sheets. I designed the site in Sketch, built it with Vue and deployed the data to an AWS S3 bucket.',
+    description: 'A website I created with my girlfriend as a resource for the Black Lives Matter movement. We coordinated a group of volunteers to collect data and stories using Slack and Google Sheets. I designed the site in Sketch, built it with Vue and deployed the data to an AWS S3 bucket.',
   },
   {
     type: 'apps',
@@ -44,7 +44,7 @@ const apps = [
     imageName: 'statify',
     tags: ['Javascript', 'Vue.js', 'Node'],
     tagline: 'Tool For Discovering Your Music Trends',
-    description: 'App for discovering your top music over time and sharing it with friends. I created the entirety of this app as a personal project using vue, node, and the Spotify and the Bitly api. The app is hosted on a free Heroku server, so the initial load may be slow. You can check out the artists I\'ve been listening to the most <a class="link-text" href="https://bit.ly/3rnNgEu" target="_blank">here</a>.',
+    description: 'An app for discovering your top music over time and sharing it with friends. I created the entirety of this app as a personal project using vue, node, and the Spotify and the Bitly api. The app is hosted on a free Heroku server, so the initial load may be slow. You can check out the artists I\'ve been listening to the most <a class="link-text" href="https://bit.ly/3rnNgEu" target="_blank">here</a>.',
   }
 ]
 

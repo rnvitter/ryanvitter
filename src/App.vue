@@ -61,7 +61,7 @@ export default {
 }
 
 .app-container {
-  max-width: 1000px;
+  max-width: 1024px;
   margin: 0 auto;
 }
 
