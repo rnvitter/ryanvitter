@@ -1,40 +1,23 @@
 <template>
-  <v-app>
+  <div id="app">
     <div class="app-wrapper">
-      <navbar></navbar>
-      <nav-menu v-if="menu && mobile"></nav-menu>
       <div id="portfolio-wrapper">
-        <splash-page></splash-page>
-        <about></about>
+        <splash-screen></splash-screen>
         <portfolio></portfolio>
       </div>
-      <rv-footer></rv-footer>
     </div>
-  </v-app>
+  </div>
 </template>
 
 <script>
-import { mapActions, mapGetters } from 'vuex'
+import { mapActions } from 'vuex'
 
-import { RvFooter, Navbar, NavMenu } from '@/components/layout'
-import About from './views/About'
 import Portfolio from './views/Portfolio'
-import SplashPage from './views/SplashPage'
+import SplashScreen from './views/SplashScreen'
 
 const components = {
-  About,
-  RvFooter,
-  Navbar,
-  NavMenu,
   Portfolio,
-  SplashPage
-}
-
-const computed = {
-  ...mapGetters({
-    mobile: 'ux/mobile',
-    menu: 'ux/menu'
-  })
+  SplashScreen
 }
 
 const methods = {
@@ -55,16 +38,15 @@ const methods = {
 export default {
   name: 'App',
   components,
-  computed,
   methods,
   mounted () {
     this.getWindowSize()
     window.addEventListener('resize', this.getWindowSize)
     window.onbeforeunload = function() { window.scrollTo(0,0) }
   },
-  ready () {
-    window.scrollTo(0,0)
-  },
+  // ready () {
+  //   window.scrollTo(0,0)
+  // },
   beforeDestroy () {
     window.scrollTo(0,0)
     window.removeEventListener('resize', this.getWindowSize)
@@ -75,14 +57,15 @@ export default {
 <style>
 .app-wrapper {
   position: relative;
+  padding-bottom: 60px;
 }
 
 .app-container {
-  max-width: 1200px;
+  max-width: 1000px;
   margin: 0 auto;
 }
 
-@media only screen and (max-width: 1200px) {
+@media only screen and (max-width: 1000px) {
   .app-container {
     width: 100%;
   }

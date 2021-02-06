@@ -1,129 +1,109 @@
-const apps = {
-  featuredApps: [
-    {
-      section: 'featured',
-      type: 'apps',
-      title: 'Election Results',
-      link: 'https://results.decisiondeskhq.com/',
-      imageName: 'election-results',
-      tags: ['Javascript', 'Vue.js', 'D3', 'Python'],
-      tagline: '2018 Live Election Night Dashboard',
-      description: 'I developed this app while working at 0ptimus. I worked on the UI/UX design, front end code, and developed all the maps and charts from scratch with D3. We had upwards of 1,500 people on the site at a time during election night.',
-      details: 'I used Vue.js for our front end framework and Django as the backend framework. I worked on the front end, UI, and UX design of the app. The first design I worked with a designer and iterated and made changes from there. The goal of the app was to have a place users can see election results for primary and general elections in 2018. The main feature we wanted was a central place for people to have a quick overview of election night and view battleground races. I designed the home page to have a state of the race section at the top with a toggleable chart and map for viewing the overview of the house, senate and governor elections. The chart is an original design of mine inspired by Tetris, with each race being represented as a block and there’s two levels (polls open and polls closed) and four columns on the second level (> +10D, < +10D, <+10R, > +10R). I created by the chart and the map using custom D3. The second section of the page shows the battleground races which shows toggle able cards for each battleground race that shows a basic overview table and tags that show important information like race prediction and race status. Other features of the app include a page for viewing all elections by state and a detailed view for each race that has an overview table, a county overview table, an interactive D3 map, basic information pertaining to the race, and a detailed downloadable county results table. We also implemented a search feature, authentication, and log in blocking for certain views.'
-    },
-    {
-      section: 'featured',
-      type: 'apps',
-      title: 'Statify',
-      link: 'http://my-statify.herokuapp.com/',
-      github: 'https://github.com/rnvitter/my-statify',
-      imageName: 'statify',
-      tags: ['Javascript', 'Vue.js', 'Node'],
-      tagline: 'Tool For Discovering Your Music Trends',
-      description: 'App for discovering your top music over time and sharing it with friends. I created the entirety of this app as a personal project using vue, node, and the Spotify and bitly apis.',
-      details: 'I developed this app as a personal project so that I could learn Node.js. I created a simple node backend to make calls to the Spotify api and used Vue.js on the front end. I am a big fan of Spotify’s end of the year unwrapped app, however those only get released at the end of the year and I wanted to keep track of top artists and songs throughout the year. The goal of the app was to allow users to view their most listened to artists and songs over several different time periods, share them with friends, and create playlists from them. One feature of the app was allowing users to share their top songs and artists with friends. I did not want to have to store anything on a database so I made the decision to store all the information needed in the url. The function creates a url by taking the users name, the parameters the user entered, and all the ids of the songs or artists that the Spotify api returns, and creating a url from that. It then hits the Bitly api endpoint to create a shortened url for sharing. When a user clicks on one of the share links it will redirect to the share view of the app that uses all the information from the url to generate a view. Other features in this app include toggling by artist and songs, changing the number of items returned, filtering by three different time periods, and previewing a song or an artist’s top 5 songs. I particularly like the card style I designed for this app and the song animation that overlays each card when a song is playing. The app is hosted on a free heroku server so the initial load is slow.'
-    }
-  ],
-  moreApps: [
-    {
-      section: 'more',
-      type: 'apps',
-      title: 'Election Forecasting',
-      link: 'https://0ptimus.decisiondeskhq.com/',
-      imageName: 'forecasting',
-      tags: ['Javascript', 'Vue.js', 'D3', 'Python'],
-      tagline: 'Election Forecasting for the 2018 Elections',
-      description: 'I developed this app while working at 0ptimus. I worked on the UI/UX design, front end code, and developed all the maps and charts from scratch with D3. I worked closely with the data scientists through several iterations to help make their vision for their work come to life.'
-    },
-    {
-      section: 'more',
-      type: 'apps',
-      title: 'Portfolio V1',
-      link: 'https://ryanvitter.herokuapp.com/',
-      imageName: 'portfolioV1',
-      tags: ['Javascript', 'Vue.js', 'Node'],
-      tagline: 'The first version of my portfolio website',
-      description: 'In my first attempt at a portfolio site I used Vue.js for the front end, and Node.js for a simple backend for making calls to the Flickr api for the photos. I hosted the site on a free heroku server so the initial load is slow. I liked the simplicity of the site, however the horizontal carousels were not the most obvious to users and there was not a lot of description for the different projects and examples.'
-    },
-    {
-      section: 'more',
-      type: 'apps',
-      title: 'Spotify Social',
-      link: null,
-      imageName: 'coming-soon',
-      tags: ['Javascript', 'Vue.js', 'Django'],
-      tagline: 'A new way to discover your music trends and share songs with friends',
-      description: 'Built using the Spotify Web and Web Playback APIs with a django backend'
-    },
-  ]
-}
+const apps = [
+  {
+    type: 'apps',
+    title: 'DDHQ Results',
+    link: 'https://results.decisiondeskhq.com/',
+    imageName: 'ddhq_results',
+    tags: ['Javascript', 'Vue.js', 'D3'],
+    tagline: 'DDHQ Results',
+    description: 'I designed and developed this app for DDHQ. The goal was to allow users to search for and visualize election results. I designed it in Sketch and then developed it with Vue, Vuetify, and D3 for the maps. The site had around 500 million views during election week.'
+  },
+  {
+    type: 'apps',
+    title: 'DDHQ 2020 Forecasting',
+    link: 'https://forecast.decisiondeskhq.com/president',
+    imageName: 'ddhq_forecast',
+    tags: ['Javascript', 'Vue.js', 'D3'],
+    tagline: 'DDHQ Election Forecast',
+    description: 'This site was created for DDHQ to show their forecast predictions for the 2020 elections. I worked closely with their data scientists through several design iterations to help bring their work to life. The visualizations were custom built in D3.'
+  },
+  {
+    type: 'apps',
+    title: 'DDHQ Embeds',
+    link: 'https://ddhq.io/embeds/',
+    imageName: 'ddhq_embeds',
+    tags: ['Javascript', 'Vue.js', 'D3'],
+    tagline: 'DDHQ Election Embeds',
+    description: 'Helped design and build a system which creates embeds that clients like Vox, Business Insider, and Buzzfeed can use to embed election results on their websites.'
+  },
+  {
+    type: 'apps',
+    title: 'Remember Their Names',
+    link: 'https://remembertheirnames.io/',
+    github: 'https://github.com/rnvitter/remember_their_names',
+    imageName: 'remember_their_names',
+    tags: ['Javascript', 'Vue.js', 'AWS S3'],
+    tagline: '',
+    description: 'A website I created with my girlfriend as a resource for the Black Lives Matter movement. We coordinated a group of a volunteers to collect data and stories using Slack and Google Sheets. I designed the site in Sketch, built it with Vue and deployed the data to an AWS S3 bucket.',
+  },
+  {
+    type: 'apps',
+    title: 'Statify',
+    link: 'http://my-statify.herokuapp.com/',
+    github: 'https://github.com/rnvitter/my-statify',
+    imageName: 'statify',
+    tags: ['Javascript', 'Vue.js', 'Node'],
+    tagline: 'Tool For Discovering Your Music Trends',
+    description: 'App for discovering your top music over time and sharing it with friends. I created the entirety of this app as a personal project using vue, node, and the Spotify and the Bitly api. The app is hosted on a free Heroku server, so the initial load may be slow. You can check out the artists I\'ve been listening to the most <a class="link-text" href="https://bit.ly/3rnNgEu" target="_blank">here</a>.',
+  }
+]
 
-const maps = {
-  featuredMaps: [
-    {
-      section: 'featured',
-      type: 'maps',
-      title: '0ptimus Poster',
-      link: 'https://drive.google.com/file/d/0BxLnMO72hm-UM1VqZThtLXcxb3c/view?usp=sharing',
-      imageName: '0ptimus_poster',
-      tags: ['QGIS', 'Illustrator'],
-      tagline: 'Visualizing the poltical and advertising landscape of the U.S.',
-      description: 'A map I made for 0ptimus clients during the 2016 presidential campaign depicting designated market areas, congressional districts, and major cities. CDs are labled and DMAs are color coded in the key at the bottom, along with a graph of the top 30 DMAs. There are several insets for the major U.S. cities.'
-    },
-    {
-      section: 'featured',
-      type: 'maps',
-      title: 'HDI and Terrorism',
-      link: 'https://drive.google.com/file/d/0BxLnMO72hm-URUNxa3d1ejZrOW8/view?usp=sharing',
-      imageName: 'human_development_and_terrorism',
-      tags: ['ArcGIS', 'Illustrator'],
-      tagline: 'Is the HDI Index correlated with terrorism?',
-      description: 'I developed this poster for a group project my senior year. We looked at the correlation between the human development index of countries and prevalence of terrorism. I designed the poster by making the map the central part and using it to visually split it up by the regions we looked at.',
-    }
-  ],
-  moreMaps: [
-    {
-      section: 'more',
-      type: 'maps',
-      title: 'GDP vs SPI',
-      link: 'https://drive.google.com/file/d/0BxLnMO72hm-UbEZycFlkSzZVUms/view?usp=sharing',
-      imageName: 'gdp_vs_spi',
-      tags: ['ArcGIS', 'Illustrator'],
-      tagline: 'Measuring the Success of Countries',
-      description: 'This map was made for one of my classes in college. I wanted to show the correlation between a countries GDP and it\'s social progress index. I used two different color scales and created a matrix for the legend to help visualize how those two varaibles change together in each country.'
-    },
-    {
-      section: 'more',
-      type: 'maps',
-      title: 'The West Indies',
-      link: 'https://drive.google.com/file/d/0BxLnMO72hm-UTU5kc3d0SHdCOVU/view?usp=sharing',
-      imageName: 'west_indies_reference',
-      tags: ['ArcGIS', 'Illustrator'],
-      tagline: 'A reference map for the West Indies region',
-      description: 'In one of my GIS classes in college we had to create a reference map of the West Indies to scale. I started in ArcGIS, and then did the majority of the work in Illustrator for label placement and making it look clean and appealing.'
-    },
-    {
-      section: 'more',
-      type: 'maps',
-      title: 'Google Trends & Political Issues',
-      link: 'https://drive.google.com/file/d/0BxLnMO72hm-UR0NnMFEzRVRnOUk/view?usp=sharing',
-      imageName: 'google_trends_political_issues',
-      tags: ['ArcGIS', 'Illustrator'],
-      tagline: 'Can Google Trends Predict the Political Leanings of Geographies?',
-      description: 'For my thesis my senior year of college I looked at whether you could use the Google search trends of different poltical topics to determine the political leanings of geographies.'
-    },
-    {
-      section: 'more',
-      type: 'maps',
-      title: 'Texas Likely Voters',
-      link: 'https://drive.google.com/file/d/0BxLnMO72hm-UNTJqOUczV0pERlk/view?usp=sharing',
-      imageName: 'tx_likely_voters',
-      tags: ['QGIS', 'Illustrator'],
-      tagline: 'Finding Likely Voters By Congressional District',
-      description: 'An example of one of the many types of maps I made for 0ptimus. This map shows likely voters in Texas for the 2016 presidential election. I added a graph to better indicate to the viewer how the data is actually distributed.'
-    }
-  ]
-}
+const maps = [
+  {
+    type: 'maps',
+    title: '0ptimus Poster',
+    link: 'https://drive.google.com/file/d/0BxLnMO72hm-UM1VqZThtLXcxb3c/view?usp=sharing',
+    imageName: '0ptimus_poster',
+    tags: ['QGIS', 'Illustrator'],
+    tagline: 'Visualizing the poltical and advertising landscape of the U.S.',
+    description: 'A map I made for 0ptimus clients during the 2016 presidential campaign depicting designated market areas, congressional districts, and major cities. CDs are labled and DMAs are color coded in the key at the bottom, along with a graph of the top 30 DMAs. There are several insets for the major U.S. cities.'
+  },
+  {
+    type: 'maps',
+    title: 'HDI and Terrorism',
+    link: 'https://drive.google.com/file/d/0BxLnMO72hm-URUNxa3d1ejZrOW8/view?usp=sharing',
+    imageName: 'human_development_and_terrorism',
+    tags: ['ArcGIS', 'Illustrator'],
+    tagline: 'Is the HDI Index correlated with terrorism?',
+    description: 'I developed this poster for a group project my senior year. We looked at the correlation between the human development index of countries and prevalence of terrorism. I designed the poster by making the map the central part and using it to visually split it up by the regions we looked at.',
+  },
+  {
+    type: 'maps',
+    title: 'GDP vs SPI',
+    link: 'https://drive.google.com/file/d/0BxLnMO72hm-UbEZycFlkSzZVUms/view?usp=sharing',
+    imageName: 'gdp_vs_spi',
+    tags: ['ArcGIS', 'Illustrator'],
+    tagline: 'Measuring the Success of Countries',
+    description: 'This map was made for one of my classes in college. I wanted to show the correlation between a countries GDP and it\'s social progress index. I used two different color scales and created a matrix for the legend to help visualize how those two varaibles change together in each country.'
+  },
+  {
+    type: 'maps',
+    title: 'The West Indies',
+    link: 'https://drive.google.com/file/d/0BxLnMO72hm-UTU5kc3d0SHdCOVU/view?usp=sharing',
+    imageName: 'west_indies_reference',
+    tags: ['ArcGIS', 'Illustrator'],
+    tagline: 'A reference map for the West Indies region',
+    description: 'In one of my GIS classes in college we had to create a reference map of the West Indies to scale. I started in ArcGIS, and then did the majority of the work in Illustrator for label placement and making it look clean and appealing.'
+  },
+  {
+    type: 'maps',
+    title: 'Google Trends & Political Issues',
+    link: 'https://drive.google.com/file/d/0BxLnMO72hm-UR0NnMFEzRVRnOUk/view?usp=sharing',
+    imageName: 'google_trends_political_issues',
+    tags: ['ArcGIS', 'Illustrator'],
+    tagline: 'Can Google Trends Predict the Political Leanings of Geographies?',
+    description: 'For my thesis my senior year of college I looked at whether you could use the Google search trends of different poltical topics to determine the political leanings of geographies.'
+  },
+  {
+    type: 'maps',
+    title: 'Texas Likely Voters',
+    link: 'https://drive.google.com/file/d/0BxLnMO72hm-UNTJqOUczV0pERlk/view?usp=sharing',
+    imageName: 'tx_likely_voters',
+    tags: ['QGIS', 'Illustrator'],
+    tagline: 'Finding Likely Voters By Congressional District',
+    description: 'An example of one of the many types of maps I made for 0ptimus. This map shows likely voters in Texas for the 2016 presidential election. I added a graph to better indicate to the viewer how the data is actually distributed.'
+  }
+]
 
 export {
   apps,

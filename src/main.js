@@ -3,7 +3,6 @@ import './main.css'
 import Vue from 'vue'
 import VueResource from 'vue-resource'
 
-import './plugins/vuetify'
 import App from './App.vue'
 
 import store from './store'

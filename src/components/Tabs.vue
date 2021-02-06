@@ -1,0 +1,59 @@
+<template>
+  <div class="tabs">
+    <div
+      v-for="(item, index) in tabs"
+      :key="index"
+      @click="setTab(item)"
+      :class="tab === item ? 'selected-tab' : 'tab-item'">
+      {{ item }}
+    </div>
+  </div>
+</template>
+
+<script>
+import { mapActions, mapGetters } from 'vuex'
+
+const computed = {
+  ...mapGetters({
+    tab: 'ux/tab'
+  })
+}
+
+const methods = {
+  ...mapActions({
+    setTab: 'ux/setTab'
+  })
+}
+
+export default {
+  computed,
+  methods,
+  data: () => ({
+    tabs: ['Apps', 'Photos', 'About']
+  })
+}
+</script>
+
+<style>
+.tabs div {
+  display: inline-block;
+  margin: 0 10px;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+.tab-item {
+  opacity: 0.6;
+  font-weight: 400;
+}
+
+.tab-item:hover {
+  opacity: 0.9;
+}
+
+.selected-tab {
+  opacity: 1;
+  font-weight: 600;
+  border-bottom: 3px solid var(--primary);
+}
+</style>

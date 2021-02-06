@@ -6,7 +6,7 @@ const initialState = {
   screenWidth: 0,
   mobile: false,
   mobilePhone: false,
-  menu: false
+  tab: 'Apps'
 }
 
 const mutations = {
@@ -19,15 +19,18 @@ const mutations = {
   [types.SET_MOBILE_PHONE] (state, isMobile) {
     state.mobilePhone = isMobile
   },
-  [types.TOGGLE_MENU] (state) {
-    state.menu = !state.menu
+  [types.SET_TAB] (state, tab) {
+    state.tab = tab
   }
 }
 
 const actions = {
+  setTab: ({ commit }, tab) => {
+    commit(types.SET_TAB, tab)
+  },
   setWidth: ({ commit }, width) => {
     commit(types.SET_SCREEN_WIDTH, width)
-    if (width < 960) {
+    if (width < 800) {
       commit(types.SET_MOBILE, true)
     } else {
       commit(types.SET_MOBILE, false)
@@ -38,24 +41,21 @@ const actions = {
     } else {
       commit(types.SET_MOBILE_PHONE, false)
     }
-  },
-  toggleMenu: ({ commit }) => {
-    commit(types.TOGGLE_MENU)
   }
 }
 
 const getters = {
-  screenWidth (state) {
-    return state.screenWidth
-  },
   mobile (state) {
     return state.mobile
   },
   mobilePhone (state) {
     return state.mobilePhone
   },
-  menu (state) {
-    return state.menu
+  screenWidth (state) {
+    return state.screenWidth
+  },
+  tab (state) {
+    return state.tab
   }
 }
 

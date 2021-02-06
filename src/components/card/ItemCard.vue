@@ -1,14 +1,11 @@
 <template>
-  <div class="item-card">
-    <v-layout row wrap v-if="mobile">
-      <v-flex xs12>
+  <div class="item-card" @click="goTo">
+    <div class="layout" v-if="mobile">
+      <div class="centered">
         <div>
-          <div class="item-name-wrapper">
-            <h2 class="item-name">
-              {{ item.title }}
-            </h2>
-          </div>
-          <div class="item-tagline">{{ item.tagline }}</div>
+          <h2 class="item-name">
+            {{ item.title }}
+          </h2>
         </div>
         <div class="item-tags" v-if="item.tags">
           <span
@@ -18,33 +15,31 @@
             {{ tag }}
           </span>
         </div>
-      </v-flex>
-      <v-flex xs12>
+      </div>
+      <div class="centered">
         <item-flip :item="item" :showOverlay="showOverlay"></item-flip>
-      </v-flex>
-      <v-flex xs12>
-        <div style="display: flex; justify-content: center;">
-          <a :href="item.link" target="_blank" class="item-link mr-3">View</a>
-          <a @click="showOverlay = !showOverlay" class="item-link mr-3">
+      </div>
+      <div class="centered">
+          <a :href="item.link" target="_blank" class="item-link">View</a>
+          <a @click="showOverlay = !showOverlay" class="item-link">
             {{ showOverlay ? 'Less' : 'Details' }}
           </a>
           <a :href="item.github" target="_blank" class="item-link" v-if="item.github">Github</a>
-        </div>
-      </v-flex>
-    </v-layout>
+      </div>
+    </div>
 
-    <v-layout row wrap v-else>
-      <v-flex xs12 sm6>
+    <div class="layout" v-else>
+      <div style="width: 60%;">
         <item-flip :item="item" :showOverlay="showOverlay"></item-flip>
-      </v-flex>
-      <v-flex xs12 sm6 style="padding: 0 20px;">
-        <div>
-          <div class="item-name-wrapper">
-            <h2 class="item-name">
-              {{ item.title }}
-            </h2>
-          </div>
-          <div class="item-tagline">{{ item.tagline }}</div>
+      </div>
+      <div style="width: 40%;">
+        <div style="padding: 0 20px;">
+          <h2 class="item-name">
+            {{ item.title }}
+          </h2>
+          <!-- <div class="item-tagline">{{ item.tagline }}</div> -->
+          <div class="divider-line"></div>
+          <div class="item-description" style="margin-top: 0px;" v-html="item.description"></div>
           <div class="item-tags" v-if="item.tags">
             <span
               class="skill skill-tag"
@@ -54,22 +49,14 @@
             </span>
           </div>
         </div>
-        <div class="item-description" style="margin-top: 0px;">{{ item.description }}</div>
-        <div style="display: flex;">
-          <a :href="item.link" target="_blank" class="item-link mr-3">View</a>
-          <a @click="showOverlay = !showOverlay" class="item-link mr-3" v-if="showDetails">
-            {{ showOverlay ? 'Less' : 'Details' }}
-          </a>
-          <a :href="item.github" target="_blank" class="item-link" v-if="item.github">Github</a>
-        </div>
-      </v-flex>
-    </v-layout>
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
 import { mapGetters } from 'vuex'
-import ItemFlip from './components/ItemFlip'
+import ItemFlip from './ItemFlip'
 
 const props = {
   item: {
@@ -93,10 +80,18 @@ const computed = {
   })
 }
 
+const methods = {
+  goTo () {
+    if (this.mobile) return
+    window.open(this.item.link, '_blank');
+  }
+}
+
 export default {
   props,
   components,
   computed,
+  methods,
   data () {
     return {
       showOverlay: false
@@ -107,46 +102,28 @@ export default {
 
 <style>
 .item-card {
-  width: 100%;
-  margin: 60px 0;
-}
-
-.item-name-wrapper {
-  margin-bottom: 15px;
-  background-color: rgba(0,0,0,0.8);
-  width: calc(100% + ((100vw - 1200px) / 2 + 20px));
-  padding: 15px;
-  margin-bottom: 20px;
+  margin-bottom: 60px;
+  cursor: pointer;
 }
 
 .item-name {
-  color: #fff;
-  font-size: 2.6em;
+  color: var(--text-color);
+  font-size: 24px;
+  line-height: 26px;
   font-weight: 700;
-  letter-spacing: -0.02em;
-  line-height: 42px;
-}
-
-.item-tagline {
-  font-size: 1.8em;
-  font-weight: 700;
-  color: #333;
-  opacity: 0.3;
-  letter-spacing: -0.02em;
-  line-height: 28px;
-  margin-bottom: 10px;
 }
 
 .item-description {
-  font-size: 1.2em;
-  font-weight: 500;
-  color: #333;
-  opacity: 0.5;
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--text-color);
+  opacity: 0.7;
   margin: 15px 10px 10px 0;
 }
 
 .item-link {
-  font-size: 1.4em;
+  font-size: 18px;
+  margin-right: 10px;
   font-weight: 600;
   color: #333;
   text-decoration: none;
@@ -157,63 +134,32 @@ export default {
 }
 
 .item-image {
-  border: 1px solid #bdbdbd;
+  /* border: 1px solid #e9e9e9; */
+  /* border-radius: 4px; */
+  /* max-width: 500px; */
+  width: 100%;
 }
 
 .item-image:hover {
-  opacity: 0.85;
+  opacity: 0.95;
 }
 
 .item-tags {
+  margin: 5px 0 10px 0;
+}
+
+.item-tags .skill:first-child {
+  margin-left: 0 !important;
+}
+
+.centered {
+  width: 100%;
+  text-align: center;
+}
+
+.divider-line {
+  width: 70px;
+  border-bottom: 1px solid #e9e9e9;
   margin: 10px 0;
-}
-
-@media only screen and (max-width: 1200px) {
-  .item-name-wrapper {
-    width: calc(100% + 20px);
-  }
-}
-
-@media only screen and (max-width: 960px) {
-  .item-name-wrapper {
-    margin-bottom: 0px;
-    background-color: rgba(0,0,0,0);
-    width: 100%;
-  }
-
-  .item-name {
-    color: #333;
-    font-size: 2.4em;
-  }
-
-  .item-tagline {
-    font-size: 1.6em;
-    padding-bottom: 10px;
-  }
-
-  .item-description {
-    font-size: 1em;
-  }
-
-  .item-name,
-  .item-tagline,
-  .item-tags {
-    text-align: center;
-  }
-
-  .item-image {
-    margin: 10px 0;
-  }
-}
-
-@media only screen and (max-width: 420px) {
-  .item-name-wrapper {
-    padding: 10px 15px;
-  }
-
-  .item-name {
-    font-size: 2.2em;
-    letter-spacing: 0em;
-  }
 }
 </style>
