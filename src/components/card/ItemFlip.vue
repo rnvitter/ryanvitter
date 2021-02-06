@@ -12,9 +12,7 @@
       <div class="detail-text" v-if="item.details">
         {{ item.details }}
       </div>
-      <div class="detail-text" v-else-if="!item.details && item.description">
-        {{ item.description }}
-      </div>
+      <div class="detail-text" v-else-if="!item.details && item.description" v-html="item.description"></div>
     </div>
   </div>
 </template>
@@ -61,9 +59,9 @@ export default {
   position: absolute;
   top: 0px;
   padding: 20px;
-  height: 100%;
+  height: calc(100% - 30px);
   overflow: auto;
-  transition: 1s ease;
+  transition: 0.5s ease;
 }
 
 .detail-text {

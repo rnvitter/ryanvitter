@@ -19,7 +19,7 @@
       <div class="centered">
         <item-flip :item="item" :showOverlay="showOverlay"></item-flip>
       </div>
-      <div class="centered">
+      <div class="centered" style="margin-top: 10px;">
           <a :href="item.link" target="_blank" class="item-link">View</a>
           <a @click="showOverlay = !showOverlay" class="item-link">
             {{ showOverlay ? 'Less' : 'Details' }}
