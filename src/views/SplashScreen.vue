@@ -100,10 +100,6 @@ export default {
   background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url(../static/img/background.jpg);
 }
 
-.splash-image:hover {
-  filter: grayscale(0%);
-}
-
 @keyframes imageAnimation {
   0% { opacity: 0; animation-timing-function: ease-in; }
   4% { opacity: 1; }
