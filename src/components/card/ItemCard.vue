@@ -104,20 +104,18 @@ export default {
     }
   },
   mounted () {
-    const callback = function(entries) {
-      let el = entries[0]
-      el.isIntersecting ? el.target.classList.add('visible-card') : el.target.classList.remove('visible-card')
-    }
     const options = {
-      root: el,
+      root: null,
       rootMargin: '0px 0px -10% 0px',
       threshold: 1
     }
-    const el = this.$refs[`item-card-${this.index}`]
-    this.observer = new IntersectionObserver(callback, options)
-    this.observer.observe(el)
+    this.observer = new IntersectionObserver((entry) => {
+      let el = entry[0]
+      el.isIntersecting ? el.target.classList.add('visible-card') : el.target.classList.remove('visible-card')
+    }, options)
+    this.observer.observe(this.$el)
   },
-  beforeDestroy() {
+  beforeDestroy () {
     if (this.observer) {
       this.observer.disconnect()
     }

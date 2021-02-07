@@ -33,7 +33,7 @@ export default {
 
 .photo {
   display: inline-block;
-  width: calc(33% - 2px);
+  width: calc(33.333% - 2px);
   padding: 1px;
   float: left;
 }
