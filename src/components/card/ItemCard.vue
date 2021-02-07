@@ -121,9 +121,17 @@ export default {
   margin: 15px 10px 10px 0;
 }
 
-/* .item-image {
-  width: 100%;
-} */
+.item-link {
+  font-size: 18px;
+  margin-right: 10px;
+  font-weight: 600;
+  color: var(--text-color);
+  text-decoration: none;
+}
+
+.item-link:hover {
+  opacity: 0.85;
+}
 
 .item-image:hover {
   opacity: 0.95;

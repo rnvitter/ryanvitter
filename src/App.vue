@@ -65,7 +65,7 @@ export default {
   margin: 0 auto;
 }
 
-@media only screen and (max-width: 1000px) {
+@media only screen and (max-width: 1024px) {
   .app-container {
     width: 100%;
   }
