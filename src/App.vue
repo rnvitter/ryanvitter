@@ -39,7 +39,7 @@ export default {
   name: 'App',
   components,
   methods,
-  mounted () {
+  beforeMount () {
     this.getWindowSize()
     window.addEventListener('resize', this.getWindowSize)
     window.onbeforeunload = function() { window.scrollTo(0,0) }

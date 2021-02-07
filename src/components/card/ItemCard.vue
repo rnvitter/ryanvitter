@@ -1,5 +1,5 @@
 <template>
-  <div class="item-card" @click="goTo">
+  <div :ref="`item-card-${index}`" class="item-card" @click="goTo">
     <div class="layout" v-if="mobile">
       <div class="centered">
         <div>
@@ -63,6 +63,10 @@ const props = {
     type: Object,
     required: true
   },
+  index : {
+    type: Number,
+    required: true
+  },
   showDetails: {
     type: Boolean,
     required: false,
@@ -76,14 +80,15 @@ const components = {
 
 const computed = {
   ...mapGetters({
-    mobile: 'ux/mobile'
+    mobile: 'ux/mobile',
+    screenWidth: 'ux/screenWidth'
   })
 }
 
 const methods = {
   goTo () {
     if (this.mobile) return
-    window.open(this.item.link, '_blank');
+    window.open(this.item.link, '_blank')
   }
 }
 
@@ -94,7 +99,27 @@ export default {
   methods,
   data () {
     return {
+      observer: null,
       showOverlay: false
+    }
+  },
+  mounted () {
+    const callback = function(entries) {
+      let el = entries[0]
+      el.isIntersecting ? el.target.classList.add('visible-card') : el.target.classList.remove('visible-card')
+    }
+    const options = {
+      root: el,
+      rootMargin: '0px 0px -10% 0px',
+      threshold: 1
+    }
+    const el = this.$refs[`item-card-${this.index}`]
+    this.observer = new IntersectionObserver(callback, options)
+    this.observer.observe(el)
+  },
+  beforeDestroy() {
+    if (this.observer) {
+      this.observer.disconnect()
     }
   }
 }
@@ -154,5 +179,29 @@ export default {
   width: 70px;
   border-bottom: 1px solid #e9e9e9;
   margin: 10px 0;
+}
+
+.visible-card img {
+  transform: scale(1.1);
+}
+
+.visible-card .item-name {
+  transition: ease 0.5s;
+  color: var(--primary);
+}
+
+.visible-card .skill-tag {
+  transition: ease 0.5s;
+  background-color: var(--primary) !important;
+}
+
+.visible-card .divider-line {
+  transition: ease 0.5s;
+  border-bottom: 1px solid var(--primary);
+}
+
+.visible-card .item-description {
+  transition: ease 0.5s;
+  opacity: 0.9;
 }
 </style>

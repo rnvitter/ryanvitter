@@ -2,8 +2,8 @@
   <div id="projects">
     <div class="app-container">
       <div class="layout">
-        <div class="xs12" v-for="app in apps" :key="app.title">
-          <item-card :item="app"></item-card>
+        <div class="xs12" v-for="(app, index) in apps" :key="app.title">
+          <item-card :item="app" :index="index"></item-card>
         </div>
       </div>
     </div>

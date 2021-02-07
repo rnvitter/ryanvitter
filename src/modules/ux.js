@@ -29,6 +29,7 @@ const actions = {
     commit(types.SET_TAB, tab)
   },
   setWidth: ({ commit }, width) => {
+    console.log(width)
     commit(types.SET_SCREEN_WIDTH, width)
     if (width < 800) {
       commit(types.SET_MOBILE, true)
