@@ -4,7 +4,8 @@
       <img
         v-for="n in 9" :key="n"
         class="photo"
-        :src="getSrc(n)"/>
+        :src="getSrc(n)"
+        :alt="`photo-${n}`"/>
     </div>
     <div class="insta-link-text">
       See more of my photography on <a class="link-text" href="https://www.instagram.com/ryanvitter/" target="_blank">Instagram</a>

@@ -8,9 +8,9 @@
       <div class="tagline-footer">
         <div id="contact-me" @click="copyEmail">Contact Me</div>
         <div>
-          <a href="https://www.linkedin.com/in/rnvitter" target="_blank" class="icon icon-linkedin"></a>
-          <a href="https://github.com/rnvitter" target="_blank" class="icon icon-github"></a>
-          <a href="https://www.instagram.com/ryanvitter/" target="_blank" class="icon icon-instagram"></a>
+          <a href="https://www.linkedin.com/in/rnvitter" aria-label="Linkedin" target="_blank" class="icon icon-linkedin"></a>
+          <a href="https://github.com/rnvitter" aria-label="Github" target="_blank" class="icon icon-github"></a>
+          <a href="https://www.instagram.com/ryanvitter/" aria-label="Instagram" target="_blank" class="icon icon-instagram"></a>
         </div>
       </div>
       <span id="copy-email-splash" style="display: none;">ryanvitter@gmail.com</span>

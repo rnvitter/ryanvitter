@@ -4,7 +4,8 @@
       <img
         class="item-image"
         width="100%"
-        :src="getSrc()"/>
+        :src="getSrc()"
+        :alt="item.imageName"/>
     </div>
     <div class="overlay" :style="showOverlay ? 'opacity: 1; pointer-events: auto;' : 'opacity: 0; pointer-events: none;'">
       <div class="detail-text" v-if="item.details">
