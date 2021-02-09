@@ -38,7 +38,7 @@ a {
 
 .link-text {
   color: var(--text-color) !important;
-  font-weight: 500;
+  font-weight: 700;
   padding-bottom: 1px;
   border-bottom: 3px solid var(--primary);
   text-decoration: none;

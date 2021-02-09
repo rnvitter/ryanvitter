@@ -131,7 +131,7 @@ export default {
 
 .tagline-title {
   font-size: 36px;
-  font-weight: 600;
+  font-weight: 700;
   letter-spacing: -0.5px;
   line-height: 38px;
 }

@@ -134,7 +134,7 @@ export default {
 .item-link {
   font-size: 18px;
   margin-right: 10px;
-  font-weight: 600;
+  font-weight: 700;
   color: var(--text-color);
   text-decoration: none;
 }

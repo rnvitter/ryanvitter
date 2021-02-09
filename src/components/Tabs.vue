@@ -45,7 +45,7 @@ export default {
 
 .selected-tab {
   opacity: 1;
-  font-weight: 600;
+  font-weight: 700;
   border-bottom: 3px solid var(--primary);
 }
 </style>

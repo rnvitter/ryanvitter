@@ -92,7 +92,7 @@ export default {
   color: var(--text-color);
   border-bottom: 2px solid var(--primary);
   padding-bottom: 1px;
-  font-weight: 500;
+  font-weight: 700;
 }
 
 .link-text:hover {
@@ -102,10 +102,9 @@ export default {
 
 .skills-header {
   margin: 20px 0;
-  font-size: 1.2em !important;
-  font-weight: 500;
+  font-size: 18px;
   font-weight: 300;
-  letter-spacing: 0.05em;
+  letter-spacing: 1px;
 }
 
 .skills-wrapper span, .skill {
