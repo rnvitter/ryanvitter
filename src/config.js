@@ -10,6 +10,15 @@ const apps = [
   },
   {
     type: 'apps',
+    title: 'Modus Suite',
+    link: 'https://modushealth.com/',
+    imageName: 'modus',
+    tags: ['Flutter', 'Vue.js', 'Sketch'],
+    tagline: 'Modus',
+    description: 'I was part of a 2 person team to create a suite of products for Modus including a web app and 3 mobile apps. The goal of the apps were to allow clinical care teams and researchs to track and analze patient step data. I designed them all in Sketch and we used Vue for the web app and Flutter for the mobile apps.'
+  },
+  {
+    type: 'apps',
     title: 'DDHQ 2020 Forecasting',
     link: 'https://forecast.decisiondeskhq.com/president',
     imageName: 'ddhq_forecast',
