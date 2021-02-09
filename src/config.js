@@ -53,6 +53,6 @@ export const apps = [
     imageName: 'statify',
     tags: ['Javascript', 'Vue.js', 'Node'],
     tagline: 'Tool For Discovering Your Music Trends',
-    description: 'An app for discovering your top music over time and sharing it with friends. I created the entirety of this app as a personal project using vue, node, and the Spotify and the Bitly api. The app is hosted on a free Heroku server, so the initial load may be slow. You can check out the artists I\'ve been listening to the most <a class="link-text" href="https://bit.ly/3rnNgEu" target="_blank">here</a>.',
+    description: 'An app for discovering your top music over time and sharing it with friends. I created the entirety of this app as a personal project using vue, node, and the Spotify and the Bitly api. The app is hosted on a free Heroku server, so the initial load may be slow.',
   }
 ]
