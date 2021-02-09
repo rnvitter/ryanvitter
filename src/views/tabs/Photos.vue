@@ -8,7 +8,7 @@
         :alt="`photo-${n}`"/>
     </div>
     <div class="insta-link-text">
-      See more of my photography on <a class="link-text" href="https://www.instagram.com/ryanvitter/" target="_blank">Instagram</a>
+      See more of my photography on <a class="link-text" href="https://www.instagram.com/ryanvitter/" target="_blank" rel="noreferrer">Instagram</a>
     </div>
   </div>
 </template>
