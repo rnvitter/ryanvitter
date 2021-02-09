@@ -3,31 +3,23 @@
     <div
       v-for="(item, index) in tabs"
       :key="index"
-      @click="setTab(item)"
-      :class="tab === item ? 'selected-tab' : 'tab-item'">
+      @click="$emit('on-select', item)"
+      :class="selectedTab === item ? 'selected-tab' : 'tab-item'">
       {{ item }}
     </div>
   </div>
 </template>
 
 <script>
-import { mapActions, mapGetters } from 'vuex'
-
-const computed = {
-  ...mapGetters({
-    tab: 'ux/tab'
-  })
-}
-
-const methods = {
-  ...mapActions({
-    setTab: 'ux/setTab'
-  })
+const props = {
+  selectedTab: {
+    type: String,
+    required: true
+  }
 }
 
 export default {
-  computed,
-  methods,
+  props,
   data: () => ({
     tabs: ['Apps', 'Photos', 'About']
   })

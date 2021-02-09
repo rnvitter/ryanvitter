@@ -10,8 +10,6 @@
 </template>
 
 <script>
-import { mapActions } from 'vuex'
-
 import Portfolio from './views/Portfolio'
 import SplashScreen from './views/SplashScreen'
 
@@ -20,37 +18,9 @@ const components = {
   SplashScreen
 }
 
-const methods = {
-  ...mapActions({
-    setScreenWidth: 'ux/setWidth'
-  }),
-  getWindowSize () {
-    if (this.resizeTimeout !== null) {
-      clearTimeout(this.resizeTimeout)
-    }
-    setTimeout(() => {
-      this.setScreenWidth(document.documentElement.clientWidth)
-      this.resizeTimeout = null
-    }, 200)
-  }
-}
-
 export default {
   name: 'App',
-  components,
-  methods,
-  beforeMount () {
-    this.getWindowSize()
-    window.addEventListener('resize', this.getWindowSize)
-    window.onbeforeunload = function() { window.scrollTo(0,0) }
-  },
-  // ready () {
-  //   window.scrollTo(0,0)
-  // },
-  beforeDestroy () {
-    window.scrollTo(0,0)
-    window.removeEventListener('resize', this.getWindowSize)
-  }
+  components
 }
 </script>
 

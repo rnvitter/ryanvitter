@@ -33,18 +33,10 @@
 </template>
 
 <script>
-import { mapGetters } from 'vuex'
-
 import Snackbar from '@/components/Snackbar'
 
 const components = {
   Snackbar
-}
-
-const computed = {
-  ...mapGetters({
-    mobile: 'ux/mobile'
-  })
 }
 
 const methods = {
@@ -66,7 +58,6 @@ const methods = {
 export default {
   name: 'splash-screen',
   components,
-  computed,
   methods
 }
 </script>

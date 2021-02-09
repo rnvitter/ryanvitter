@@ -1,7 +1,7 @@
 <template>
   <div :ref="`item-card-${index}`" class="item-card" @click="goTo">
-    <div class="layout" v-if="mobile">
-      <div class="centered">
+    <div class="layout">
+      <div class="card-header centered">
         <div>
           <h2 class="item-name">
             {{ item.title }}
@@ -16,23 +16,12 @@
           </span>
         </div>
       </div>
-      <div class="centered">
-        <item-flip :item="item" :showOverlay="showOverlay"></item-flip>
-      </div>
-      <div class="centered" style="margin-top: 10px;">
-          <a :href="item.link" target="_blank" class="item-link">View</a>
-          <a @click="showOverlay = !showOverlay" class="item-link">
-            {{ showOverlay ? 'Less' : 'Details' }}
-          </a>
-          <a :href="item.github" target="_blank" class="item-link" v-if="item.github">Github</a>
-      </div>
-    </div>
 
-    <div class="layout" v-else>
-      <div style="width: 60%;">
+      <div class="card-image centered">
         <item-flip :item="item" :showOverlay="showOverlay"></item-flip>
       </div>
-      <div style="width: 40%;">
+
+      <div class="card-description">
         <div style="padding: 0 20px;">
           <h2 class="item-name">
             {{ item.title }}
@@ -50,12 +39,19 @@
           </div>
         </div>
       </div>
+
+      <div class="card-footer centered" style="margin-top: 10px;">
+        <a :href="item.link" target="_blank" class="item-link">View</a>
+        <a @click="showOverlay = !showOverlay" class="item-link">
+          {{ showOverlay ? 'Less' : 'Details' }}
+        </a>
+        <a :href="item.github" target="_blank" class="item-link" v-if="item.github">Github</a>
+      </div>
     </div>
   </div>
 </template>
 
 <script>
-import { mapGetters } from 'vuex'
 import ItemFlip from './ItemFlip'
 
 const props = {
@@ -78,16 +74,8 @@ const components = {
   ItemFlip
 }
 
-const computed = {
-  ...mapGetters({
-    mobile: 'ux/mobile',
-    screenWidth: 'ux/screenWidth'
-  })
-}
-
 const methods = {
   goTo () {
-    if (this.mobile) return
     window.open(this.item.link, '_blank')
   }
 }
@@ -95,7 +83,6 @@ const methods = {
 export default {
   props,
   components,
-  computed,
   methods,
   data () {
     return {
@@ -106,7 +93,7 @@ export default {
   mounted () {
     const options = {
       root: null,
-      rootMargin: '0px 0px -10% 0px',
+      rootMargin: '0px 0px -60px 0px',
       threshold: 1
     }
     this.observer = new IntersectionObserver((entry) => {
@@ -201,5 +188,33 @@ export default {
 .visible-card .item-description {
   transition: ease 0.5s;
   opacity: 0.9;
+}
+
+.card-image {
+  width: 60%;
+}
+
+.card-description {
+  width: 40%;
+}
+
+.card-header,
+.card-footer {
+  display: none;
+}
+
+@media only screen and (max-width: 800px) {
+  .card-image {
+    width: 100%;
+  }
+
+  .card-description {
+    display: none;
+  }
+
+  .card-header,
+  .card-footer {
+    display: block;
+  }
 }
 </style>

@@ -1,7 +1,10 @@
 <template>
   <div class="portfolio">
     <div class="portfolio-header">
-      <tabs></tabs>
+      <tabs
+        :selectedTab="tab"
+        @on-select="tab = $event">
+      </tabs>
     </div>
     <projects v-if="tab === 'Apps'"></projects>
     <photos v-if="tab === 'Photos'"></photos>
@@ -10,8 +13,6 @@
 </template>
 
 <script>
-import { mapGetters } from 'vuex'
-
 import { About, Photos, Projects } from './tabs'
 import Tabs from '@/components/Tabs'
 
@@ -23,15 +24,11 @@ const components = {
   Tabs
 }
 
-const computed = {
-  ...mapGetters({
-    tab: 'ux/tab'
-  })
-}
-
 export default {
   components,
-  computed
+  data: () => ({
+    tab: 'Apps'
+  })
 }
 </script>
 

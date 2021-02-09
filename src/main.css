@@ -108,15 +108,9 @@ a {
 .icon-linkedin:before {
   content: "\e900";
 }
-.icon-flickr:before {
-  content: "\e901";
-}
 .icon-instagram:before {
   content: "\e902";
 }
 .icon-gmail:before {
   content: "\e903";
-}
-.icon-flickr-2:before {
-  content: "\eaa6";
 }
