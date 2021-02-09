@@ -1,12 +1,10 @@
 <template>
   <div class="image-wrapper">
     <div class="front" :style="showOverlay ? 'opacity: 0.1;' : 'opacity: 1;'">
-      <a :href="item.link" target=”_blank” style="text-decoration: none;">
-        <img
-          class="item-image"
-          width="100%"
-          :src="getSrc()"/>
-      </a>
+      <img
+        class="item-image"
+        width="100%"
+        :src="getSrc()"/>
     </div>
     <div class="overlay" :style="showOverlay ? 'opacity: 1; pointer-events: auto;' : 'opacity: 0; pointer-events: none;'">
       <div class="detail-text" v-if="item.details">
