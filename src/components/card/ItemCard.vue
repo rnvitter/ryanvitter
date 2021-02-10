@@ -42,7 +42,7 @@
 
       <div class="card-footer centered" style="margin-top: 10px;">
         <a :href="item.link" target="_blank" rel="noreferrer" class="item-link">View</a>
-        <a @click="showOverlay = !showOverlay" class="item-link">
+        <a @click.stop="showOverlay = !showOverlay" class="item-link">
           {{ showOverlay ? 'Less' : 'Details' }}
         </a>
         <a :href="item.github" target="_blank" rel="noreferrer" class="item-link" v-if="item.github">Github</a>
